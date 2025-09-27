@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('common.nav.attendance_guide'))
 @section('description', 'Hướng dẫn tham dự hội nghị WCES 2025')
@@ -6,7 +7,7 @@
 
 @section('og_title', __('common.nav.attendance_guide'))
 @section('og_description', 'Hướng dẫn tham dự hội nghị WCES 2025')
-@section('og_image', asset('images/wces2025-attendance-guide-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-attendance-guide-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-attendance-guide- cva-pages-module no-user not-home width-full')
 

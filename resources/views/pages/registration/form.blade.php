@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('registration.title'))
 @section('description', __('registration.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('registration.title'))
 @section('og_description', __('registration.description'))
-@section('og_image', asset('images/wces2025-registration-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-registration-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-registration- cva-pages-module no-user not-home width-full')
 

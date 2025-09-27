@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('home.title'))
 @section('description', __('home.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('home.hero.title'))
 @section('og_description', __('home.hero.description'))
-@section('og_image', asset('images/wces2025-og-image.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-og-image.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-home- cva-pages-module no-user is-home width-full title-off')
 
@@ -25,7 +26,7 @@
         <!-- Banner Section -->
         <div class='fModule f-banner py-0 f-module f-module-gallery-list'>
           <div class="f-module-content fModuleContent">
-            <img src="{{ asset('images/BVVD-KV.jpg') }}" alt="WCES 2025 Banner" />
+            <img src="{{ Storage::url('images/BVVD-KV.jpg') }}" alt="WCES 2025 Banner" />
           </div>
         </div>
 

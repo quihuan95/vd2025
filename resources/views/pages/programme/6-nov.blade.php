@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('programme.pages.6_nov.title'))
 @section('description', __('programme.pages.6_nov.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('programme.pages.6_nov.title'))
 @section('og_description', __('programme.pages.6_nov.description'))
-@section('og_image', asset('images/wces2025-6nov-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-6nov-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-programme-6-nov- cva-pages-module no-user not-home width-full')
 

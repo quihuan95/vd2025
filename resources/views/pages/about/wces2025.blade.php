@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('about.title'))
 @section('description', __('about.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('about.title'))
 @section('og_description', __('about.description'))
-@section('og_image', asset('images/wces2025-about-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-about-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-about-wces2025- cva-pages-module no-user not-home width-full')
 
@@ -66,7 +67,7 @@
                 <div class="diagram-section">
                   <h4 class="diagram-title">{{ __('about.sections.conference_diagram.morning.title') }}</h4>
                   <div class="diagram-image">
-                    <img src="{{ asset('images/layout_sang_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.morning.title') }}" class="img-fluid rounded shadow">
+                    <img src="{{ Storage::url('images/layout_sang_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.morning.title') }}" class="img-fluid rounded shadow">
                   </div>
                 </div>
 
@@ -74,7 +75,8 @@
                 <div class="diagram-section">
                   <h4 class="diagram-title">{{ __('about.sections.conference_diagram.afternoon.title') }}</h4>
                   <div class="diagram-image">
-                    <img src="{{ asset('images/layout_chieu_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.afternoon.title') }}" class="img-fluid rounded shadow">
+                    <img src="{{ Storage::url('images/layout_chieu_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.afternoon.title') }}"
+                      class="img-fluid rounded shadow">
                   </div>
                 </div>
               </div>

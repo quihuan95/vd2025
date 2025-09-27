@@ -17,7 +17,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="@yield('og_title', 'WCES 2025 - World Congress of Endoscopic Surgeons')">
   <meta property="og:description" content="@yield('og_description', 'The 21st World Congress of Endoscopic Surgeons in Singapore from 4-8 November 2025')">
-  <meta property="og:image" content="@yield('og_image', asset('images/wces2025-og-image.jpg'))">
+  <meta property="og:image" content="@yield('og_image', Storage::url('images/og/wces2025-og-image.jpg'))">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WCES 2025">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@yield('twitter_title', 'WCES 2025 - World Congress of Endoscopic Surgeons')">
   <meta name="twitter:description" content="@yield('twitter_description', 'The 21st World Congress of Endoscopic Surgeons in Singapore from 4-8 November 2025')">
-  <meta name="twitter:image" content="@yield('twitter_image', asset('images/wces2025-twitter-image.jpg'))">
+  <meta name="twitter:image" content="@yield('twitter_image', Storage::url('images/og/wces2025-twitter-image.jpg'))">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ url()->current() }}">

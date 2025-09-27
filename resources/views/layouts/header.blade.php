@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Storage; @endphp
 @php
   $menuItems = [
       [
@@ -90,7 +91,7 @@
             <ul class="fGalleryImages fGalleryList fGalleryView">
               <li class="fGalleryItem fGalleryItem-0">
                 <a href='{{ locale_route('home') }}' class="fGalleryImage">
-                  <img src="{{ asset('images/Logo BV - No Text.png') }}" alt="WCES 2025 Logo" />
+                  <img src="{{ Storage::url('images/Logo BV - No Text.png') }}" alt="WCES 2025 Logo" />
                 </a>
               </li>
             </ul>

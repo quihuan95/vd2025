@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('singapore.visa_immigration.title'))
 @section('description', __('singapore.visa_immigration.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('singapore.visa_immigration.title'))
 @section('og_description', __('singapore.visa_immigration.description'))
-@section('og_image', asset('images/wces2025-visa-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-visa-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-singapore-visa-immigration- cva-pages-module no-user not-home width-full')
 

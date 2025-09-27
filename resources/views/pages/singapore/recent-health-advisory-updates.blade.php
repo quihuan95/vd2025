@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@php use Illuminate\Support\Facades\Storage; @endphp
 
 @section('title', __('singapore.recent_health_advisory_updates.title'))
 @section('description', __('singapore.recent_health_advisory_updates.description'))
@@ -6,7 +7,7 @@
 
 @section('og_title', __('singapore.recent_health_advisory_updates.title'))
 @section('og_description', __('singapore.recent_health_advisory_updates.description'))
-@section('og_image', asset('images/wces2025-health-advisory-og.jpg'))
+@section('og_image', Storage::url('images/og/wces2025-health-advisory-og.jpg'))
 
 @section('body_class', 'com-pages view-module alias- path-singapore-recent-health-advisory-updates- cva-pages-module no-user not-home width-full')
 
