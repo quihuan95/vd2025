@@ -10,8 +10,8 @@ console.log("Custom.js loaded");
     // Initialize when document is ready
     $(document).ready(function () {
         initializeComponents();
-        setupEventListeners();
-        optimizePerformance();
+        // setupEventListeners();
+        // optimizePerformance();
     });
 
     /**
