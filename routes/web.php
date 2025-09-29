@@ -199,6 +199,21 @@ Route::prefix('admin')->name('admin.')->group(function () {
 });
 
 // Fallback routes without locale (redirect to English)
+// Exclude static assets and admin routes from locale redirect
 Route::get('/{any}', function () {
-    return redirect('/en' . request()->getRequestUri());
+    $uri = request()->getRequestUri();
+
+    // Don't redirect static assets, admin routes, or API routes
+    if (
+        preg_match('#\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|pdf|zip|doc|docx|xls|xlsx)$#i', $uri) ||
+        str_starts_with($uri, '/admin') ||
+        str_starts_with($uri, '/api') ||
+        str_starts_with($uri, '/storage') ||
+        str_starts_with($uri, '/favicon') ||
+        str_starts_with($uri, '/build')
+    ) {
+        abort(404);
+    }
+
+    return redirect('/en' . $uri);
 })->where('any', '.*');

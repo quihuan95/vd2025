@@ -2,6 +2,7 @@
  * WCES 2025 Custom JavaScript
  * Optimized for performance and user experience
  */
+console.log("Custom.js loaded");
 
 (function ($) {
     "use strict";
@@ -80,9 +81,9 @@
         const countdownElement = $(".f-countdown");
         if (countdownElement.length === 0) return;
 
-        // Set target date (November 4, 2025)
-        const targetDate = new Date("2025-11-04T00:00:00").getTime();
-
+        // Set target date (October 31, 2025)
+        const targetDate = new Date("2025-10-31T00:00:00").getTime();
+        console.log(targetDate);
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = targetDate - now;

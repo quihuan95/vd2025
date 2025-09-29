@@ -151,6 +151,9 @@
   <!-- Custom Scripts -->
   @yield('scripts')
 
+  <!-- WCES 2025 Custom JavaScript -->
+  <script src="{{ asset('js/custom.js') }}"></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
       $("#invoice .fTable").addClass("table table-striped table-bordered");
