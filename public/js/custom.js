@@ -18,13 +18,13 @@ console.log("Custom.js loaded");
      * Initialize all components
      */
     function initializeComponents() {
-        initNavigation();
+        // initNavigation();
         initCountdown();
-        initCarousels();
-        initLazyLoading();
-        initScrollToTop();
-        initFormValidation();
-        initAccessibility();
+        // initCarousels();
+        // initLazyLoading();
+        // initScrollToTop();
+        // initFormValidation();
+        // initAccessibility();
     }
 
     /**
