@@ -23,10 +23,10 @@
       <section id="fMatter" class="col-12">
         <div id="f-messages"></div>
 
-        <!-- Banner Section -->
+        <!-- 1. Banner Section -->
         <div class='fModule f-banner py-0 f-module f-module-gallery-list'>
           <div class="f-module-content fModuleContent">
-            <img src="{{ Storage::url('images/BVVD-KV.jpg') }}" alt="WCES 2025 Banner" />
+            <img src="{{ Storage::url('images/BVVD-KV.jpg') }}" alt="VDUHSC 2025 Banner" />
           </div>
         </div>
 
@@ -68,270 +68,52 @@
           </div>
         </div>
 
-        <!-- About Event Section -->
-        <div class='fModule f-about-home container-function pb-0 f-module f-module-pages-custom'>
-          <div class="f-module-title fModuleTitle">
-            <h3>{{ __('home.about.title') }}</h3>
-          </div>
-          <div class="f-module-content fModuleContent">
-            <div>
-              <h4>
-                <span>{{ __('home.hero.title') }}</span>
-                {{ __('home.hero.description') }}
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        <!-- Event Highlights Section -->
-        <div class='fModule f-highlights pb-4 pb-lg-0 col-xs-12 col-12 col-xl-4 f-module f-module-gallery-list'>
-          <div class="f-module-content fModuleContent">
-            <ul class="fGalleryImages fGalleryList">
-              <li class="fGalleryItem">
-                <a class="fGalleryImage">
-                  <img alt="Event Highlights" src="https://storage.unitedwebnetwork.com/files/1212/64d6523d3fb063bdc0df357ef14a6cef.png" loading="lazy" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class='fModule f-highlights-text align-content-center pb-0 col-xs-12 col-12 col-xl-8 f-module f-module-pages-custom'>
-          <div class="f-module-content fModuleContent">
-            <div>
-              <div class="highlights-item">
-                <p><label>WCES 2025 Congress</label></p>
-                <h3>{{ __('home.highlights.title') }}</h3>
-                <ul>
-                  <li>
-                    <div>{{ __('home.highlights.items.artificial_intelligence') }}</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.image_guided_surgery') }}</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.robotic_surgery') }}</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.healthcare_economics') }}</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.women_in_surgery') }}</div>
-                  </li>
-                  <li>
-                    <div>OR of the Future</div>
-                  </li>
-                  <li>
-                    <div>Education & Training in MIS</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.innovation_tissue') }}</div>
-                  </li>
-                  <li>
-                    <div>Innovation in MIS</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.prosthesis_mesh') }}</div>
-                  </li>
-                  <li>
-                    <div>Startups in MIS</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.cinema_mis') }}</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.fellowship_program') }}</div>
-                  </li>
-                  <li>
-                    <div>Value Driven Outcome in MIS</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.carbon_neutrality') }}</div>
-                  </li>
-                  <li>
-                    <div>QoL in MIS</div>
-                  </li>
-                  <li>
-                    <div>{{ __('home.highlights.items.patient_safety') }}</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Welcome Message Section -->
+        <!-- 2. Welcome Message Section -->
         <div class='fModule container-function f-welcome pb-0 f-module f-module-pages-custom'>
           <div class="f-module-title fModuleTitle">
-            <h3>{{ __('home.welcome.title') }}</h3>
+            <h3>{{ app()->getLocale() === 'vi' ? 'Thư chào mừng' : 'Welcome Message' }}</h3>
           </div>
           <div class="f-module-content fModuleContent">
             <div></div>
             <div class="info">
-              <p>{{ __('home.welcome.greeting') }}</p>
-              <p>{!! __('home.welcome.content.paragraph_1') !!}</p>
-              <p>{!! __('home.welcome.content.paragraph_2') !!}</p>
-              <p>{!! __('home.welcome.content.paragraph_3') !!}</p>
-              <p>{!! __('home.welcome.content.paragraph_4') !!}</p>
-              <p>{!! __('home.welcome.content.paragraph_5') !!}</p>
-              <p>{{ __('home.welcome.content.closing') }}</p>
+              @if (app()->getLocale() === 'vi')
+                <p><strong>Kính gửi Quý Đồng nghiệp,</strong></p>
+                <p>Chúng tôi trân trọng kính mời Quý vị tham dự Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức năm 2025, diễn ra tại Hà Nội ngày 01 tháng 11 năm 2025. Đây là
+                  lần đầu tiên Bệnh viện Hữu nghị Việt Đức vinh dự đăng cai sự kiện quan trọng này, và chúng tôi rất vui mừng được chào đón sự tham dự của các chuyên gia và các bác
+                  sĩ đến từ khắp nơi trên thế giới.</p>
+                <p>Hội nghị sẽ mang đến một chương trình khoa học đa dạng và toàn diện, bao gồm 04 phiên chuyên đề với khoảng 40 bài tham luận. Nội dung thảo luận trải dài nhiều lĩnh
+                  vực bao gồm: ghép tạng, tim mạch, tiêu hóa, chấn thương chỉnh hình chỉnh hình…</p>
+                <p>Chúng tôi tin rằng hội nghị lần này sẽ là một cơ hội đặc biệt để học hỏi, nâng cao kỹ năng chuyên môn và mở rộng kết nối quốc tế, thúc đẩy những trao đổi và hợp
+                  tác giữa các chuyên gia hàng đầu. Từ đó, áp dụng những tiến bộ khoa học để cải thiện dịch vụ y tế và nâng cao sức khỏe toàn cầu.</p>
+                <p>Chúng tôi rất mong được đón tiếp Quý vị tại Hà Nội và cùng nhau tạo nên một hội nghị thành công, ý nghĩa.</p>
+                <p><strong>Trân trọng,</strong><br>
+                  <strong>Dương Đức Hùng</strong><br>
+                  <strong>Giám đốc</strong><br>
+                  <strong>Bệnh viện Hữu nghị Việt Đức</strong>
+                </p>
+              @else
+                <p><strong>Dear Colleagues and Friends,</strong></p>
+                <p>It is our great pleasure to welcome you to the Viet Duc University Hospital Scientific Congress 2025, taking place in Hanoi on November 1, 2025. This marks the
+                  very first time that Viet Duc University Hospital has the honor of hosting this distinguished event, and we are delighted to bring together leading experts,
+                  researchers, and practitioners from across the globe.</p>
+                <p>The Congress will feature a diverse and comprehensive scientific program, including four sessions with approximately 40 presentations. The discussions will span
+                  multiple specialties — with a special focus on organ transplantation, alongside important topics in cardiovascular, gastrointestinal, and orthopedic, among others.
+                </p>
+                <p>We believe that this congress will be a unique opportunity for training, skill enhancement, and global networking, fostering meaningful exchanges among leading
+                  professionals. Ultimately, our shared goal is to translate these advancements into better patient care and improved health outcomes worldwide.</p>
+                <p>We warmly look forward to welcoming you to Hanoi and to an inspiring and productive conference experience.</p>
+                <p><strong>Warm regards,</strong><br>
+                  <strong>DUONG Duc Hung</strong><br>
+                  <strong>Director</strong><br>
+                  <strong>Viet Duc University Hospital</strong>
+                </p>
+              @endif
             </div>
           </div>
         </div>
-    </div>
 
-    <!-- Welcome Images Section -->
-    <div class='fModule container-function f-welcom-img f-module f-module-gallery-list'>
-      <div class="f-module-content fModuleContent">
-        <ul class="fGalleryImages row justify-content-center fGalleryList">
-          <li class="fGalleryItem col-12 col-sm-10 col-md-6 col-lg-4 mb-4">
-            <a class="fGalleryImage">
-              <img alt="Davide Lomanto- Congress President" src="https://storage.unitedwebnetwork.com/files/1212/4a5bc10cab08dcabaed0c07688b91c1b.png" loading="lazy" />
-            </a>
-            <div class="fGalleryText">
-              <h5>Prof Davide Lomanto</h5>
-              <p>{{ __('home.speakers.congress_president') }}</p>
-            </div>
-          </li>
-          <li class="fGalleryItem col-12 col-sm-10 col-md-6 col-lg-4 mb-4">
-            <a class="fGalleryImage">
-              <img alt="Asim Shabbir- Congress Chair" src="https://storage.unitedwebnetwork.com/files/1212/0c709c774f6b95b516a9d6fe3ae67fbc.png" loading="lazy" />
-            </a>
-            <div class="fGalleryText">
-              <h5>Assoc Prof Asim Shabbir</h5>
-              <p>{{ __('home.speakers.congress_chair') }}</p>
-            </div>
-          </li>
-          <li class="fGalleryItem col-12 col-sm-10 col-md-6 col-lg-4 mb-4">
-            <a class="fGalleryImage">
-              <img alt="Aung Myint Oo- Scientific Chair" src="https://storage.unitedwebnetwork.com/files/1212/819a31714cd0f35e2972b6ab7178f1bf.png" loading="lazy" />
-            </a>
-            <div class="fGalleryText">
-              <h5>Asst Prof Aung Myint Oo</h5>
-              <p>{{ __('home.speakers.scientific_chair') }}</p>
-            </div>
-          </li>
-        </ul>
-      </div>
+      </section>
     </div>
-
-    <!-- Venue Section -->
-    <div class='fModule fnumber_counter f-venue bg-light container-function f-module f-module-pages-custom-photo'>
-      <div class="f-module-content fModuleContent">
-        <div class="f-media row justify-content-center">
-          <div class="f-media-text col-12">
-            <div class="venue-text">
-              <h3>{{ __('home.venue.title') }}</h3>
-              <p>{{ __('home.venue.content.paragraph_1') }}</p>
-              <p>{{ __('home.venue.content.paragraph_2') }}</p>
-            </div>
-
-            <div class="stats-container">
-              <div class="stat-card">
-                <div class="stat-number" data-count="1500">0</div>
-                <div class="stat-label">{{ __('home.statistics.attendees') }}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number" data-count="40">0</div>
-                <div class="stat-label">{{ __('home.statistics.exhibition_booth') }}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number" data-count="4">0</div>
-                <div class="stat-label">{{ __('home.statistics.workshops') }}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sponsors Section -->
-    <div class='fModule pt-5 f-organised f-module f-module-gallery-list'>
-      <div class="f-module-title fModuleTitle">
-        <h3>{{ __('home.sponsors.endorsed_by') }}</h3>
-      </div>
-      <div class="f-module-content fModuleContent">
-        <ul class="fGalleryImages row justify-content-center fGalleryList">
-          <li class="fGalleryItem col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-            <a class="fGalleryImage">
-              <img alt="DGAV Logo" src="https://storage.unitedwebnetwork.com/files/1212/dgav-logo_325629.jpg" loading="lazy" />
-            </a>
-          </li>
-          <li class="fGalleryItem col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-            <a class="fGalleryImage">
-              <img alt="ISOPES Logo" src="https://storage.unitedwebnetwork.com/files/1212/isopes_282549.png" loading="lazy" />
-            </a>
-          </li>
-          <li class="fGalleryItem col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-            <a class="fGalleryImage">
-              <img alt="SCRS Logo" src="https://storage.unitedwebnetwork.com/files/1212/2025_SCRS_274410_274501.png" loading="lazy" />
-            </a>
-          </li>
-          <li class="fGalleryItem col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-            <a class="fGalleryImage">
-              <img alt="OMSS Logo" src="https://storage.unitedwebnetwork.com/files/1212/OMSS_277624.avif" loading="lazy" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class='fModule f-organised f-module f-module-gallery-list'>
-      <div class="f-module-content fModuleContent">
-        <div class='fGalleryContainer'>
-          <h4>{{ __('home.sponsors.bronze_sponsor') }}</h4>
-          <ul class="fGalleryImages row justify-content-center fGalleryList">
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="Miconvey" src="https://storage.unitedwebnetwork.com/files/1212/Miconvey_322712.png" loading="lazy" />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class='fGalleryContainer'>
-          <h4>{{ __('home.sponsors.other_sponsors') }}</h4>
-          <ul class="fGalleryImages row justify-content-center fGalleryList">
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="Aldaver" src="https://storage.unitedwebnetwork.com/files/1212/Aldaver_322713.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="Biocer" src="https://storage.unitedwebnetwork.com/files/1212/Biocer_322498.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="Healnoc" src="https://storage.unitedwebnetwork.com/files/1212/Healnoc_322587.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="KOTOBUKI" src="https://storage.unitedwebnetwork.com/files/1212/KOTOBUKI_331072.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="SonoScape Medical Corp." src="https://storage.unitedwebnetwork.com/files/1212/SonoScape%20Medical%20Corp._322521.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="Teleflex Medical" src="https://storage.unitedwebnetwork.com/files/1212/Teleflex%20Medical_322520.png" loading="lazy" />
-              </a>
-            </li>
-            <li class="fGalleryItem col-12 col-sm-6 col-md-3 col-lg-2 mb-3">
-              <a class="fGalleryImage">
-                <img alt="VHMed" src="https://storage.unitedwebnetwork.com/files/1212/VHMed_322711.jpg" loading="lazy" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    </section>
-  </div>
   </div>
 @endsection
 
@@ -365,68 +147,7 @@
         m.html(min);
       }
 
-      // Number counter animation
-      var a = 0;
-      $(window).scroll(function() {
-        var $counterElement = $('.fnumber_counter');
-        if ($counterElement.length > 0) {
-          var oTop = $counterElement.offset().top - window.innerHeight;
-          if (a == 0 && $(window).scrollTop() > oTop) {
-            $('.count').each(function() {
-              var $this = $(this);
-              var countTo = $this.attr('data-count');
-
-              $({
-                countNum: $this.text()
-              }).animate({
-                countNum: countTo
-              }, {
-                duration: 2500,
-                easing: 'swing',
-                step: function() {
-                  $this.text(Math.floor(this.countNum));
-                },
-                complete: function() {
-                  $this.text(this.countNum);
-                }
-              });
-            });
-            a = 1;
-          }
-        }
-      });
-
-      // Owl Carousel for numbers
-      if ($('.numbers-carousel').length > 0) {
-        $('.numbers-carousel').owlCarousel({
-          autoplayTimeout: 5000,
-          autoplayHoverPause: true,
-          margin: 0,
-          nav: false,
-          dots: true,
-          slideTransition: 'linear',
-          navText: ['<i class="fa-solid fa-angle-left"></i>', '<i class="fa-solid fa-angle-right"></i>'],
-          responsive: {
-            0: {
-              items: 2,
-              loop: true,
-              autoplay: true
-            },
-            499: {
-              items: 2,
-              loop: true,
-              autoplay: true
-            },
-            768: {
-              items: 3,
-              loop: false,
-              autoplay: false
-            }
-          }
-        });
-      }
-
-      // bxSlider for banner
+      // bxSlider for banner (if multiple images)
       if ($('.f-banner .fGalleryImages').length > 0) {
         $('.f-banner .fGalleryImages').bxSlider({
           mode: 'fade',

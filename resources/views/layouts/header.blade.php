@@ -9,7 +9,7 @@
           'submenu' => [],
       ],
       [
-          'title' => 'common.nav.about_wces2025',
+          'title' => 'common.nav.about',
           'route' => 'about.wces2025',
           'url' => 'about.wces2025',
           'has_submenu' => false,
@@ -22,51 +22,35 @@
           'has_submenu' => true,
           'submenu' => [
               [
+                  'title' => 'common.nav.agenda',
+                  'route' => 'programme.agenda',
+                  'url' => 'programme.agenda',
+              ],
+              [
                   'title' => 'common.nav.speakers',
                   'route' => 'invited.speakers',
                   'url' => 'invited.speakers',
               ],
-              [
-                  'title' => 'common.nav.main_congress',
-                  'route' => 'programme.6-nov',
-                  'url' => 'programme.6-nov',
-              ],
           ],
       ],
       [
-          'title' => 'common.nav.sponsorship',
-          'route' => 'sponsors.official',
-          'url' => 'sponsors.official',
+          'title' => 'common.nav.venue',
+          'route' => 'singapore.venue',
+          'url' => 'singapore.venue',
           'has_submenu' => false,
           'submenu' => [],
       ],
       [
-          'title' => 'common.nav.singapore',
-          'route' => null,
-          'url' => 'javascript:void(0)',
-          'has_submenu' => true,
-          'submenu' => [
-              [
-                  'title' => 'common.nav.venue',
-                  'route' => 'singapore.venue',
-                  'url' => 'singapore.venue',
-              ],
-              [
-                  'title' => 'common.nav.accommodation',
-                  'route' => 'singapore.accommodation',
-                  'url' => 'singapore.accommodation',
-              ],
-              [
-                  'title' => 'common.nav.visa_immigration',
-                  'route' => 'singapore.visa-immigration',
-                  'url' => 'singapore.visa-immigration',
-              ],
-          ],
-      ],
-      [
-          'title' => 'common.nav.attendance_guide',
+          'title' => 'common.nav.guide',
           'route' => 'attendance.guide',
           'url' => 'attendance.guide',
+          'has_submenu' => false,
+          'submenu' => [],
+      ],
+      [
+          'title' => 'common.nav.information',
+          'route' => 'contact.faq',
+          'url' => 'contact.faq',
           'has_submenu' => false,
           'submenu' => [],
       ],
@@ -91,7 +75,7 @@
             <ul class="fGalleryImages fGalleryList fGalleryView">
               <li class="fGalleryItem fGalleryItem-0">
                 <a href='{{ locale_route('home') }}' class="fGalleryImage">
-                  <img src="{{ Storage::url('images/Logo BV - No Text.png') }}" alt="WCES 2025 Logo" />
+                  <img src="{{ Storage::url('images/Logo BV - No Text.png') }}" alt="VDUHSC 2025 Logo" />
                 </a>
               </li>
             </ul>

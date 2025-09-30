@@ -1,5 +1,5 @@
 /**
- * WCES 2025 Custom JavaScript
+ * VDUHSC 2025 Custom JavaScript
  * Optimized for performance and user experience
  */
 console.log("Custom.js loaded");
@@ -499,7 +499,7 @@ console.log("Custom.js loaded");
     };
 
     // Expose functions globally if needed
-    window.WCES2025 = {
+    window.VDUHSC2025 = {
         initCountdown: initCountdown,
         initCarousels: initCarousels,
         initLazyLoading: initLazyLoading,

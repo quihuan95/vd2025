@@ -55,6 +55,14 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|vi'], 'middlew
 
     // Programme pages
     Route::prefix('programme')->group(function () {
+        Route::get('/agenda', [App\Http\Controllers\ProgrammeController::class, 'agenda'])->name('programme.agenda');
+        Route::get('/images', [App\Http\Controllers\ProgrammeController::class, 'getImages'])->name('programme.images');
+
+        Route::get('/1-nov', function () {
+            return view('pages.programme.1-nov');
+        })->name('programme.1-nov');
+
+        // Legacy routes (keep for backward compatibility)
         Route::get('/6-nov', function () {
             return view('pages.programme.6-nov');
         })->name('programme.6-nov');

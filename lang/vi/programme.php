@@ -1,15 +1,35 @@
 <?php
 
 return [
-    'title' => 'Chương trình - WCES 2025',
-    'description' => 'Lịch trình chương trình đầy đủ cho WCES 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
-    'keywords' => 'WCES 2025, chương trình, lịch trình, phẫu thuật nội soi, Singapore',
+    'title' => 'Chương trình - VDUHSC 2025',
+    'description' => 'Lịch trình chương trình đầy đủ cho VDUHSC 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
+    'keywords' => 'VDUHSC 2025, chương trình, lịch trình, ghép tạng, Hà Nội',
 
     'pages' => [
+        '31_oct' => [
+            'title' => 'Chương trình - VDUHSC 2025',
+            'description' => 'Lịch trình chương trình đầy đủ cho ngày 31 tháng 10 năm 2025 tại VDUHSC 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
+            'keywords' => 'VDUHSC 2025, 31 tháng 10, chương trình, lịch trình, ghép tạng, Hà Nội',
+            'page_title' => 'Chương trình',
+            'coming_soon' => 'Sắp ra mắt',
+            'coming_soon_description' => 'Chương trình chi tiết cho ngày 31 tháng 10 năm 2025 sẽ sớm được cập nhật.',
+            'programme_coming_soon' => 'Chương trình sắp ra mắt',
+            'programme_description' => 'Chúng tôi đang hoàn thiện chi tiết chương trình cho ngày 31 tháng 10 năm 2025. Vui lòng quay lại sau.',
+        ],
+        '1_nov' => [
+            'title' => 'Chương trình 1 tháng 11 - VDUHSC 2025',
+            'description' => 'Lịch trình chương trình đầy đủ cho ngày 1 tháng 11 năm 2025 tại VDUHSC 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
+            'keywords' => 'VDUHSC 2025, 1 tháng 11, chương trình, lịch trình, ghép tạng, Hà Nội',
+            'page_title' => 'Chương trình 1 tháng 11',
+            'coming_soon' => 'Sắp ra mắt',
+            'coming_soon_description' => 'Chương trình chi tiết cho ngày 1 tháng 11 năm 2025 sẽ sớm được cập nhật.',
+            'programme_coming_soon' => 'Chương trình sắp ra mắt',
+            'programme_description' => 'Chúng tôi đang hoàn thiện chi tiết chương trình cho ngày 1 tháng 11 năm 2025. Vui lòng quay lại sau.',
+        ],
         '6_nov' => [
-            'title' => 'Chương trình 6 tháng 11 - WCES 2025',
-            'description' => 'Lịch trình chương trình đầy đủ cho ngày 6 tháng 11 năm 2025 tại WCES 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
-            'keywords' => 'WCES 2025, 6 tháng 11, chương trình, lịch trình, phẫu thuật nội soi, Singapore',
+            'title' => 'Chương trình 6 tháng 11 - VDUHSC 2025',
+            'description' => 'Lịch trình chương trình đầy đủ cho ngày 6 tháng 11 năm 2025 tại VDUHSC 2025. Khám phá các phiên họp, hội thảo và cơ hội kết nối.',
+            'keywords' => 'VDUHSC 2025, 6 tháng 11, chương trình, lịch trình, ghép tạng, Hà Nội',
             'page_title' => 'Chương trình 6 tháng 11',
             'section_title' => 'Chương trình 6 tháng 11 năm 2025',
             'content' => [

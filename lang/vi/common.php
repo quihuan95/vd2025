@@ -4,10 +4,19 @@ return [
   // Navigation
   'nav' => [
     'home' => 'Trang chủ',
+    'about' => 'Giới thiệu',
+    'programme' => 'Chương trình',
+    'agenda' => 'Chương trình',
+    'programme_1_nov' => 'Chương trình 1/11',
+    'venue' => 'Địa điểm',
+    'guide' => 'Hướng dẫn',
+    'information' => 'Thông tin liên hệ',
+    'registration' => 'Đăng ký',
+    'speakers' => 'Diễn giả',
+    // Legacy keys (keep for backward compatibility)
     'congress' => 'Đại hội',
     'about_wces2025' => 'Giới thiệu',
     'committee_members' => 'Thành viên ban tổ chức',
-    'programme' => 'Chương trình',
     'invited_speakers' => 'Diễn giả mời',
     'precongress_workshop' => 'Hội thảo tiền đại hội',
     'main_congress' => 'Đại hội chính',
@@ -18,7 +27,6 @@ return [
     'sponsorship_opportunity' => 'Cơ hội tài trợ',
     'official_sponsors' => 'Nhà tài trợ chính thức',
     'singapore' => 'Du lịch',
-    'venue' => 'Địa điểm',
     'accommodation' => 'Chỗ ở',
     'visa_immigration' => 'Visa & Nhập cư',
     'yellow_fever_vaccination' => 'Tiêm phòng sốt vàng da',
@@ -27,8 +35,6 @@ return [
     'attendance_guide' => 'Hướng dẫn tham dự',
     'promotional_toolkit' => 'Bộ công cụ quảng bá',
     'contact' => 'Liên hệ',
-    'registration' => 'Đăng ký',
-    'speakers' => 'Diễn giả mời',
   ],
 
   // Common words
@@ -74,7 +80,7 @@ return [
     'subscribe_newsletter' => 'Đăng ký nhận tin tức',
     'stay_connected' => 'Kết nối. Cập nhật thông tin',
     'contact_us' => 'Liên hệ với chúng tôi',
-    'copyright' => 'Bản quyền 2025 WCES - Tất cả quyền được bảo lưu.',
+    'copyright' => 'Bản quyền 2025 VDUHSC - Tất cả quyền được bảo lưu.',
     'powered_by' => 'Được hỗ trợ bởi',
     'privacy_policy' => 'Chính sách bảo mật',
   ],

@@ -1,11 +1,11 @@
 <?php
 
 return [
-  'title' => 'FAQ - WCES 2025',
-  'description' => 'Frequently Asked Questions about WCES 2025. Find answers to common questions about registration, programme, accommodation, and more.',
-  'keywords' => 'WCES 2025, FAQ, frequently asked questions, contact, help, support',
+  'title' => 'Contact Information - VDUHSC 2025',
+  'description' => 'Contact information for VDUHSC 2025. Get in touch with the Scientific Committee and Congress Secretariat for any inquiries.',
+  'keywords' => 'VDUHSC 2025, contact, information, scientific committee, secretariat, support',
 
-  'page_title' => 'FAQ',
+  'page_title' => 'Contact Information',
 
   'sections' => [
     'general' => [

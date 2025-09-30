@@ -7,34 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- SEO Meta Tags -->
-  <title>@yield('title', 'WCES 2025 - World Congress of Endoscopic Surgeons')</title>
-  <meta name="description" content="@yield('description', 'The 21st World Congress of Endoscopic Surgeons (WCES 2025) in Singapore from 4-8 November 2025. Join us for the latest in endoscopic and laparoscopic surgery.')">
-  <meta name="keywords" content="@yield('keywords', 'WCES 2025, endoscopic surgery, laparoscopic surgery, Singapore, medical conference, surgery congress')">
-  <meta name="author" content="WCES 2025">
+  <title>@yield('title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')</title>
+  <meta name="description" content="@yield('description', 'Viet Duc University Hospital Scientific Congress (VDUHSC 2025) in Hanoi on November 1, 2025. Join us for the latest in organ transplantation, cardiovascular, gastrointestinal, and orthopedic surgery.')">
+  <meta name="keywords" content="@yield('keywords', 'VDUHSC 2025, organ transplantation, cardiovascular surgery, gastrointestinal surgery, orthopedic surgery, Hanoi, medical conference, surgery congress')">
+  <meta name="author" content="VDUHSC 2025">
   <meta name="robots" content="index, follow">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="@yield('og_title', 'WCES 2025 - World Congress of Endoscopic Surgeons')">
-  <meta property="og:description" content="@yield('og_description', 'The 21st World Congress of Endoscopic Surgeons in Singapore from 4-8 November 2025')">
-  <meta property="og:image" content="@yield('og_image', Storage::url('images/og/wces2025-og-image.jpg'))">
+  <meta property="og:title" content="@yield('og_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
+  <meta property="og:description" content="@yield('og_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025')">
+  <meta property="og:image" content="@yield('og_image', Storage::url('images/og/vduhsc2025-og-image.jpg'))">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="WCES 2025">
+  <meta property="og:site_name" content="VDUHSC 2025">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="@yield('twitter_title', 'WCES 2025 - World Congress of Endoscopic Surgeons')">
-  <meta name="twitter:description" content="@yield('twitter_description', 'The 21st World Congress of Endoscopic Surgeons in Singapore from 4-8 November 2025')">
-  <meta name="twitter:image" content="@yield('twitter_image', Storage::url('images/og/wces2025-twitter-image.jpg'))">
+  <meta name="twitter:title" content="@yield('twitter_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
+  <meta name="twitter:description" content="@yield('twitter_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025')">
+  <meta name="twitter:image" content="@yield('twitter_image', Storage::url('images/og/vduhsc2025-twitter-image.jpg'))">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ url()->current() }}">
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ asset('favicon/favicon32x32.png') }}" sizes="32x32" />
-  <link rel="apple-touch-icon" href="{{ asset('favicon/favicon48x48.png') }}" />
-  <link rel="shortcut icon" href="{{ asset('favicon/favicon48x48.png') }}" sizes="48x48" />
+  <link rel="icon" href="{{ asset('favicon.ico') }}" />
 
   <!-- CDN CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -151,7 +149,7 @@
   <!-- Custom Scripts -->
   @yield('scripts')
 
-  <!-- WCES 2025 Custom JavaScript -->
+  <!-- VDUHSC 2025 Custom JavaScript -->
   <script src="{{ asset('js/custom.js') }}"></script>
 
   <script type="text/javascript">

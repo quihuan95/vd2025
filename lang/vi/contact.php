@@ -1,11 +1,11 @@
 <?php
 
 return [
-  'title' => 'Câu hỏi thường gặp - WCES 2025',
-  'description' => 'Các câu hỏi thường gặp về WCES 2025. Tìm câu trả lời cho các câu hỏi phổ biến về đăng ký, chương trình, chỗ ở và nhiều hơn nữa.',
-  'keywords' => 'WCES 2025, câu hỏi thường gặp, FAQ, liên hệ, hỗ trợ, giúp đỡ',
+  'title' => 'Thông tin liên hệ - VDUHSC 2025',
+  'description' => 'Thông tin liên hệ cho VDUHSC 2025. Liên hệ với Ban chuyên môn Hội nghị và Ban Thư ký Hội nghị để được hỗ trợ.',
+  'keywords' => 'VDUHSC 2025, thông tin liên hệ, ban chuyên môn, ban thư ký, hỗ trợ',
 
-  'page_title' => 'Câu hỏi thường gặp',
+  'page_title' => 'Thông tin liên hệ',
 
   'sections' => [
     'general' => [

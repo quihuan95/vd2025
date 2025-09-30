@@ -1,11 +1,11 @@
 <?php
 
 return [
-  'title' => 'Giới thiệu WCES 2025 - Đại hội Thế giới về Phẫu thuật Nội soi',
+  'title' => 'Giới thiệu VDUHSC 2025 - Đại hội Thế giới về Phẫu thuật Nội soi',
   'description' => 'Tìm hiểu về Đại hội Thế giới lần thứ 21 về Phẫu thuật Nội soi (WCES 2025) tại Singapore. Khám phá các tổ chức ELSA và IFSES cùng sứ mệnh thúc đẩy phẫu thuật nội soi.',
   'keywords' => 'WCES 2025, giới thiệu, ELSA, IFSES, phẫu thuật nội soi, phẫu thuật nội soi ổ bụng, Singapore, đại hội y tế',
 
-  'page_title' => 'Giới thiệu WCES 2025',
+  'page_title' => 'Giới thiệu VDUHSC 2025',
   'page_subtitle' => 'Đại hội Thế giới lần thứ 21 về Phẫu thuật Nội soi',
 
   'sections' => [

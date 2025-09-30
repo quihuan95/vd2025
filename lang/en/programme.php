@@ -1,15 +1,35 @@
 <?php
 
 return [
-    'title' => 'Programme - WCES 2025',
-    'description' => 'Complete programme schedule for WCES 2025. Explore sessions, workshops, and networking opportunities.',
-    'keywords' => 'WCES 2025, programme, schedule, endoscopic surgery, Singapore',
+    'title' => 'Programme - VDUHSC 2025',
+    'description' => 'Complete programme schedule for VDUHSC 2025. Explore sessions, workshops, and networking opportunities.',
+    'keywords' => 'VDUHSC 2025, programme, schedule, organ transplantation, Hanoi',
 
     'pages' => [
+        '31_oct' => [
+            'title' => 'Programme - VDUHSC 2025',
+            'description' => 'Complete programme schedule for 31 October 2025 at VDUHSC 2025. Explore sessions, workshops, and networking opportunities.',
+            'keywords' => 'VDUHSC 2025, 31 October, programme, schedule, organ transplantation, Hanoi',
+            'page_title' => 'Agenda',
+            'coming_soon' => 'Coming Soon',
+            'coming_soon_description' => 'The detailed programme for 31 October 2025 will be available soon.',
+            'programme_coming_soon' => 'Programme Coming Soon',
+            'programme_description' => 'We are finalizing the programme details for 31 October 2025. Please check back later.',
+        ],
+        '1_nov' => [
+            'title' => '1 November Programme - VDUHSC 2025',
+            'description' => 'Complete programme schedule for 1 November 2025 at VDUHSC 2025. Explore sessions, workshops, and networking opportunities.',
+            'keywords' => 'VDUHSC 2025, 1 November, programme, schedule, organ transplantation, Hanoi',
+            'page_title' => '1 November Programme',
+            'coming_soon' => 'Coming Soon',
+            'coming_soon_description' => 'The detailed programme for 1 November 2025 will be available soon.',
+            'programme_coming_soon' => 'Programme Coming Soon',
+            'programme_description' => 'We are finalizing the programme details for 1 November 2025. Please check back later.',
+        ],
         '6_nov' => [
-            'title' => '6 November Programme - WCES 2025',
-            'description' => 'Complete programme schedule for 6 November 2025 at WCES 2025. Explore sessions, workshops, and networking opportunities.',
-            'keywords' => 'WCES 2025, 6 November, programme, schedule, endoscopic surgery, Singapore',
+            'title' => '6 November Programme - VDUHSC 2025',
+            'description' => 'Complete programme schedule for 6 November 2025 at VDUHSC 2025. Explore sessions, workshops, and networking opportunities.',
+            'keywords' => 'VDUHSC 2025, 6 November, programme, schedule, organ transplantation, Hanoi',
             'page_title' => '6 November Programme',
             'section_title' => '6 November 2025 Programme',
             'content' => [

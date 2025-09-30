@@ -70,7 +70,7 @@
 
 ```php
 __('common.nav.home')           // "Home" / "Trang chủ"
-__('common.nav.about_wces2025') // "About WCES 2025" / "Giới thiệu WCES 2025"
+__('common.nav.about_wces2025') // "About WCES 2025" / "Giới thiệu VDUHSC 2025"
 __('common.buttons.register')   // "Register" / "Đăng ký"
 __('common.messages.success')   // "Success!" / "Thành công!"
 ```

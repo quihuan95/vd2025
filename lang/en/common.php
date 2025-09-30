@@ -4,10 +4,19 @@ return [
   // Navigation
   'nav' => [
     'home' => 'Home',
+    'about' => 'About',
+    'programme' => 'Programme',
+    'agenda' => 'Agenda',
+    'programme_1_nov' => 'Programme 1 Nov',
+    'venue' => 'Venue',
+    'guide' => 'Guide',
+    'information' => 'Information',
+    'registration' => 'Registration',
+    'speakers' => 'Speakers',
+    // Legacy keys (keep for backward compatibility)
     'congress' => 'Congress',
     'about_wces2025' => 'About',
     'committee_members' => 'Committee Members',
-    'programme' => 'Programme',
     'invited_speakers' => 'Invited Speakers',
     'precongress_workshop' => 'Pre-Congress Workshop',
     'main_congress' => 'Main Congress',
@@ -18,7 +27,6 @@ return [
     'sponsorship_opportunity' => 'Sponsorship Opportunity',
     'official_sponsors' => 'Official Sponsors',
     'singapore' => 'Travel',
-    'venue' => 'Venue',
     'accommodation' => 'Accommodation',
     'visa_immigration' => 'Visa & Immigration',
     'yellow_fever_vaccination' => 'Yellow Fever Vaccination',
@@ -27,8 +35,6 @@ return [
     'attendance_guide' => 'Guide',
     'promotional_toolkit' => 'Promotional Toolkit',
     'contact' => 'Contact',
-    'registration' => 'Registration',
-    'speakers' => 'Invited speakers',
   ],
 
   // Common words
@@ -74,7 +80,7 @@ return [
     'subscribe_newsletter' => 'Subscribe Our Mailing List',
     'stay_connected' => 'Stay Connected. Stay Informed',
     'contact_us' => 'Contact Us',
-    'copyright' => 'Copyright 2025 WCES - All Rights Reserved.',
+    'copyright' => 'Copyright 2025 VDUHSC - All Rights Reserved.',
     'powered_by' => 'Powered By',
     'privacy_policy' => 'Privacy Policy',
   ],

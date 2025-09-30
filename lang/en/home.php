@@ -1,17 +1,17 @@
 <?php
 
 return [
-  'title' => 'WCES 2025 - World Congress of Endoscopic Surgeons',
-  'description' => 'The 21st World Congress of Endoscopic Surgeons (WCES 2025) in Singapore from 4-8 November 2025. Join us for the latest in endoscopic and laparoscopic surgery.',
-  'keywords' => 'WCES 2025, endoscopic surgery, laparoscopic surgery, Singapore, medical conference, surgery congress',
+  'title' => 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress',
+  'description' => 'Viet Duc University Hospital Scientific Congress (VDUHSC 2025) in Hanoi on November 1, 2025. Join us for the latest in organ transplantation, cardiovascular, gastrointestinal, and orthopedic surgery.',
+  'keywords' => 'VDUHSC 2025, organ transplantation, cardiovascular surgery, gastrointestinal surgery, orthopedic surgery, Hanoi, medical conference, surgery congress',
 
   // Hero Section
   'hero' => [
-    'title' => '21st World Congress of Endoscopic Surgeons',
-    'subtitle' => 'WCES 2025',
-    'date' => '4-8 November 2025',
-    'location' => 'Suntec Singapore Convention & Exhibition Center',
-    'description' => 'Join leading surgeons and healthcare professionals from around the world for the most comprehensive endoscopic surgery congress.',
+    'title' => 'Viet Duc University Hospital Scientific Congress',
+    'subtitle' => 'VDUHSC 2025',
+    'date' => '1 November 2025',
+    'location' => 'Hanoi, Vietnam',
+    'description' => 'Join leading surgeons and healthcare professionals from around the world for the most comprehensive scientific congress focusing on organ transplantation and advanced surgery.',
     'register_button' => 'Register Now',
     'learn_more_button' => 'Learn More',
   ],
@@ -27,7 +27,7 @@ return [
 
   // About Section
   'about' => [
-    'title' => 'About WCES 2025',
+    'title' => 'About VDUHSC 2025',
     'description' => 'The 21st World Congress of Endoscopic Surgeons, which also serves as the 17th Asia Pacific Endo-Laparoscopic Surgeons (ELSA) Congress will stand as a pivotal event in the advancement of endoscopic surgery.',
     'read_more' => 'Read More',
   ],
@@ -94,11 +94,11 @@ return [
     'title' => 'Welcome Message',
     'greeting' => 'Dear Colleagues and Friends,',
     'content' => [
-      'paragraph_1' => 'It is our great honor and pleasure to invite you to the <strong>21<sup>st</sup> World Congress of Endoscopic Surgery (WCES 2025)</strong>, taking place in the vibrant, tropical city of <strong>Singapore from 4 until 8 November 2025</strong>, under the theme "<em><strong>Revolutionising Endo-Lap Surgery.</strong></em>" This prestigious event will be co-hosted by the Endoscopic and Laparoscopic Surgeons of Asia (ELSA) and the International Federation of Societies of Endoscopic Surgeons (IFSES), alongside the 17th Asia-Pacific Congress of ELSA.',
+      'paragraph_1' => 'It is our great honor and pleasure to invite you to the <strong>Viet Duc University Hospital Scientific Congress (VDUHSC 2025)</strong>, taking place in <strong>Hanoi on November 1, 2025</strong>, under the theme "<em><strong>The Role of Surgery and Transplantation in the Era of Global Integration.</strong></em>" This prestigious event will focus on organ transplantation, cardiovascular, gastrointestinal, and orthopedic surgery.',
       'paragraph_2' => 'The congress will feature a dynamic and comprehensive scientific program, including <strong>11 pre-congress workshops and masterclasses, more than 80 scientific sessions, and the latest updates in endo-laparoscopic and robotic surgery</strong>. Renowned experts from around the world will join us, ensuring a rich exchange of knowledge and inspiring discussions that will drive the future of minimally invasive surgery.',
       'paragraph_3' => 'Bringing together ELSA and leading continental societies under IFSES, this congress offers unparalleled opportunities for learning, skill enhancement, and global networking. Delegates can also explore a state-of-the-art surgical exhibition featuring cutting-edge innovations in technology and clinical practice. Beyond science, our social programs promise unforgettable experiences, allowing participants and their accompanying guests to immerse themselves in the vibrant culture of Singapore.',
-      'paragraph_4' => '<strong>WCES 2025 is more than just a congress—it is a global celebration of our shared commitment to advancing patient care and pushing the boundaries of surgical innovation</strong>. Together, as a unified surgical community, we aim to shape the future of endoscopic and laparoscopic surgery for better patient outcomes worldwide.',
-      'paragraph_5' => 'We eagerly anticipate welcoming you to Singapore for this landmark event. <strong>See you at WCES 2025!</strong>',
+      'paragraph_4' => '<strong>VDUHSC 2025 is more than just a congress—it is a global celebration of our shared commitment to advancing patient care and pushing the boundaries of surgical innovation</strong>. Together, as a unified surgical community, we aim to shape the future of organ transplantation and advanced surgery for better patient outcomes worldwide.',
+      'paragraph_5' => 'We eagerly anticipate welcoming you to Hanoi for this landmark event. <strong>See you at VDUHSC 2025!</strong>',
       'closing' => 'Warm regards,',
     ],
   ],

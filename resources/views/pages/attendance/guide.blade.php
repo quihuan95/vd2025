@@ -55,26 +55,6 @@
                 <ul>
                   <li>Chứng chỉ CME sẽ được phát hành dưới dạng bản điện tử (PDF) và được gửi trực tiếp vào email đã đăng ký của đại biểu.</li>
                 </ul>
-
-                <div class="contact-info mt-4">
-                  <h4>Thông tin liên hệ</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h5>Ban chuyên môn Hội nghị | Scientific Committee</h5>
-                      <p><strong>TS. Bùi Trung Nghĩa</strong><br>
-                        Tel: +84 948 996 688<br>
-                        Email: nghiabt@vduh.org</p>
-                    </div>
-                    <div class="col-md-6">
-                      <h5>Ban Thư ký Hội nghị | Secretariat</h5>
-                      <p><strong>Bà Nguyễn Thị Kim Thoa</strong><br>
-                        Tel: +84 983 926 268</p>
-                      <p><strong>Bà Phạm Bích Vân</strong><br>
-                        Tel: +84 917 738 321<br>
-                        Email: phambichvan@vduh.org</p>
-                    </div>
-                  </div>
-                </div>
               @else
                 <h3>Attendance Guide for Viet Duc University Hospital Scientific Congress 2025</h3>
 
@@ -102,26 +82,6 @@
 
                 <h4>3. After the Congress</h4>
                 <p>Certificates will be provided in electronic PDF format and sent directly to the registered email address of each delegate.</p>
-
-                <div class="contact-info mt-4">
-                  <h4>Contact Information</h4>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <h5>Scientific Committee</h5>
-                      <p><strong>Dr. Bui Trung Nghia</strong><br>
-                        Tel: +84 948 996 688<br>
-                        Email: nghiabt@vduh.org</p>
-                    </div>
-                    <div class="col-md-6">
-                      <h5>Congress Secretariat</h5>
-                      <p><strong>Ms. Nguyen Thi Kim Thoa</strong><br>
-                        Tel: +84 983 926 268</p>
-                      <p><strong>Ms. Pham Bich Van</strong><br>
-                        Tel: +84 917 738 321<br>
-                        Email: phambichvan@vduh.org</p>
-                    </div>
-                  </div>
-                </div>
               @endif
             </div>
           </div>
@@ -176,26 +136,6 @@
       padding: 1rem;
       border-radius: 0.5rem;
       margin: 1.5rem 0;
-    }
-
-    .f-attendance-guide .contact-info {
-      background-color: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      border-left: 4px solid var(--brand-color-1);
-    }
-
-    .f-attendance-guide .contact-info h4 {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-    }
-
-    .f-attendance-guide .contact-info p {
-      margin-bottom: 1rem;
-    }
-
-    .f-attendance-guide .contact-info strong {
-      color: var(--brand-color-1);
     }
   </style>
 @endsection

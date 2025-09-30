@@ -155,7 +155,7 @@
                   <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" name="newsletter" id="newsletter" {{ old('newsletter') ? 'checked' : '' }}>
                     <label class="form-check-label" for="newsletter">
-                      Subscribe to our newsletter for updates about WCES 2025
+                      Subscribe to our newsletter for updates about VDUHSC 2025
                     </label>
                   </div>
 

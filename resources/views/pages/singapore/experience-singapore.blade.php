@@ -33,7 +33,7 @@
                 </span>
               </h3>
 
-              <p>Make the most of your visit to Singapore during WCES 2025. Explore the city's rich culture, world-class attractions, and diverse culinary scene.</p>
+              <p>Make the most of your visit to Hanoi during VDUHSC 2025. Explore the city's rich culture, world-class attractions, and diverse culinary scene.</p>
 
               <div class="row">
                 <div class="col-md-4 mb-4">
