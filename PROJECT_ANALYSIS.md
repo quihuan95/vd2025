@@ -1,15 +1,15 @@
-# Phân tích dự án WCES 2025
+# Phân tích dự án VDUHSC 2025
 
 ## Tổng quan dự án
 
-Dự án WCES 2025 là một website cho World Congress of Endoscopic Surgeons 2025, được xây dựng bằng Laravel với các views HTML tĩnh.
+Dự án VDUHSC 2025 là một website cho World Congress of Endoscopic Surgeons 2025, được xây dựng bằng Laravel với các views HTML tĩnh.
 
 ## Cấu trúc Views đã phân tích
 
 ### 1. Trang chủ và About
 
 -   `resources/views/pages/home/index.html` - Trang chủ
--   `resources/views/pages/about/wces2025.html` - Giới thiệu về WCES 2025
+-   `resources/views/pages/about/wces2025.html` - Giới thiệu về VDUHSC 2025
 
 ### 2. Chương trình (Programme)
 

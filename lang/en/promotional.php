@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'title' => 'Promotional Toolkit - WCES 2025',
-  'description' => 'Download promotional materials for WCES 2025. Help us spread the word with brochures, banners, social media posts, and more.',
-  'keywords' => 'WCES 2025, promotional toolkit, marketing materials, brochures, banners, social media, download',
+  'title' => 'Promotional Toolkit - VDUHSC 2025',
+  'description' => 'Download promotional materials for VDUHSC 2025. Help us spread the word with brochures, banners, social media posts, and more.',
+  'keywords' => 'VDUHSC 2025, promotional toolkit, marketing materials, brochures, banners, social media, download',
 
   'page_title' => 'Promotional Toolkit',
 
@@ -24,7 +24,7 @@ return [
     'sections' => [
       'brochure' => [
         'title' => 'Congress Brochure',
-        'description' => 'Download the official WCES 2025 brochure with complete information about the congress.',
+        'description' => 'Download the official VDUHSC 2025 brochure with complete information about the congress.',
         'download_button' => 'Download Brochure',
       ],
       'header' => [
@@ -49,7 +49,7 @@ return [
       ],
       'logo' => [
         'title' => 'Official Logos',
-        'description' => 'Official WCES 2025 logos in various formats and sizes.',
+        'description' => 'Official VDUHSC 2025 logos in various formats and sizes.',
         'download_button' => 'Download Logos',
       ],
     ],
@@ -60,7 +60,7 @@ return [
         'Do not modify the logos or official branding elements',
         'Maintain the original aspect ratio of images',
         'Use high-resolution versions for print materials',
-        'Credit WCES 2025 when sharing on social media',
+        'Credit VDUHSC 2025 when sharing on social media',
         'Contact us for custom promotional materials',
       ],
     ],

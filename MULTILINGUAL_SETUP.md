@@ -1,8 +1,8 @@
-# Hệ thống Đa ngôn ngữ WCES 2025
+# Hệ thống Đa ngôn ngữ VDUHSC 2025
 
 ## Tổng quan
 
-Website WCES 2025 đã được cấu hình để hỗ trợ đa ngôn ngữ (Anh-Việt) sử dụng Laravel Localization.
+Website VDUHSC 2025 đã được cấu hình để hỗ trợ đa ngôn ngữ (Anh-Việt) sử dụng Laravel Localization.
 
 ## Cấu trúc thư mục
 

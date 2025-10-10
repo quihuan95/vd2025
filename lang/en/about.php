@@ -1,11 +1,11 @@
 <?php
 
 return [
-  'title' => 'About WCES 2025 - World Congress of Endoscopic Surgeons',
-  'description' => 'Learn about the 21st World Congress of Endoscopic Surgeons (WCES 2025) in Singapore. Discover ELSA and IFSES organizations and their mission in advancing endoscopic surgery.',
-  'keywords' => 'WCES 2025, about, ELSA, IFSES, endoscopic surgery, laparoscopic surgery, Singapore, medical congress',
+  'title' => 'About VDUHSC 2025 - World Congress of Endoscopic Surgeons',
+  'description' => 'Learn about the 21st World Congress of Endoscopic Surgeons (VDUHSC 2025) in Singapore. Discover ELSA and IFSES organizations and their mission in advancing endoscopic surgery.',
+  'keywords' => 'VDUHSC 2025, about, ELSA, IFSES, endoscopic surgery, laparoscopic surgery, Singapore, medical congress',
 
-  'page_title' => 'About WCES 2025',
+  'page_title' => 'About VDUHSC 2025',
   'page_subtitle' => 'The 21st World Congress of Endoscopic Surgeons',
 
   'sections' => [

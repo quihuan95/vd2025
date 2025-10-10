@@ -12,27 +12,27 @@ return [
       'title' => 'General',
       'faqs' => [
         [
-          'question' => 'What is the 21<sup>st</sup> World Congress of Endoscopic Surgery in conjunction with the 17<sup>th</sup> Asia-Pacific Congress of ELSA (WCES 2025)?',
+          'question' => 'What is the 21<sup>st</sup> World Congress of Endoscopic Surgery in conjunction with the 17<sup>th</sup> Asia-Pacific Congress of ELSA (VDUHSC 2025)?',
           'answer' => 'It is an international congress focused on the latest updates in Endo-Laparoscopic and Robotic Surgery.',
         ],
         [
-          'question' => 'Does WCES 2025 take place in person?',
-          'answer' => 'Yes, WCES 2025 is an in-person congress. We look forward to welcoming you to Singapore.',
+          'question' => 'Does VDUHSC 2025 take place in person?',
+          'answer' => 'Yes, VDUHSC 2025 is an in-person congress. We look forward to welcoming you to Singapore.',
         ],
         [
-          'question' => 'When and where will WCES 2025 be held?',
-          'answer' => 'WCES 2025 will be held from 4-8 November 2025 at Suntec Singapore Convention & Exhibition Centre.',
+          'question' => 'When and where will VDUHSC 2025 be held?',
+          'answer' => 'VDUHSC 2025 will be held from 4-8 November 2025 at Suntec Singapore Convention & Exhibition Centre.',
         ],
         [
-          'question' => 'Who should attend WCES 2025?',
-          'answer' => 'WCES 2025 is designed for surgeons, healthcare professionals, researchers, and students interested in endoscopic and laparoscopic surgery.',
+          'question' => 'Who should attend VDUHSC 2025?',
+          'answer' => 'VDUHSC 2025 is designed for surgeons, healthcare professionals, researchers, and students interested in endoscopic and laparoscopic surgery.',
         ],
         [
           'question' => 'What is the registration fee?',
           'answer' => 'Registration fees vary by category and early bird discounts are available. Please check the registration page for detailed pricing.',
         ],
         [
-          'question' => 'How can I register for WCES 2025?',
+          'question' => 'How can I register for VDUHSC 2025?',
           'answer' => 'You can register online through our website. Early registration is recommended to secure your spot.',
         ],
         [
@@ -45,7 +45,7 @@ return [
         ],
         [
           'question' => 'Will there be CME credits available?',
-          'answer' => 'Yes, WCES 2025 is accredited for continuing medical education credits.',
+          'answer' => 'Yes, VDUHSC 2025 is accredited for continuing medical education credits.',
         ],
         [
           'question' => 'What languages will be used during the congress?',

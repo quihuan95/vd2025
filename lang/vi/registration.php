@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'title' => 'Đăng ký tham dự - WCES 2025',
+  'title' => 'Đăng ký tham dự - VDUHSC 2025',
   'description' => 'Đăng ký tham dự Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025. Điền đầy đủ thông tin để hoàn tất đăng ký.',
-  'keywords' => 'WCES 2025, đăng ký, tham dự, hội nghị, bệnh viện Việt Đức',
+  'keywords' => 'VDUHSC 2025, đăng ký, tham dự, hội nghị, bệnh viện Việt Đức',
 
   'page_title' => 'Đăng ký tham dự',
   'page_subtitle' => 'Registration Form',
@@ -83,7 +83,7 @@ return [
 
   'success' => [
     'title' => 'Đăng ký thành công!',
-    'message' => 'Cảm ơn bạn đã đăng ký tham gia WCES 2025. Đơn đăng ký của bạn đã được tiếp nhận và đang được xử lý.',
+    'message' => 'Cảm ơn bạn đã đăng ký tham gia VDUHSC 2025. Đơn đăng ký của bạn đã được tiếp nhận và đang được xử lý.',
     'registration_code' => 'Mã đăng ký của bạn',
     'next_steps' => 'Các bước tiếp theo',
     'email_confirmation' => 'Bạn sẽ nhận được email xác nhận trong thời gian sớm nhất',

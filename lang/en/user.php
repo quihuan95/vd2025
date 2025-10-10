@@ -2,9 +2,9 @@
 
 return [
   'login' => [
-    'title' => 'Login - WCES 2025',
-    'description' => 'Login to your WCES 2025 account to access registration, programme details, and more.',
-    'keywords' => 'WCES 2025, login, account, registration, access',
+    'title' => 'Login - VDUHSC 2025',
+    'description' => 'Login to your VDUHSC 2025 account to access registration, programme details, and more.',
+    'keywords' => 'VDUHSC 2025, login, account, registration, access',
     'page_title' => 'Login',
     'form' => [
       'email' => 'Email Address',
@@ -17,9 +17,9 @@ return [
     ],
   ],
   'register' => [
-    'title' => 'Register - WCES 2025',
-    'description' => 'Create your WCES 2025 account to register for the congress and access exclusive content.',
-    'keywords' => 'WCES 2025, register, account, create, congress',
+    'title' => 'Register - VDUHSC 2025',
+    'description' => 'Create your VDUHSC 2025 account to register for the congress and access exclusive content.',
+    'keywords' => 'VDUHSC 2025, register, account, create, congress',
     'page_title' => 'Create Account',
     'form' => [
       'first_name' => 'First Name',
@@ -37,9 +37,9 @@ return [
     ],
   ],
   'recover' => [
-    'title' => 'Password Recovery - WCES 2025',
-    'description' => 'Recover your WCES 2025 account password.',
-    'keywords' => 'WCES 2025, password recovery, reset password, account',
+    'title' => 'Password Recovery - VDUHSC 2025',
+    'description' => 'Recover your VDUHSC 2025 account password.',
+    'keywords' => 'VDUHSC 2025, password recovery, reset password, account',
     'page_title' => 'Password Recovery',
     'form' => [
       'email' => 'Email Address',

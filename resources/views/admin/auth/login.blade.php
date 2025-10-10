@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng nhập Admin - WCES 2025</title>
+  <title>Đăng nhập Admin - VDUHSC 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -183,7 +183,7 @@
         <i class="fas fa-shield-alt me-2"></i>
         Admin Panel
       </h1>
-      <p>WCES 2025 - Quản lý đăng ký</p>
+      <p>VDUHSC 2025 - Quản lý đăng ký</p>
     </div>
 
     <div class="login-body">

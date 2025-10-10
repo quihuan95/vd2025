@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
   return $request->user();
 });
 
-// API routes for WCES 2025
+// API routes for VDUHSC 2025
 Route::prefix('wces2025')->group(function () {
   // Programme API
   Route::prefix('programme')->group(function () {

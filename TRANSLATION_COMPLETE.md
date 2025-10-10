@@ -1,4 +1,4 @@
-# ✅ Hoàn thành Dịch thuật Toàn bộ Website WCES 2025
+# ✅ Hoàn thành Dịch thuật Toàn bộ Website VDUHSC 2025
 
 ## 🎯 Tổng kết công việc đã hoàn thành
 
@@ -70,7 +70,7 @@
 
 ```php
 __('common.nav.home')           // "Home" / "Trang chủ"
-__('common.nav.about_wces2025') // "About WCES 2025" / "Giới thiệu VDUHSC 2025"
+__('common.nav.about_wces2025') // "About VDUHSC 2025" / "Giới thiệu VDUHSC 2025"
 __('common.buttons.register')   // "Register" / "Đăng ký"
 __('common.messages.success')   // "Success!" / "Thành công!"
 ```
@@ -152,7 +152,7 @@ http://localhost:8000/vi/     # Tiếng Việt
 
 ## 🎉 **Kết quả:**
 
-Website WCES 2025 đã được dịch hoàn toàn sang tiếng Việt với:
+Website VDUHSC 2025 đã được dịch hoàn toàn sang tiếng Việt với:
 
 -   ✅ **100% nội dung được dịch** - không bỏ sót từ nào
 -   ✅ **Dịch sát nghĩa** - sử dụng thuật ngữ y tế chính xác

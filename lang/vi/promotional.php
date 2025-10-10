@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'title' => 'Bộ công cụ quảng bá - WCES 2025',
-  'description' => 'Tải xuống tài liệu quảng bá cho WCES 2025. Giúp chúng tôi lan tỏa thông tin với tờ rơi, biểu ngữ, bài đăng mạng xã hội và nhiều hơn nữa.',
-  'keywords' => 'WCES 2025, bộ công cụ quảng bá, tài liệu tiếp thị, tờ rơi, biểu ngữ, mạng xã hội, tải xuống',
+  'title' => 'Bộ công cụ quảng bá - VDUHSC 2025',
+  'description' => 'Tải xuống tài liệu quảng bá cho VDUHSC 2025. Giúp chúng tôi lan tỏa thông tin với tờ rơi, biểu ngữ, bài đăng mạng xã hội và nhiều hơn nữa.',
+  'keywords' => 'VDUHSC 2025, bộ công cụ quảng bá, tài liệu tiếp thị, tờ rơi, biểu ngữ, mạng xã hội, tải xuống',
 
   'page_title' => 'Bộ công cụ quảng bá',
 
@@ -24,7 +24,7 @@ return [
     'sections' => [
       'brochure' => [
         'title' => 'Tờ rơi Đại hội',
-        'description' => 'Tải xuống tờ rơi chính thức WCES 2025 với thông tin đầy đủ về đại hội.',
+        'description' => 'Tải xuống tờ rơi chính thức VDUHSC 2025 với thông tin đầy đủ về đại hội.',
         'download_button' => 'Tải xuống Tờ rơi',
       ],
       'header' => [
@@ -49,7 +49,7 @@ return [
       ],
       'logo' => [
         'title' => 'Logo chính thức',
-        'description' => 'Logo chính thức WCES 2025 ở các định dạng và kích thước khác nhau.',
+        'description' => 'Logo chính thức VDUHSC 2025 ở các định dạng và kích thước khác nhau.',
         'download_button' => 'Tải xuống Logo',
       ],
     ],
@@ -60,7 +60,7 @@ return [
         'Không được chỉnh sửa logo hoặc các yếu tố thương hiệu chính thức',
         'Duy trì tỷ lệ khung hình gốc của hình ảnh',
         'Sử dụng phiên bản độ phân giải cao cho tài liệu in',
-        'Ghi công WCES 2025 khi chia sẻ trên mạng xã hội',
+        'Ghi công VDUHSC 2025 khi chia sẻ trên mạng xã hội',
         'Liên hệ với chúng tôi để có tài liệu quảng bá tùy chỉnh',
       ],
     ],

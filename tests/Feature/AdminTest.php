@@ -21,7 +21,7 @@ class AdminTest extends TestCase
 
         // Create admin user
         $this->admin = User::create([
-            'name' => 'Admin WCES 2025',
+            'name' => 'Admin VDUHSC 2025',
             'email' => 'admin@wces2025.com',
             'password' => bcrypt('admin123'),
             'email_verified_at' => now(),

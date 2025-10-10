@@ -12,27 +12,27 @@ return [
       'title' => 'Chung',
       'faqs' => [
         [
-          'question' => 'Đại hội Thế giới lần thứ 21 về Phẫu thuật Nội soi kết hợp với Đại hội Châu Á-Thái Bình Dương lần thứ 17 của ELSA (WCES 2025) là gì?',
+          'question' => 'Đại hội Thế giới lần thứ 21 về Phẫu thuật Nội soi kết hợp với Đại hội Châu Á-Thái Bình Dương lần thứ 17 của ELSA (VDUHSC 2025) là gì?',
           'answer' => 'Đây là một đại hội quốc tế tập trung vào những cập nhật mới nhất trong Phẫu thuật Nội soi-Ổ bụng và Phẫu thuật Robot.',
         ],
         [
-          'question' => 'WCES 2025 có diễn ra trực tiếp không?',
-          'answer' => 'Có, WCES 2025 là một đại hội trực tiếp. Chúng tôi mong được chào đón bạn đến Singapore.',
+          'question' => 'VDUHSC 2025 có diễn ra trực tiếp không?',
+          'answer' => 'Có, VDUHSC 2025 là một đại hội trực tiếp. Chúng tôi mong được chào đón bạn đến Singapore.',
         ],
         [
-          'question' => 'WCES 2025 sẽ được tổ chức khi nào và ở đâu?',
-          'answer' => 'WCES 2025 sẽ được tổ chức từ ngày 4-8 tháng 11 năm 2025 tại Trung tâm Hội nghị & Triển lãm Suntec Singapore.',
+          'question' => 'VDUHSC 2025 sẽ được tổ chức khi nào và ở đâu?',
+          'answer' => 'VDUHSC 2025 sẽ được tổ chức từ ngày 4-8 tháng 11 năm 2025 tại Trung tâm Hội nghị & Triển lãm Suntec Singapore.',
         ],
         [
-          'question' => 'Ai nên tham dự WCES 2025?',
-          'answer' => 'WCES 2025 được thiết kế cho các bác sĩ phẫu thuật, chuyên gia y tế, nhà nghiên cứu và sinh viên quan tâm đến phẫu thuật nội soi và nội soi ổ bụng.',
+          'question' => 'Ai nên tham dự VDUHSC 2025?',
+          'answer' => 'VDUHSC 2025 được thiết kế cho các bác sĩ phẫu thuật, chuyên gia y tế, nhà nghiên cứu và sinh viên quan tâm đến phẫu thuật nội soi và nội soi ổ bụng.',
         ],
         [
           'question' => 'Phí đăng ký là bao nhiêu?',
           'answer' => 'Phí đăng ký khác nhau theo từng danh mục và có giảm giá đăng ký sớm. Vui lòng kiểm tra trang đăng ký để biết giá chi tiết.',
         ],
         [
-          'question' => 'Làm thế nào để đăng ký tham dự WCES 2025?',
+          'question' => 'Làm thế nào để đăng ký tham dự VDUHSC 2025?',
           'answer' => 'Bạn có thể đăng ký trực tuyến thông qua trang web của chúng tôi. Khuyến nghị đăng ký sớm để đảm bảo chỗ của bạn.',
         ],
         [
@@ -45,7 +45,7 @@ return [
         ],
         [
           'question' => 'Có tín chỉ CME có sẵn không?',
-          'answer' => 'Có, WCES 2025 được công nhận cho các tín chỉ giáo dục y tế liên tục.',
+          'answer' => 'Có, VDUHSC 2025 được công nhận cho các tín chỉ giáo dục y tế liên tục.',
         ],
         [
           'question' => 'Ngôn ngữ nào sẽ được sử dụng trong đại hội?',

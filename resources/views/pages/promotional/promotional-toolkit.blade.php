@@ -72,12 +72,12 @@
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="card h-100">
                         <div class="card-img-top">
-                          <img src="https://storage.unitedwebnetwork.com/files/1212/brochure-image_269670.jpg" alt="Comprehensive Brochure WCES 2025" class="img-fluid">
+                          <img src="https://storage.unitedwebnetwork.com/files/1212/brochure-image_269670.jpg" alt="Comprehensive Brochure VDUHSC 2025" class="img-fluid">
                         </div>
                         <div class="card-body d-flex flex-column">
-                          <h5 class="card-title">Comprehensive Brochure WCES 2025</h5>
-                          <p class="card-text flex-grow-1">Complete information about WCES 2025 in a comprehensive brochure format.</p>
-                          <a href="https://storage.unitedwebnetwork.com/files/1212/WCES 4 Folded 2_compressed_311761.pdf" target="_blank" class="btn btn-primary download-pdf-word">
+                          <h5 class="card-title">Comprehensive Brochure VDUHSC 2025</h5>
+                          <p class="card-text flex-grow-1">Complete information about VDUHSC 2025 in a comprehensive brochure format.</p>
+                          <a href="https://storage.unitedwebnetwork.com/files/1212/VDUHSC 4 Folded 2_compressed_311761.pdf" target="_blank" class="btn btn-primary download-pdf-word">
                             <i class="fas fa-download me-2"></i>Download PDF
                           </a>
                         </div>
@@ -92,12 +92,12 @@
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                       <div class="card h-100">
                         <div class="card-img-top">
-                          <img src="https://storage.unitedwebnetwork.com/files/1212/WCES%20Web%20Banner-01_269668.jpg" alt="WCES 2025 Website Banner 1" class="img-fluid">
+                          <img src="https://storage.unitedwebnetwork.com/files/1212/VDUHSC%20Web%20Banner-01_269668.jpg" alt="VDUHSC 2025 Website Banner 1" class="img-fluid">
                         </div>
                         <div class="card-body d-flex flex-column">
-                          <h5 class="card-title">WCES 2025 Website Banner 1</h5>
+                          <h5 class="card-title">VDUHSC 2025 Website Banner 1</h5>
                           <p class="card-text flex-grow-1">Professional website banner for online promotion.</p>
-                          <a href="https://storage.unitedwebnetwork.com/files/1212/WCES%20Web%20Banner-01_269668.jpg" target="_blank" class="btn btn-primary download-kit">
+                          <a href="https://storage.unitedwebnetwork.com/files/1212/VDUHSC%20Web%20Banner-01_269668.jpg" target="_blank" class="btn btn-primary download-kit">
                             <i class="fas fa-download me-2"></i>Download
                           </a>
                         </div>
@@ -106,13 +106,13 @@
                     <div class="col-12 col-md-6 col-lg-4 mb-4">
                       <div class="card h-100">
                         <div class="card-img-top">
-                          <img src="https://storage.unitedwebnetwork.com/files/1212/WCES%20Website%20Banner%201920X750_269667.jpg" alt="WCES 2025 Website Banner 2"
+                          <img src="https://storage.unitedwebnetwork.com/files/1212/VDUHSC%20Website%20Banner%201920X750_269667.jpg" alt="VDUHSC 2025 Website Banner 2"
                             class="img-fluid">
                         </div>
                         <div class="card-body d-flex flex-column">
-                          <h5 class="card-title">WCES 2025 Website Banner 2</h5>
+                          <h5 class="card-title">VDUHSC 2025 Website Banner 2</h5>
                           <p class="card-text flex-grow-1">Alternative website banner design for different layouts.</p>
-                          <a href="https://storage.unitedwebnetwork.com/files/1212/WCES%20Website%20Banner%201920X750_269667.jpg" target="_blank"
+                          <a href="https://storage.unitedwebnetwork.com/files/1212/VDUHSC%20Website%20Banner%201920X750_269667.jpg" target="_blank"
                             class="btn btn-primary download-kit">
                             <i class="fas fa-download me-2"></i>Download
                           </a>
@@ -180,7 +180,7 @@
                         </div>
                         <div class="card-body d-flex flex-column">
                           <h5 class="card-title">Email Signature</h5>
-                          <p class="card-text flex-grow-1">Professional email signature template to promote WCES 2025.</p>
+                          <p class="card-text flex-grow-1">Professional email signature template to promote VDUHSC 2025.</p>
                           <a href="https://storage.unitedwebnetwork.com/files/1212/Email%20Signature_269663.jpg" target="_blank" class="btn btn-primary download-kit">
                             <i class="fas fa-download me-2"></i>Download
                           </a>
@@ -196,12 +196,12 @@
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="card h-100">
                         <div class="card-img-top">
-                          <img src="https://storage.unitedwebnetwork.com/files/1212/WCES%202025%20PPT%20Template_282066.png" alt="Powerpoint" class="img-fluid">
+                          <img src="https://storage.unitedwebnetwork.com/files/1212/VDUHSC%202025%20PPT%20Template_282066.png" alt="Powerpoint" class="img-fluid">
                         </div>
                         <div class="card-body d-flex flex-column">
                           <h5 class="card-title">Powerpoint Template</h5>
-                          <p class="card-text flex-grow-1">Professional PowerPoint template for presentations about WCES 2025.</p>
-                          <a href="https://storage.unitedwebnetwork.com/files/1212/WCES 2025 PPT Template_282064.pptx" target="_blank" class="btn btn-primary download-kit">
+                          <p class="card-text flex-grow-1">Professional PowerPoint template for presentations about VDUHSC 2025.</p>
+                          <a href="https://storage.unitedwebnetwork.com/files/1212/VDUHSC 2025 PPT Template_282064.pptx" target="_blank" class="btn btn-primary download-kit">
                             <i class="fas fa-download me-2"></i>Download PPTX
                           </a>
                         </div>
@@ -218,7 +218,7 @@
                   <div class="col-md-6">
                     <h5>Do's</h5>
                     <ul>
-                      <li>Use materials for WCES 2025 promotion only</li>
+                      <li>Use materials for VDUHSC 2025 promotion only</li>
                       <li>Maintain the original design integrity</li>
                       <li>Include proper attribution when required</li>
                       <li>Share on your social media platforms</li>

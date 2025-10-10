@@ -1,9 +1,9 @@
 <?php
 
 return [
-  'title' => 'Registration - WCES 2025',
+  'title' => 'Registration - VDUHSC 2025',
   'description' => 'Register for Viet Duc University Hospital International Scientific Conference 2025. Fill in all required information to complete your registration.',
-  'keywords' => 'WCES 2025, registration, attend, conference, Viet Duc Hospital',
+  'keywords' => 'VDUHSC 2025, registration, attend, conference, Viet Duc Hospital',
 
   'page_title' => 'Registration',
   'page_subtitle' => 'Registration Form',
@@ -83,7 +83,7 @@ return [
 
   'success' => [
     'title' => 'Registration Successful!',
-    'message' => 'Thank you for registering for WCES 2025. Your registration has been received and is being processed.',
+    'message' => 'Thank you for registering for VDUHSC 2025. Your registration has been received and is being processed.',
     'registration_code' => 'Your Registration Code',
     'next_steps' => 'What happens next?',
     'email_confirmation' => 'You will receive an email confirmation shortly',

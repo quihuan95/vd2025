@@ -31,20 +31,20 @@
           <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               @if (app()->getLocale() === 'vi')
-                <p>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025 diễn ra vào ngày 01 tháng 11 năm 2025 tại Hà Nội. Hội nghị dự kiến sẽ có sự tham gia của hơn 500 đại
+                <p><strong><i>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025</i></strong> diễn ra vào ngày <strong><i>01 tháng 11 năm 2025 tại Hà Nội</i></strong>. Hội nghị dự kiến sẽ có sự tham gia của hơn 500 đại
                   biểu là những chuyên gia, bác sĩ và các nhà nghiên cứu hàng đầu tại Việt Nam và trên thế giới, nhằm trao đổi và cập nhật những tiến bộ mới nhất trong lĩnh vực ngoại
                   khoa và ghép tạng.</p>
 
-                <p>Với chủ đề "Vai trò của Ngoại khoa và Ghép tạng trong Kỷ nguyên Hội nhập Toàn cầu", hội nghị sẽ kéo dài trong một ngày với bốn phiên báo cáo, tập trung vào các
+                <p>Với chủ đề "<strong><i>Vai trò của Ngoại khoa và Ghép tạng trong Kỷ nguyên Hội nhập Toàn cầu</i></strong>", hội nghị sẽ kéo dài trong một ngày với bốn phiên báo cáo, tập trung vào các
                   lĩnh vực: ghép tạng, phẫu thuật gan mật, tiết niệu, phẫu thuật tim mạch và lồng ngực, liền thương, phẫu thuật tiêu hóa, sản phụ khoa và chỉnh hình.</p>
 
                 <p>Hội nghị hứa hẹn sẽ là diễn đàn để trao đổi kiến thức chuyên môn và kết nối cho các chuyên gia. Đây là cơ hội đặc biệt để thúc đẩy đổi mới, tăng cường hợp tác và
                   cùng hướng tới mục tiêu nâng cao hiệu quả điều trị, cải thiện kết quả cho người bệnh trong lĩnh vực ngoại khoa và ghép tạng.</p>
               @else
-                <p>Viet Duc University Hospital Scientific Congress 2025 will take place on November 1, 2025 in Hanoi. Hosted for the first time by Viet Duc University Hospital, this
+                <p><strong><i>Viet Duc University Hospital Scientific Congress 2025</i></strong> will take place on <strong><i>November 1, 2025 in Hanoi</i></strong>. Hosted for the first time by Viet Duc University Hospital, this
                   international event will gather leading experts, surgeons, and researchers to explore the latest frontiers of surgery and transplantation.</p>
 
-                <p>Under the theme "The Role of Surgery and Transplantation in the Era of Global Integration", Congress will feature a full-day scientific program including an
+                <p>Under the theme "<strong><i>The Role of Surgery and Transplantation in the Era of Global Integration</i></strong>", Congress will feature a full-day scientific program including an
                   overview plenary and four parallel sessions, covering hepato-pancreato-biliary surgery and liver transplantation, kidney and urology, cardiothoracic and lung
                   transplantation, wound healing, gastrointestinal and metabolic surgery, obstetrics and gynecology, and orthopedics.</p>
 

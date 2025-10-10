@@ -56,8 +56,8 @@ class RegistrationController extends Controller
             return redirect()->route('registration.success', ['locale' => app()->getLocale()])
                 ->with('registration_code', $registrationCode)
                 ->with('success', app()->getLocale() === 'vi'
-                    ? 'Đăng ký thành công! Cảm ơn bạn đã đăng ký tham gia WCES 2025.'
-                    : 'Registration successful! Thank you for registering for WCES 2025.');
+                    ? 'Đăng ký thành công! Cảm ơn bạn đã đăng ký tham gia VDUHSC 2025.'
+                    : 'Registration successful! Thank you for registering for VDUHSC 2025.');
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,

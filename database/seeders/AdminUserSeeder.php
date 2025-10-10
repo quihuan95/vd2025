@@ -18,7 +18,7 @@ class AdminUserSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'admin@wces2025.com'],
             [
-                'name' => 'Admin WCES 2025',
+                'name' => 'Admin VDUHSC 2025',
                 'email' => 'admin@wces2025.com',
                 'password' => Hash::make('admin123'),
                 'email_verified_at' => now(),
