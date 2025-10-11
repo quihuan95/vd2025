@@ -63,20 +63,29 @@
           <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               <div class="conference-diagram-container">
-                <!-- Morning Session Diagram -->
+                <!-- Diagram Image -->
                 <div class="diagram-section">
-                  <h4 class="diagram-title">{{ __('about.sections.conference_diagram.morning.title') }}</h4>
                   <div class="diagram-image">
-                    <img src="{{ Storage::url('images/layout_sang_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.morning.title') }}" class="img-fluid rounded shadow">
+                    <img style="max-width: 500px;" src="{{ Storage::url('images/so-do.png') }}" alt="{{ __('about.sections.conference_diagram.morning.title') }}" class="rounded shadow">
                   </div>
-                </div>
-
-                <!-- Afternoon Session Diagram -->
-                <div class="diagram-section">
-                  <h4 class="diagram-title">{{ __('about.sections.conference_diagram.afternoon.title') }}</h4>
-                  <div class="diagram-image">
-                    <img src="{{ Storage::url('images/layout_chieu_1.11.jpg') }}" alt="{{ __('about.sections.conference_diagram.afternoon.title') }}"
-                      class="img-fluid rounded shadow">
+                  
+                  <!-- Simple Text Legend -->
+                  <div class="diagram-legend mt-4">
+                    @if (app()->getLocale() === 'vi')
+                      <p><strong>Nội dung thể hiện trên sơ đồ:</strong></p>
+                      <p>Hội trường 1/Hall 1 - Crystal Grand Ballroom</p>
+                      <p>Hội trường 2/Hall 2 - Emerald Room</p>
+                      <p>Hội trường 3/Hall 3 - Charlotte</p>
+                      <p>Khu vực check-in</p>
+                      <p>Gian hàng của Nhà Tài trợ</p>
+                    @else
+                      <p><strong>Content shown on the diagram:</strong></p>
+                      <p>Hall 1 - Crystal Grand Ballroom</p>
+                      <p>Hall 2 - Emerald Room</p>
+                      <p>Hall 3 - Charlotte</p>
+                      <p>Check-in Area</p>
+                      <p>Sponsor Exhibition</p>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -199,6 +208,20 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
+    /* Simple Text Legend */
+    .diagram-legend {
+      text-align: center;
+    }
+
+    .diagram-legend p {
+      margin-bottom: 0.5rem;
+      color: #495057;
+    }
+
+    .diagram-legend p:first-child {
+      margin-bottom: 1rem;
+    }
+
     @media (max-width: 768px) {
       .diagram-section {
         margin-bottom: 2rem;
@@ -214,6 +237,10 @@
 
       .diagram-image img {
         border-radius: 0.25rem;
+      }
+
+      .diagram-legend p {
+        font-size: 0.9rem;
       }
     }
   </style>

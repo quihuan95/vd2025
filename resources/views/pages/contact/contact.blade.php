@@ -83,6 +83,65 @@
             </div>
           </div>
         </div>
+
+        <!-- FAQ Section -->
+        <div class='fModule f-faq f-module f-module-pages-custom mt-5'>
+          <div class="f-module-content fModuleContent">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="text-center mb-5">{{ __('contact.faq_title') }}</h3>
+                  
+                  <div class="faq-container">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                      <div class="faq-question" onclick="toggleFAQ(1)">
+                        <h5>{{ __('contact.faq1_question') }}</h5>
+                        <span class="faq-icon">+</span>
+                      </div>
+                      <div class="faq-answer" id="faq-answer-1">
+                        <p>{{ __('contact.faq1_answer') }}</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                      <div class="faq-question" onclick="toggleFAQ(2)">
+                        <h5>{{ __('contact.faq2_question') }}</h5>
+                        <span class="faq-icon">+</span>
+                      </div>
+                      <div class="faq-answer" id="faq-answer-2">
+                        <p>{{ __('contact.faq2_answer') }}</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                      <div class="faq-question" onclick="toggleFAQ(3)">
+                        <h5>{{ __('contact.faq3_question') }}</h5>
+                        <span class="faq-icon">+</span>
+                      </div>
+                      <div class="faq-answer" id="faq-answer-3">
+                        <p>{{ __('contact.faq3_answer') }}</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                      <div class="faq-question" onclick="toggleFAQ(4)">
+                        <h5>{{ __('contact.faq4_question') }}</h5>
+                        <span class="faq-icon">+</span>
+                      </div>
+                      <div class="faq-answer" id="faq-answer-4">
+                        <p>{{ __('contact.faq4_answer') }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -136,5 +195,125 @@
         margin-bottom: 1rem;
       }
     }
+
+    /* FAQ Styles */
+    .f-faq h3 {
+      color: var(--brand-color-1);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background-color: var(--brand-color-1);
+      color: white;
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #1a4a5c;
+    }
+
+    .faq-question h5 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      flex: 1;
+      padding-right: 1rem;
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding: 1.5rem;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Responsive FAQ */
+    @media (max-width: 768px) {
+      .faq-question {
+        padding: 1rem;
+      }
+      
+      .faq-question h5 {
+        font-size: 1rem;
+      }
+      
+      .faq-answer p {
+        padding: 1rem;
+      }
+    }
   </style>
+
+  <script>
+    function toggleFAQ(faqNumber) {
+      const faqItem = document.querySelector(`.faq-item:nth-child(${faqNumber})`);
+      const answer = document.getElementById(`faq-answer-${faqNumber}`);
+      
+      // Toggle active class
+      faqItem.classList.toggle('active');
+      
+      // Close other FAQ items
+      document.querySelectorAll('.faq-item').forEach((item, index) => {
+        if (index + 1 !== faqNumber) {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    // Initialize FAQ functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Optional: Add keyboard support
+      document.querySelectorAll('.faq-question').forEach((question, index) => {
+        question.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleFAQ(index + 1);
+          }
+        });
+        
+        // Make it focusable for accessibility
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('role', 'button');
+        question.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
 @endsection

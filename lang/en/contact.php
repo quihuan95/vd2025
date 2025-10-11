@@ -125,4 +125,14 @@ return [
     'address' => 'Address',
     'office_hours' => 'Office Hours',
   ],
+
+  'faq_title' => 'Frequently Asked Questions',
+  'faq1_question' => 'What format will the Viet Duc University Hospital International Scientific Conference 2025 be hosted?',
+  'faq1_answer' => 'VDUHSC 2025 is a full-fledged in person (i.e. physical) conference',
+  'faq2_question' => 'How will the check-in process happen?',
+  'faq2_answer' => 'After registration, delegate will receive a confirmation email from the organizing committee with the QR code for check-in. Please save your QR code for a quick check-in at the event.',
+  'faq3_question' => 'Will I receive a certificate of attendance after attending the Conference?',
+  'faq3_answer' => 'We provide certificates for all present delegates. Certificates of active participation will only be sent out via email after actually attending the VDUHSC 2025.',
+  'faq4_question' => 'Can I get a copy of the presentation materials?',
+  'faq4_answer' => 'Presentation materials will not be provided or shared.',
 ];

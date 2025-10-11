@@ -125,4 +125,14 @@ return [
     'address' => 'Địa chỉ',
     'office_hours' => 'Giờ làm việc',
   ],
+
+  'faq_title' => 'Câu hỏi thường gặp',
+  'faq1_question' => 'Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025 sẽ được tổ chức theo hình thức nào?',
+  'faq1_answer' => 'Hội nghị sẽ chỉ được tổ chức dưới hình thức trực tiếp',
+  'faq2_question' => 'Đại biểu sẽ làm thủ tục check-in tại Hội nghị như thế nào?',
+  'faq2_answer' => 'Sau khi điền link đăng ký tham dự Hội nghị, Quý Đại biểu sẽ nhận được email xác nhận từ Ban Tổ Chức, kèm mã QR để check-in tại Hội nghị. Quý Đại biểu vui lòng lưu mã QR để check-in nhanh tại sự kiện.',
+  'faq3_question' => 'Đại biểu có được cấp Chứng chỉ đào tạo Y khoa liên tục (CME) sau khi tham gia Hội nghị không?',
+  'faq3_answer' => 'Nếu tham gia đủ 70% thời lượng của Hội nghị, Đại biểu sẽ được cấp CME (3 giờ tín chỉ)',
+  'faq4_question' => 'Đại biểu có được nhận tài liệu Hội nghị không?',
+  'faq4_answer' => 'Hội nghị sẽ không chia sẻ tài liệu và các bài báo cáo',
 ];
