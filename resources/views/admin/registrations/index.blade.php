@@ -192,7 +192,7 @@
 <body>
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-12" style="max-width: 1200px; margin: 2rem; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+      <div class="col-12" style="max-width: 1400px; margin: 2rem; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
         <!-- Statistics Cards -->
         <div class="row mb-4">
           <div class="col-md-3">
