@@ -21,7 +21,6 @@
   <div class="container">
     <div class="row">
       <section id="fMatter" class="col-12">
-        <div id="f-messages"></div>
 
         <!-- About the Congress Section -->
         <div class='fModule f-about f-module f-module-pages-custom'>

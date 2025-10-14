@@ -28,7 +28,7 @@
           <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               @if (app()->getLocale() === 'vi')
-                <div class="mb-4"><strong>Mọi thắc mắc xin liên với Ban Tổ Chức qua email:</strong></div>
+                <div class="mb-4"><strong>Mọi thắc mắc xin liên với Ban Tổ Chức qua email: <a href="mailto:eventvietduc@vduh.org">eventvietduc@vduh.org</a></strong></div>
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="contact-card">
@@ -54,7 +54,7 @@
                   </div>
                 </div>
               @else
-                <div class="mb-4"><strong>For any queries related to the conference contact us at:</strong></div>
+                <div class="mb-4"><strong>For any queries related to the conference contact us at: <a href="mailto:eventvietduc@vduh.org">eventvietduc@vduh.org</a></strong></div>
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="contact-card">

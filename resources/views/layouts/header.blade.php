@@ -9,13 +9,6 @@
           'submenu' => [],
       ],
       [
-          'title' => 'common.nav.about',
-          'route' => 'about.wces2025',
-          'url' => 'about.wces2025',
-          'has_submenu' => false,
-          'submenu' => [],
-      ],
-      [
           'title' => 'common.nav.programme',
           'route' => null,
           'url' => '#',
@@ -37,13 +30,6 @@
           'title' => 'common.nav.venue',
           'route' => 'singapore.venue',
           'url' => 'singapore.venue',
-          'has_submenu' => false,
-          'submenu' => [],
-      ],
-      [
-          'title' => 'common.nav.guide',
-          'route' => 'attendance.guide',
-          'url' => 'attendance.guide',
           'has_submenu' => false,
           'submenu' => [],
       ],
