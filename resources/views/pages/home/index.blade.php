@@ -70,9 +70,9 @@
 
                 <!-- About the Congress Section -->
         <div class='fModule f-about f-module f-module-pages-custom'>
-          {{-- <div class="f-module-title fModuleTitle">
-            <h3>{{ __('about.sections.about_congress.title') }}</h3>
-          </div> --}}
+          <div class="f-module-title fModuleTitle">
+            <h3>{{ __('home.about.title') }}</h3>
+          </div>
           <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               @if (app()->getLocale() === 'vi')
@@ -96,44 +96,6 @@
                 <p>The Congress is designed as a platform for knowledge sharing, professional training, and global networking. It represents a unique opportunity to foster
                   innovation, strengthen collaborations, and ultimately enhance patient outcomes in surgical and transplant medicine.</p>
               @endif
-            </div>
-          </div>
-        </div>
-
-        <!-- Conference Diagram Section -->
-        <div class='fModule f-conference-diagram f-module f-module-pages-custom'>
-          <div class="f-module-title fModuleTitle">
-            <h3>{{ __('about.sections.conference_diagram.title') }}</h3>
-          </div>
-          <div class="f-module-content fModuleContent">
-            <div class="container bg-light p-4">
-              <div class="conference-diagram-container">
-                <!-- Diagram Image -->
-                <div class="diagram-section">
-                  <div class="diagram-image">
-                    <img style="max-width: 500px;" src="{{ Storage::url('images/so-do.png') }}" alt="{{ __('about.sections.conference_diagram.morning.title') }}" class="rounded shadow">
-                  </div>
-                  
-                  <!-- Simple Text Legend -->
-                  <div class="diagram-legend mt-4">
-                    @if (app()->getLocale() === 'vi')
-                      <p><strong>Nội dung thể hiện trên sơ đồ:</strong></p>
-                      <p>Hội trường 1/Hall 1 - Crystal Grand Ballroom</p>
-                      <p>Hội trường 2/Hall 2 - Emerald Room</p>
-                      <p>Hội trường 3/Hall 3 - Charlotte</p>
-                      <p>Khu vực check-in</p>
-                      <p>Gian hàng của Nhà Tài trợ</p>
-                    @else
-                      <p><strong>Content shown on the diagram:</strong></p>
-                      <p>Hall 1 - Crystal Grand Ballroom</p>
-                      <p>Hall 2 - Emerald Room</p>
-                      <p>Hall 3 - Charlotte</p>
-                      <p>Check-in Area</p>
-                      <p>Sponsor Exhibition</p>
-                    @endif
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
