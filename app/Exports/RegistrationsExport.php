@@ -8,11 +8,13 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use Maatwebsite\Excel\Concerns\WithColumnWidths;
+use Maatwebsite\Excel\Concerns\WithCustomStartCell;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 
 class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, WithStyles, WithColumnWidths
 {
     protected $registrations;
+    protected $counter = 0;
 
     public function __construct($registrations)
     {
@@ -27,8 +29,8 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
     public function headings(): array
     {
         return [
+            'Stt',
             'Mã đăng ký',
-            'ID',
             'Họ và tên',
             'Giới tính',
             'Ngày sinh',
@@ -43,9 +45,10 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
 
     public function map($registration): array
     {
+        $this->counter++;
         return [
+            $this->counter, // STT (số thứ tự)
             $registration->registration_code ?? '',
-            $registration->id,
             $registration->full_name ?? '',
             $registration->gender_display ?? '',
             $registration->date_of_birth ? $registration->date_of_birth->format('d/m/Y') : '',
@@ -80,8 +83,8 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
     public function columnWidths(): array
     {
         return [
-            'A' => 20, // Mã đăng ký
-            'B' => 8,  // ID
+            'A' => 8,  // STT
+            'B' => 20, // Mã đăng ký
             'C' => 25, // Họ và tên
             'D' => 12, // Giới tính
             'E' => 15, // Ngày sinh
