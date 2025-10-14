@@ -8,44 +8,41 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --brand-color-1: #dc3545;
-    }
-
     body {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #f8f9fa;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
     }
 
     .login-container {
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
       max-width: 400px;
       width: 100%;
       margin: 20px;
     }
 
     .login-header {
-      background: linear-gradient(135deg, var(--brand-color-1) 0%, #e74c3c 100%);
+      background: #dc3545;
       color: white;
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
+      border-radius: 8px 8px 0 0;
     }
 
     .login-header h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
     }
 
     .login-header p {
-      margin-bottom: 0;
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
       opacity: 0.9;
     }
 
@@ -54,82 +51,50 @@
     }
 
     .form-floating {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .form-control {
-      border: 2px solid #e9ecef;
-      border-radius: 12px;
-      padding: 1rem 0.75rem;
-      font-size: 1rem;
-      transition: all 0.3s ease;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
     }
 
     .form-control:focus {
-      border-color: var(--brand-color-1);
+      border-color: #dc3545;
       box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-    }
-
-    .form-floating>label {
-      padding: 1rem 0.75rem;
     }
 
     .btn-login {
-      background: linear-gradient(135deg, var(--brand-color-1) 0%, #e74c3c 100%);
-      border: none;
-      border-radius: 12px;
-      padding: 1rem;
-      font-size: 1.1rem;
-      font-weight: 600;
+      background: #dc3545;
+      border: 1px solid #dc3545;
+      border-radius: 4px;
+      padding: 0.75rem;
+      font-size: 1rem;
       color: white;
       width: 100%;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
     }
 
     .btn-login:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+      background: #c82333;
+      border-color: #bd2130;
       color: white;
     }
 
-    .btn-login:active {
-      transform: translateY(0);
-    }
-
     .form-check-input:checked {
-      background-color: var(--brand-color-1);
-      border-color: var(--brand-color-1);
-    }
-
-    .form-check-input:focus {
-      box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+      background-color: #dc3545;
+      border-color: #dc3545;
     }
 
     .alert {
-      border-radius: 12px;
-      border: none;
-    }
-
-    .alert-danger {
-      background: #f8d7da;
-      color: #721c24;
+      border-radius: 4px;
     }
 
     .login-footer {
       text-align: center;
-      padding: 1rem 2rem 2rem;
+      padding: 1rem 2rem;
       color: #6c757d;
-      font-size: 0.9rem;
-    }
-
-    .login-footer a {
-      color: var(--brand-color-1);
-      text-decoration: none;
-    }
-
-    .login-footer a:hover {
-      text-decoration: underline;
+      font-size: 0.85rem;
+      border-top: 1px solid #dee2e6;
     }
 
     .loading {
@@ -140,12 +105,12 @@
     .loading::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       top: 50%;
       left: 50%;
-      margin-left: -10px;
-      margin-top: -10px;
+      margin-left: -8px;
+      margin-top: -8px;
       border: 2px solid #ffffff;
       border-radius: 50%;
       border-top-color: transparent;
@@ -155,22 +120,6 @@
     @keyframes spin {
       to {
         transform: rotate(360deg);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .login-container {
-        margin: 10px;
-        border-radius: 15px;
-      }
-
-      .login-header,
-      .login-body {
-        padding: 1.5rem;
-      }
-
-      .login-header h1 {
-        font-size: 1.25rem;
       }
     }
   </style>
