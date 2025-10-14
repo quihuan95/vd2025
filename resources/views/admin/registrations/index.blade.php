@@ -244,7 +244,7 @@
         <!-- Filters and Actions -->
         <div class="admin-toolbar">
           <form method="GET" class="row g-3 align-items-end">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <label for="search" class="form-label">Tìm kiếm</label>
               <input type="text" class="form-control" id="search" name="search" value="{{ request('search') }}" placeholder="Tên, email, cơ quan...">
             </div>
@@ -257,7 +257,7 @@
                 <option value="rejected" {{ request('status') == 'rejected' ? 'selected' : '' }}>Từ chối</option>
               </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
               <label for="sort_by" class="form-label">Sắp xếp</label>
               <select class="form-select" id="sort_by" name="sort_by">
                 <option value="created_at" {{ request('sort_by') == 'created_at' ? 'selected' : '' }}>Ngày đăng ký</option>
@@ -270,16 +270,12 @@
                 <i class="fas fa-search me-1"></i> Lọc
               </button>
             </div>
-          </form>
-
-          <div class="admin-actions mt-3">
+            <div class="col-md-2">
             <a href="{{ route('admin.export', request()->query()) }}" class="btn btn-success">
               <i class="fas fa-file-excel me-1"></i> Xuất Excel
             </a>
-            <a href="{{ route('admin.logout') }}" class="btn btn-outline-danger">
-              <i class="fas fa-sign-out-alt me-1"></i> Đăng xuất
-            </a>
           </div>
+          </form>
         </div>
 
         <!-- Registrations Table -->

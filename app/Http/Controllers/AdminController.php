@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registration;
+use App\Exports\RegistrationsExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use Maatwebsite\Excel\Facades\Excel;
-// use App\Exports\RegistrationsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -74,59 +74,9 @@ class AdminController extends Controller
 
         $registrations = $query->get();
 
-        $filename = 'registrations_' . date('Y-m-d_H-i-s') . '.csv';
+        $filename = 'registrations_' . date('Y-m-d_H-i-s') . '.xlsx';
 
-        $headers = [
-            'Content-Type' => 'text/csv',
-            'Content-Disposition' => 'attachment; filename="' . $filename . '"',
-        ];
-
-        $callback = function () use ($registrations) {
-            $file = fopen('php://output', 'w');
-
-            // Add BOM for UTF-8
-            fwrite($file, "\xEF\xBB\xBF");
-
-            // CSV Headers
-            fputcsv($file, [
-                'Mã đăng ký',
-                'ID',
-                'Họ và tên',
-                'Giới tính',
-                'Ngày sinh',
-                'Cơ quan',
-                'Khoa/Phòng',
-                'Chức vụ',
-                'Email',
-                'Số điện thoại',
-                'Trạng thái',
-                'Ghi chú',
-                'Ngày đăng ký'
-            ]);
-
-            // CSV Data
-            foreach ($registrations as $registration) {
-                fputcsv($file, [
-                    $registration->registration_code,
-                    $registration->id,
-                    $registration->full_name,
-                    $registration->gender_display,
-                    $registration->date_of_birth->format('d/m/Y'),
-                    $registration->organization,
-                    $registration->department,
-                    $registration->title,
-                    $registration->email,
-                    $registration->phone,
-                    $registration->status_display,
-                    $registration->notes,
-                    $registration->created_at->format('d/m/Y H:i')
-                ]);
-            }
-
-            fclose($file);
-        };
-
-        return response()->stream($callback, 200, $headers);
+        return Excel::download(new RegistrationsExport($registrations), $filename);
     }
 
     public function destroy(Registration $registration)

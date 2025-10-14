@@ -104,12 +104,7 @@
                     @endif
                   </h3>
                   
-                  <div class="address-info">
-                    <div class="address-item">
-                      <h5>Khách sạn Lotte Hanoi</h5>
-                      <p class="address-text">54 Liễu Giai, Ngọc Hà, Hà Nội, Việt Nam</p>
-                    </div>
-                    
+                  <div class="address-info">                    
                     <div class="address-item">
                       <h5>Lotte Hotel Hanoi</h5>
                       <p class="address-text">54 Lieu Giai, Ngoc Ha, Ha Noi, Viet Nam</p>
@@ -117,18 +112,33 @@
                   </div>
 
                   <div class="location-features mt-4">
-                    <div class="feature-highlight">
-                      <i class="fas fa-map-marker-alt"></i>
-                      <span>Trung tâm Hà Nội</span>
-                    </div>
-                    <div class="feature-highlight">
-                      <i class="fas fa-plane"></i>
-                      <span>Gần sân bay Nội Bài</span>
-                    </div>
-                    <div class="feature-highlight">
-                      <i class="fas fa-subway"></i>
-                      <span>Giao thông thuận tiện</span>
-                    </div>
+                    @if (app()->getLocale() === 'vi')
+                      <div class="feature-highlight">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Trung tâm Hà Nội</span>
+                      </div>
+                      <div class="feature-highlight">
+                        <i class="fas fa-plane"></i>
+                        <span>Gần sân bay Nội Bài</span>
+                      </div>
+                      <div class="feature-highlight">
+                        <i class="fas fa-subway"></i>
+                        <span>Giao thông thuận tiện</span>
+                      </div>
+                    @else
+                      <div class="feature-highlight">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hanoi City Center</span>
+                      </div>
+                      <div class="feature-highlight">
+                        <i class="fas fa-plane"></i>
+                        <span>Near Noi Bai Airport</span>
+                      </div>
+                      <div class="feature-highlight">
+                        <i class="fas fa-subway"></i>
+                        <span>Convenient Transportation</span>
+                      </div>
+                    @endif
                   </div>
                 </div>
               </div>
