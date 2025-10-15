@@ -73,7 +73,7 @@
           <div class="f-module-title fModuleTitle">
             <h3>{{ __('home.about.title') }}</h3>
           </div>
-          <div class="f-module-content fModuleContent">
+          {{-- <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               @if (app()->getLocale() === 'vi')
                 <p><strong><i>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025</i></strong> diễn ra vào ngày <strong><i>01 tháng 11 năm 2025 tại Hà Nội</i></strong>. Hội nghị dự kiến sẽ có sự tham gia của hơn 500 đại
@@ -97,7 +97,7 @@
                   innovation, strengthen collaborations, and ultimately enhance patient outcomes in surgical and transplant medicine.</p>
               @endif
             </div>
-          </div>
+          </div> --}}
         </div>
 
         <!-- 2. Welcome Message Section -->

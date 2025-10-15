@@ -30,10 +30,10 @@
               <!-- Image Gallery -->
               <div class="image-gallery">
                 @if (count($images) > 0)
-                  <div class="row">
+                  <div class="row justify-content-center">
                     @foreach ($images as $index => $image)
                       <!-- Desktop: 2 columns, Mobile: 1 column -->
-                      <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-4">
+                      <div class="col-lg-10 col-md-10 col-sm-12 col-12 mb-4">
                         <div class="gallery-item">
                           <img src="{{ $image['url'] }}" alt="{{ __('programme.pages.31_oct.page_title') }} - {{ $image['filename'] }}" class="img-fluid rounded shadow"
                             loading="lazy">
