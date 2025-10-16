@@ -17,7 +17,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="@yield('og_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
   <meta property="og:description" content="@yield('og_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025')">
-  <meta property="og:image" content="@yield('og_image', Storage::url('images/og/vduhsc2025-og-image.jpg'))">
+  <meta property="og:image" content="@yield('og_image', Storage::url('images/BVVD-KV.jpg'))">
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VDUHSC 2025">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@yield('twitter_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
   <meta name="twitter:description" content="@yield('twitter_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025')">
-  <meta name="twitter:image" content="@yield('twitter_image', Storage::url('images/og/vduhsc2025-twitter-image.jpg'))">
+  <meta name="twitter:image" content="@yield('twitter_image', Storage::url('images/BVVD-KV.jpg'))">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ url()->current() }}">
