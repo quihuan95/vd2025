@@ -27,7 +27,7 @@ return [
 
   // About Section
   'about' => [
-    'title' => 'Giới thiệu VDUHSC 2025',
+    'title' => 'Giới thiệu',
     'description' => 'Đại hội Thế giới lần thứ 21 về Phẫu thuật Nội soi, đồng thời cũng là Đại hội lần thứ 17 của Hiệp hội Phẫu thuật Nội soi Châu Á Thái Bình Dương (ELSA) sẽ là một sự kiện quan trọng trong việc phát triển phẫu thuật nội soi.',
     'read_more' => 'Đọc thêm',
   ],

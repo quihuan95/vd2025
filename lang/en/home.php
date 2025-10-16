@@ -27,7 +27,7 @@ return [
 
   // About Section
   'about' => [
-    'title' => 'About VDUHSC 2025',
+    'title' => 'About',
     'description' => 'The 21st World Congress of Endoscopic Surgeons, which also serves as the 17th Asia Pacific Endo-Laparoscopic Surgeons (ELSA) Congress will stand as a pivotal event in the advancement of endoscopic surgery.',
     'read_more' => 'Read More',
   ],
