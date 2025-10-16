@@ -64,6 +64,15 @@ return [
         'placeholder' => 'Nhập số điện thoại',
         'placeholder_en' => 'Enter your phone number',
       ],
+      'event_type' => [
+        'label' => 'Quý khách đăng ký tham dự sự kiện nào?',
+        'label_en' => 'What event are you registering for?',
+        'options' => [
+          'pre_conference_workshop' => 'Tập huấn tiền Hội nghị (31/10)',
+          'university_hospital_international_scientific_conference' => 'Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025  (01/11)',
+          'both' => 'Cả 2',
+        ],
+      ],
     ],
 
     'buttons' => [

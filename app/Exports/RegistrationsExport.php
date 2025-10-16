@@ -39,6 +39,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             'Chức vụ',
             'Email',
             'Số điện thoại',
+            'Sự kiện tham dự',
             // 'Trạng thái / Status'
         ];
     }
@@ -57,6 +58,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             $registration->title ?? '',
             $registration->email ?? '',
             $registration->phone ?? '',
+            $registration->event_type_display ?? '',
             // $registration->status_display ?? '',
         ];
     }
@@ -93,6 +95,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             'H' => 20, // Chức vụ
             'I' => 30, // Email
             'J' => 15, // Số điện thoại
+            'K' => 50, // Sự kiện tham dự
         ];
     }
 }

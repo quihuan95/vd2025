@@ -13,6 +13,7 @@ class Registration extends Model
         'date_of_birth',
         'organization',
         'department',
+        'event_type',
         'title',
         'email',
         'phone',
@@ -46,6 +47,26 @@ class Registration extends Model
         ];
 
         return $statuses[$this->status] ?? $this->status;
+    }
+
+    public function getEventTypeDisplayAttribute()
+    {
+        $eventType = [
+            'en' => [
+                'pre_conference_workshop' => 'Pre-Conference Workshop (October 31st)',
+                'university_hospital_international_scientific_conference' => 'Viet Duc University Hospital International Scientific Conference 2025 (November 1st)',
+                'both' => 'Both'
+            ],
+            'vi' => [
+                'pre_conference_workshop' => 'Tập huấn tiền Hội nghị (31/10)',
+                'university_hospital_international_scientific_conference' => 'Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025  (01/11)',
+                'both' => 'Cả 2'
+            ],
+        ];
+
+        $lang = app()->getLocale();
+        
+        return $eventType[$lang][$this->event_type] ?? $this->event_type;
     }
 
     // Scope for filtering by status

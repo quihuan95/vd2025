@@ -64,6 +64,15 @@ return [
         'placeholder' => 'Enter your phone number',
         'placeholder_en' => 'Enter your phone number',
       ],
+      'event_type' => [
+        'label' => 'What event are you registering for?',
+        'label_en' => 'What event are you registering for?',
+        'options' => [
+          'pre_conference_workshop' => 'Pre-Conference Workshop (October 31st)',
+          'university_hospital_international_scientific_conference' => 'Viet Duc University Hospital International Scientific Conference 2025 (November 1st)',
+          'both' => 'Both',
+        ],
+      ],
     ],
 
     'buttons' => [

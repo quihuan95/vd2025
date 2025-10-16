@@ -290,6 +290,7 @@
                   <th>Giới tính</th>
                   <th>Email</th>
                   <th>Cơ quan</th>
+                  <th>Sự kiện</th>
                   <th>Trạng thái</th>
                   <th>Ngày đăng ký</th>
                   <th>Thao tác</th>
@@ -321,6 +322,9 @@
                       </div>
                     </td>
                     <td>
+                      <span class="badge bg-info">{{ $registration->event_type_display }}</span>
+                    </td>
+                    <td>
                       <span class="status-badge status-{{ $registration->status }}">
                         {{ $registration->status_display }}
                       </span>
@@ -339,7 +343,7 @@
                   </tr>
                 @empty
                   <tr>
-                    <td colspan="8" class="text-center py-4">
+                    <td colspan="10" class="text-center py-4">
                       <div class="empty-state">
                         <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
                         <h5>Không có đăng ký nào</h5>

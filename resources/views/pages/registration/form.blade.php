@@ -47,7 +47,7 @@
 
                   <div class="row">
                     <!-- Full Name -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="full_name" class="form-label">
                         {{ __('registration.form.fields.full_name.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -64,7 +64,7 @@
                     </div>
 
                     <!-- Gender -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="gender" class="form-label">
                         {{ __('registration.form.fields.gender.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -84,7 +84,7 @@
                     </div>
 
                     <!-- Date of Birth -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="date_of_birth" class="form-label">
                         {{ __('registration.form.fields.date_of_birth.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -100,7 +100,7 @@
                     </div>
 
                     <!-- Organization -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="organization" class="form-label">
                         {{ __('registration.form.fields.organization.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -117,7 +117,7 @@
                     </div>
 
                     <!-- Department -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="department" class="form-label">
                         {{ __('registration.form.fields.department.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -134,7 +134,7 @@
                     </div>
 
                     <!-- Title -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="title" class="form-label">
                         {{ __('registration.form.fields.title.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -151,7 +151,7 @@
                     </div>
 
                     <!-- Email -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="email" class="form-label">
                         {{ __('registration.form.fields.email.label') }}
                         <span class="text-danger">*</span>
@@ -165,7 +165,7 @@
                     </div>
 
                     <!-- Phone -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                       <label for="phone" class="form-label">
                         {{ __('registration.form.fields.phone.label') }}
                         @if (app()->getLocale() === 'vi')
@@ -177,6 +177,26 @@
                         placeholder="{{ app()->getLocale() === 'vi' ? __('registration.form.fields.phone.placeholder') : __('registration.form.fields.phone.placeholder_en') }}"
                         value="{{ old('phone') }}" required>
                       @error('phone')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                      @enderror
+                    </div>
+
+                    <!-- Event Type -->
+                    <div class="col-12 mb-3">
+                      <label for="event_type" class="form-label">
+                        {{ __('registration.form.fields.event_type.label') }}
+                        @if (app()->getLocale() === 'vi')
+                          <small class="text-muted">({{ __('registration.form.fields.event_type.label_en') }})</small>
+                        @endif
+                        <span class="text-danger">*</span>
+                      </label>
+                      <select class="form-select @error('event_type') is-invalid @enderror" id="event_type" name="event_type" required>
+                        <option value="">{{ app()->getLocale() === 'vi' ? 'Chọn sự kiện tham dự' : 'Select event to attend' }}</option>
+                        @foreach (__('registration.form.fields.event_type.options') as $key => $value)
+                          <option value="{{ $key }}" {{ old('event_type') == $key ? 'selected' : '' }}>{{ $value }}</option>
+                        @endforeach
+                      </select>
+                      @error('event_type')
                         <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
                     </div>
@@ -257,10 +277,6 @@
     }
 
     /* Ensure form fields have proper spacing */
-    .registration-form .col-md-6 {
-      margin-bottom: 1rem !important;
-    }
-
     .registration-form .col-12 {
       margin-bottom: 1rem !important;
     }
