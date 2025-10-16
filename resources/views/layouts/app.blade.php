@@ -17,7 +17,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="@yield('og_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
   <meta property="og:description" content="@yield('og_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025. Join us for the latest in organ transplantation, cardiovascular, gastrointestinal, and orthopedic surgery.')">
-  <meta property="og:image" content="@yield('og_image', asset('storage/images/BVVD-KV.jpg'))">
+  <meta property="og:image" content="@yield('og_image', get_social_image_url())">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -26,12 +26,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VDUHSC 2025">
   <meta property="og:locale" content="{{ app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US' }}">
+  <meta property="og:updated_time" content="{{ now()->toISOString() }}">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@yield('twitter_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
   <meta name="twitter:description" content="@yield('twitter_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025')">
-  <meta name="twitter:image" content="@yield('twitter_image', asset('storage/images/BVVD-KV.jpg'))">
+  <meta name="twitter:image" content="@yield('twitter_image', get_social_image_url())">
   
   <!-- Additional Meta Tags for Better Social Media Sharing -->
   <meta name="theme-color" content="#0066cc">
@@ -42,11 +43,15 @@
   <!-- Zalo Specific Meta Tags -->
   <meta property="zalo:title" content="@yield('og_title', 'VDUHSC 2025 - Viet Duc University Hospital Scientific Congress')">
   <meta property="zalo:description" content="@yield('og_description', 'Viet Duc University Hospital Scientific Congress in Hanoi on November 1, 2025. Join us for the latest in organ transplantation, cardiovascular, gastrointestinal, and orthopedic surgery.')">
-  <meta property="zalo:image" content="@yield('og_image', asset('storage/images/BVVD-KV.jpg'))">
+  <meta property="zalo:image" content="@yield('og_image', get_social_image_url())">
   
   <!-- Additional Open Graph for better compatibility -->
-  <meta property="og:updated_time" content="{{ now()->toISOString() }}">
-  <meta property="og:image:secure_url" content="@yield('og_image', asset('storage/images/BVVD-KV.jpg'))">
+  <meta property="og:image:secure_url" content="@yield('og_image', get_social_image_url())">
+  
+  <!-- Cache Control Headers -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ url()->current() }}">

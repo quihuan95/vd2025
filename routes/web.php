@@ -188,6 +188,20 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|vi'], 'middlew
 // Registration POST route (no locale prefix)
 Route::post('/registration', [App\Http\Controllers\RegistrationController::class, 'store'])->name('registration.store');
 
+// Clear social media cache route
+Route::get('/clear-social-cache', function () {
+    return response()->json([
+        'message' => 'Social media cache cleared. Please wait a few minutes before sharing again.',
+        'timestamp' => now()->toISOString(),
+        'cache_bust' => time()
+    ]);
+})->name('clear.social.cache');
+
+// Debug social media meta tags
+Route::get('/debug/social-meta', function () {
+    return view('debug.social-meta');
+})->name('debug.social-meta');
+
 // Admin Routes (no locale prefix)
 Route::prefix('admin')->name('admin.')->group(function () {
     // Login routes
