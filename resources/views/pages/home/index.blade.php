@@ -68,7 +68,7 @@
           </div>
         </div>
 
-                <!-- About the Congress Section -->
+        <!-- About the Congress Section -->
         <div class='fModule f-about f-module f-module-pages-custom'>
           <div class="f-module-title fModuleTitle">
             <h3>{{ __('home.about.title') }}</h3>
@@ -76,20 +76,24 @@
           <div class="f-module-content fModuleContent">
             <div class="container bg-light p-4">
               @if (app()->getLocale() === 'vi')
-                <p><strong><i>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025</i></strong> diễn ra vào ngày <strong><i>01 tháng 11 năm 2025 tại Hà Nội</i></strong>. Hội nghị dự kiến sẽ có sự tham gia của hơn 500 đại
+                <p><strong><i>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức 2025</i></strong> diễn ra vào ngày <strong><i>01 tháng 11 năm 2025 tại Hà Nội</i></strong>. Hội
+                  nghị dự kiến sẽ có sự tham gia của hơn 500 đại
                   biểu là những chuyên gia, bác sĩ và các nhà nghiên cứu hàng đầu tại Việt Nam và trên thế giới, nhằm trao đổi và cập nhật những tiến bộ mới nhất trong lĩnh vực ngoại
                   khoa và ghép tạng.</p>
 
-                <p>Với chủ đề "<strong><i>Vai trò của Ngoại khoa và Ghép tạng trong Kỷ nguyên Hội nhập Toàn cầu</i></strong>", hội nghị sẽ kéo dài trong một ngày với bốn phiên báo cáo, tập trung vào các
+                <p>Với chủ đề "<strong><i>Vai trò của Ngoại khoa và Ghép tạng trong Kỷ nguyên Hội nhập Toàn cầu</i></strong>", hội nghị sẽ kéo dài trong một ngày với bốn phiên báo
+                  cáo, tập trung vào các
                   lĩnh vực: ghép tạng, phẫu thuật gan mật, tiết niệu, phẫu thuật tim mạch và lồng ngực, liền thương, phẫu thuật tiêu hóa, sản phụ khoa và chỉnh hình.</p>
 
                 <p>Hội nghị hứa hẹn sẽ là diễn đàn để trao đổi kiến thức chuyên môn và kết nối cho các chuyên gia. Đây là cơ hội đặc biệt để thúc đẩy đổi mới, tăng cường hợp tác và
                   cùng hướng tới mục tiêu nâng cao hiệu quả điều trị, cải thiện kết quả cho người bệnh trong lĩnh vực ngoại khoa và ghép tạng.</p>
               @else
-                <p><strong><i>Viet Duc University Hospital Scientific Congress 2025</i></strong> will take place on <strong><i>November 1, 2025 in Hanoi</i></strong>. Hosted for the first time by Viet Duc University Hospital, this
+                <p><strong><i>Viet Duc University Hospital Scientific Congress 2025</i></strong> will take place on <strong><i>November 1, 2025 in Hanoi</i></strong>. Hosted for the
+                  first time by Viet Duc University Hospital, this
                   international event will gather leading experts, surgeons, and researchers to explore the latest frontiers of surgery and transplantation.</p>
 
-                <p>Under the theme "<strong><i>The Role of Surgery and Transplantation in the Era of Global Integration</i></strong>", Congress will feature a full-day scientific program including an
+                <p>Under the theme "<strong><i>The Role of Surgery and Transplantation in the Era of Global Integration</i></strong>", Congress will feature a full-day scientific
+                  program including an
                   overview plenary and four parallel sessions, covering hepato-pancreato-biliary surgery and liver transplantation, kidney and urology, cardiothoracic and lung
                   transplantation, wound healing, gastrointestinal and metabolic surgery, obstetrics and gynecology, and orthopedics.</p>
 
@@ -110,26 +114,30 @@
             <div class="info">
               @if (app()->getLocale() === 'vi')
                 <p><strong>Kính gửi Quý Đồng nghiệp,</strong></p>
-                <p>Chúng tôi trân trọng kính mời Quý vị tham dự <strong>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức năm 2025</strong>, diễn ra tại Hà Nội ngày <strong>01 tháng 11 năm 2025</strong>. Đây là
+                <p>Chúng tôi trân trọng kính mời Quý vị tham dự <strong>Hội nghị Khoa học Quốc tế Bệnh viện Hữu nghị Việt Đức năm 2025</strong>, diễn ra tại Hà Nội ngày <strong>01
+                    tháng 11 năm 2025</strong>. Đây là
                   lần đầu tiên Bệnh viện Hữu nghị Việt Đức vinh dự đăng cai sự kiện quan trọng này, và chúng tôi rất vui mừng được chào đón sự tham dự của các chuyên gia và các bác
                   sĩ đến từ khắp nơi trên thế giới.</p>
-                <p>Hội nghị sẽ mang đến một chương trình khoa học đa dạng và toàn diện, bao gồm <strong>04 phiên chuyên đề</strong> với <strong>khoảng 40 bài tham luận</strong>. Nội dung thảo luận trải dài nhiều lĩnh
+                <p>Hội nghị sẽ mang đến một chương trình khoa học đa dạng và toàn diện, bao gồm <strong>04 phiên chuyên đề</strong> với <strong>khoảng 40 bài tham luận</strong>. Nội
+                  dung thảo luận trải dài nhiều lĩnh
                   vực bao gồm: ghép tạng, tim mạch, tiêu hóa, chấn thương chỉnh hình chỉnh hình…</p>
                 <p>Chúng tôi tin rằng hội nghị lần này sẽ là một cơ hội đặc biệt để học hỏi, nâng cao kỹ năng chuyên môn và mở rộng kết nối quốc tế, thúc đẩy những trao đổi và hợp
                   tác giữa các chuyên gia hàng đầu. Từ đó, áp dụng những tiến bộ khoa học để cải thiện dịch vụ y tế và nâng cao sức khỏe toàn cầu.</p>
                 <p>Chúng tôi rất mong được đón tiếp Quý vị tại Hà Nội và cùng nhau tạo nên một hội nghị thành công, ý nghĩa.</p>
                 <p>Trân trọng<br>
                   <br>
-                  <p><strong>Dương Đức Hùng</strong><br></p>
-                  <p><strong>Giám đốc</strong><br></p>
-                  <p><strong>Bệnh viện Hữu nghị Việt Đức</strong></p>
+                <p><strong>Dương Đức Hùng</strong><br></p>
+                <p><strong>Giám đốc</strong><br></p>
+                <p><strong>Bệnh viện Hữu nghị Việt Đức</strong></p>
                 </p>
               @else
                 <p><strong>Dear Colleagues and Friends,</strong></p>
-                <p>It is our great pleasure to welcome you to the <strong>Viet Duc University Hospital Scientific Congress 2025</strong>, taking place in <strong>Hanoi on November 1, 2025</strong>. This marks the
+                <p>It is our great pleasure to welcome you to the <strong>Viet Duc University Hospital Scientific Congress 2025</strong>, taking place in <strong>Hanoi on November 1,
+                    2025</strong>. This marks the
                   very first time that Viet Duc University Hospital has the honor of hosting this distinguished event, and we are delighted to bring together leading experts,
                   researchers, and practitioners from across the globe.</p>
-                <p>The Congress will feature a diverse and comprehensive scientific program, including <strong>four sessions with approximately 40 presentations</strong>. The discussions will span
+                <p>The Congress will feature a diverse and comprehensive scientific program, including <strong>four sessions with approximately 40 presentations</strong>. The
+                  discussions will span
                   multiple specialties — with a special focus on organ transplantation, alongside important topics in cardiovascular, gastrointestinal, and orthopedic, among others.
                 </p>
                 <p>We believe that this congress will be a unique opportunity for training, skill enhancement, and global networking, fostering meaningful exchanges among leading
@@ -137,9 +145,9 @@
                 <p>We warmly look forward to welcoming you to Hanoi and to an inspiring and productive conference experience.</p>
                 <p>Warm regards<br>
                   <br>
-                  <p><strong>DUONG Duc Hung</strong><br></p>
-                  <strong>Director</strong><br>
-                  <p><strong>Viet Duc University Hospital</strong></p>
+                <p><strong>DUONG Duc Hung</strong><br></p>
+                <strong>Director</strong><br>
+                <p><strong>Viet Duc University Hospital</strong></p>
                 </p>
               @endif
             </div>
@@ -154,7 +162,8 @@
           <div class="f-module-content fModuleContent">
             <div class="row">
               <div class="col-12 col-lg-6">
-                <img src="{{ Storage::url('images/mai-ltha.webp') }}" alt="{{ __('singapore.venue_info.lotte_hotel') }}" class="img-fluid venue-image" style="width: 100%; height: auto; border-radius: 8px;" />
+                <img src="{{ Storage::url('images/mai-ltha.webp') }}" alt="{{ __('singapore.venue_info.lotte_hotel') }}" class="img-fluid venue-image"
+                  style="width: 100%; height: auto; border-radius: 8px;" />
               </div>
               <div class="col-12 col-lg-6">
                 <div class="venue-info">
@@ -163,7 +172,8 @@
                       <h4 class="venue-subtitle">Lotte Hotel Hanoi</h4>
                       <div class="venue-badge">5 SAO</div>
                     </div>
-                    <p class="venue-description">Lotte Hà Nội nằm trong tòa nhà <strong>Lotte Center 65 tầng</strong>, là một trong những khách sạn 5 sao hàng đầu tại Hà Nội. Khách sạn cung cấp các phòng hội nghị <strong>sang trọng và hiện đại</strong>, phù hợp cho các sự kiện quốc tế và hội nghị khoa học.</p>
+                    <p class="venue-description">Lotte Hà Nội nằm trong tòa nhà <strong>Lotte Center 65 tầng</strong>, là một trong những khách sạn 5 sao hàng đầu tại Hà Nội. Khách
+                      sạn cung cấp các phòng hội nghị <strong>sang trọng và hiện đại</strong>, phù hợp cho các sự kiện quốc tế và hội nghị khoa học.</p>
                     <div class="venue-location">
                       <div class="location-item">
                         <i class="location-icon">-</i>
@@ -187,7 +197,9 @@
                       <h4 class="venue-subtitle">Lotte Hotel Hanoi</h4>
                       <div class="venue-badge">5 STAR</div>
                     </div>
-                    <p class="venue-description">Located in the heart of Hanoi, Lotte Hotel Hanoi is a <strong>five-star landmark hotel</strong> that serves as the perfect venue for international conferences and events. The hotel is part of the impressive <strong>65-story Lotte Center</strong>, offering modern facilities and exceptional service.</p>
+                    <p class="venue-description">Located in the heart of Hanoi, Lotte Hotel Hanoi is a <strong>five-star landmark hotel</strong> that serves as the perfect venue for
+                      international conferences and events. The hotel is part of the impressive <strong>65-story Lotte Center</strong>, offering modern facilities and exceptional
+                      service.</p>
                     <div class="venue-location">
                       <div class="location-item">
                         <i class="location-icon">-</i>
@@ -209,6 +221,69 @@
                     </div>
                   @endif
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Sponsors Information Section -->
+        <div class='fModule container-function f-sponsors pb-0 f-module f-module-pages-custom'>
+          <div class="f-module-title fModuleTitle">
+            <h3>{{ app()->getLocale() === 'vi' ? 'Nhà tài trợ' : 'Sponsors' }}</h3>
+          </div>
+          <div class="f-module-content fModuleContent">
+            <!-- Diamond Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos diamond-logos">
+                <img src="{{ Storage::url('images/ntt/Astellas_Kim_cuong_1.png') }}" alt="Diamond Sponsor 1" class="sponsor-logo">
+              </div>
+            </div>
+
+            <!-- Platinum Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos platinum-logos">
+                <img src="{{ Storage::url('images/ntt/Novartis_bach_kim_2.png') }}" alt="Platinum Sponsor 1" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/J&J_bach_kim_3.png') }}" alt="Platinum Sponsor 2" class="sponsor-logo">
+              </div>
+            </div>
+
+            <!-- Gold Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos gold-logos">
+                <img src="{{ Storage::url('images/ntt/Sandoz_vang_4.png') }}" alt="Gold Sponsor 1" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Teva_vang_5.png') }}" alt="Gold Sponsor 2" class="sponsor-logo">
+              </div>
+            </div>
+
+            <!-- Silver Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos silver-logos">
+                <img src="{{ Storage::url('images/ntt/Pfizer_bac_6.png') }}" alt="Silver Sponsor 1" class="sponsor-logo">
+              </div>
+            </div>
+
+            <!-- Bronze Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos bronze-logos">
+                <img src="{{ Storage::url('images/ntt/B.Braun_dong_7.png') }}" alt="Bronze Sponsor 1" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Baxter_dong_8.png') }}" alt="Bronze Sponsor 2" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/MSD_dong_9.png') }}" alt="Bronze Sponsor 3" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Kabi_dong_10.png') }}" alt="Bronze Sponsor 4" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Gravitas_dong_11.png') }}" alt="Bronze Sponsor 4" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Zuelligpharma_dong_12.png') }}" alt="Bronze Sponsor 4" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/AZ_dong_13.png') }}" alt="Bronze Sponsor 4" class="sponsor-logo">
+              </div>
+            </div>
+
+            <!-- Co-Sponsors -->
+            <div class="sponsor-tier">
+              <div class="sponsor-logos co-sponsor-logos">
+                <img src="{{ Storage::url('images/ntt/Van_nien_tai_tro_14.png') }}" alt="Co-Sponsor 1" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Abbott_tai_tro_15.png') }}" alt="Co-Sponsor 2" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Kabi_tai_tro_16.png') }}" alt="Co-Sponsor 3" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/Viet_Phap_tai_tro_17.png') }}" alt="Co-Sponsor 4" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/SANOFI_tai_tro_18.png') }}" alt="Co-Sponsor 5" class="sponsor-logo">
+                <img src="{{ Storage::url('images/ntt/COMED_tai_tro_20.png') }}" alt="Co-Sponsor 6" class="sponsor-logo">
               </div>
             </div>
           </div>
@@ -269,23 +344,23 @@
     .f-venue {
       margin-top: 2rem;
     }
-    
+
     .venue-image {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-    
+
     .venue-image:hover {
       transform: scale(1.02);
     }
-    
+
     .venue-info {
       padding: 1.5rem;
       background: #ffffff;
       border-radius: 5px;
       border: 1px solid #e9ecef;
     }
-    
+
     .venue-highlight {
       display: flex;
       align-items: center;
@@ -294,15 +369,15 @@
       padding-bottom: 1rem;
       border-bottom: 2px solid #e9ecef;
     }
-    
+
     .venue-subtitle {
       color: #2c3e50;
       font-weight: 700;
       font-size: 1.8rem;
       margin: 0;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
-    
+
     .venue-badge {
       background-color: #28a745;
       color: white;
@@ -311,7 +386,7 @@
       font-weight: 600;
       font-size: 0.8rem;
     }
-    
+
     .venue-description {
       line-height: 1.8;
       margin-bottom: 2rem;
@@ -319,23 +394,23 @@
       font-size: 1.1rem;
       text-align: justify;
     }
-    
+
     .venue-description strong {
       color: #28a745;
       font-weight: 700;
     }
-    
+
     .venue-location {
       margin-bottom: 2rem;
     }
-    
+
     .location-item {
       display: flex;
       align-items: center;
       margin-bottom: 0.5rem;
       padding: 0.5rem 0;
     }
-    
+
     .location-icon {
       font-size: 1.5rem;
       margin-right: 1rem;
@@ -343,12 +418,12 @@
       color: #28a745;
       font-weight: bold;
     }
-    
+
     .location-item span {
       color: #495057;
       font-weight: 500;
     }
-    
+
     .btn-venue-link {
       background-color: #28a745;
       color: white;
@@ -364,30 +439,29 @@
       text-decoration: none;
       display: inline-block;
     }
-    
+
     .btn-venue-link:hover {
       background-color: #1e7e34;
       border-color: #1e7e34;
       color: white;
       text-decoration: none;
     }
-    
+
     .btn-venue-link:active {
       background-color: #155724;
     }
-    
+
     .btn-venue-link:focus {
       outline: none;
       box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
     }
-    
+
     @media (max-width: 991px) {
       .venue-info {
         margin-top: 1rem;
       }
     }
 
-    
     .f-about-wces .fGalleryImages .ItemfinnerGallery .fGalleryText h5 {
       text-align: center;
       font-size: 1.5rem;
@@ -530,6 +604,173 @@
 
       .diagram-legend p {
         font-size: 0.9rem;
+      }
+    }
+
+    /* Sponsors Styles */
+    .f-sponsors {
+      margin: 3rem 0;
+      padding: 2rem 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .sponsor-tier {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .tier-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .tier-title.diamond {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      color: #1565c0;
+      border: 2px solid #90caf9;
+      box-shadow: 0 4px 15px rgba(21, 101, 192, 0.2);
+    }
+
+    .tier-title.platinum {
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+      color: #7b1fa2;
+      border: 2px solid #ce93d8;
+      box-shadow: 0 4px 15px rgba(123, 31, 162, 0.2);
+    }
+
+    .tier-title.gold {
+      background: linear-gradient(135deg, #fff8e1, #ffecb3);
+      color: #f57c00;
+      border: 2px solid #ffcc02;
+      box-shadow: 0 4px 15px rgba(245, 124, 0, 0.2);
+    }
+
+    .tier-title.silver {
+      background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+      color: #616161;
+      border: 2px solid #bdbdbd;
+      box-shadow: 0 4px 15px rgba(97, 97, 97, 0.2);
+    }
+
+    .tier-title.bronze {
+      background: linear-gradient(135deg, #efebe9, #d7ccc8);
+      color: #5d4037;
+      border: 2px solid #a1887f;
+      box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
+    }
+
+    .tier-title.co-sponsor {
+      background: linear-gradient(135deg, #e8f5e8, #c8e6c8);
+      color: #2e7d32;
+      border: 2px solid #81c784;
+      box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+    }
+
+    .sponsor-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sponsor-logo {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: white;
+      padding: 1rem;
+      object-fit: contain;
+    }
+
+    .sponsor-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sponsor-logos {
+        gap: 1rem;
+        flex-direction: column;
+      }
+
+      .tier-title {
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .sponsor-logo {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .diamond-logos .sponsor-logo {
+        width: 300px;
+        height: 150px;
+      }
+
+      .platinum-logos .sponsor-logo {
+        width: 280px;
+        height: 140px;
+      }
+
+      .gold-logos .sponsor-logo {
+        width: 250px;
+        height: 125px;
+      }
+
+      .silver-logos .sponsor-logo {
+        width: 200px;
+        height: 100px;
+      }
+
+      .bronze-logos .sponsor-logo {
+        width: 150px;
+        height: 75px;
+      }
+
+      .co-sponsor-logos .sponsor-logo {
+        width: 120px;
+        height: 60px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .diamond-logos .sponsor-logo {
+        width: 400px;
+        height: 200px;
+      }
+
+      .platinum-logos .sponsor-logo {
+        width: 350px;
+        height: 175px;
+      }
+
+      .gold-logos .sponsor-logo {
+        width: 300px;
+        height: 150px;
+      }
+
+      .silver-logos .sponsor-logo {
+        width: 250px;
+        height: 125px;
+      }
+
+      .bronze-logos .sponsor-logo {
+        width: 200px;
+        height: 100px;
+      }
+
+      .co-sponsor-logos .sponsor-logo {
+        width: 150px;
+        height: 75px;
       }
     }
   </style>

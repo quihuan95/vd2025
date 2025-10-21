@@ -291,7 +291,6 @@
                   <th>Email</th>
                   <th>Cơ quan</th>
                   <th>Sự kiện</th>
-                  <th>Trạng thái</th>
                   <th>Ngày đăng ký</th>
                   <th>Thao tác</th>
                 </tr>
@@ -323,11 +322,6 @@
                     </td>
                     <td>
                       <span class="badge bg-info">{{ $registration->event_type_display }}</span>
-                    </td>
-                    <td>
-                      <span class="status-badge status-{{ $registration->status }}">
-                        {{ $registration->status_display }}
-                      </span>
                     </td>
                     <td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
                     <td>
