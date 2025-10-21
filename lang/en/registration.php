@@ -73,6 +73,14 @@ return [
           'both' => 'Both',
         ],
       ],
+      'gala_dinner' => [
+        'label' => 'Would you join the Gala dinner?',
+        'label_en' => 'Would you join the Gala dinner?',
+        'options' => [
+          'yes' => 'Yes',
+          'no' => 'No',
+        ],
+      ],
     ],
 
     'buttons' => [

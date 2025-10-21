@@ -200,6 +200,25 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                       @enderror
                     </div>
+
+                    <!-- Gala Dinner -->
+                    <div class="col-12 mb-3">
+                      <label for="gala_dinner" class="form-label">
+                        {{ __('registration.form.fields.gala_dinner.label') }}
+                        @if (app()->getLocale() === 'vi')
+                          <small class="text-muted">({{ __('registration.form.fields.gala_dinner.label_en') }})</small>
+                        @endif
+                      </label>
+                      <select class="form-select @error('gala_dinner') is-invalid @enderror" id="gala_dinner" name="gala_dinner" required>
+                        <option value="">{{ app()->getLocale() === 'vi' ? 'Chọn lựa chọn tiệc tối' : 'Select gala dinner option' }}</option>
+                        @foreach (__('registration.form.fields.gala_dinner.options') as $key => $value)
+                          <option value="{{ $key === 'yes' ? '1' : '0' }}" {{ old('gala_dinner') == ($key === 'yes' ? '1' : '0') ? 'selected' : '' }}>{{ $value }}</option>
+                        @endforeach
+                      </select>
+                      @error('gala_dinner')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                      @enderror
+                    </div>
                   </div>
 
                   <!-- Form Actions -->

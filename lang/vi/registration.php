@@ -73,6 +73,14 @@ return [
           'both' => 'Cả 2',
         ],
       ],
+      'gala_dinner' => [
+        'label' => 'Quý đại biểu có tham dự tiệc tối không?',
+        'label_en' => 'Would you join the Gala dinner?',
+        'options' => [
+          'yes' => 'Có',
+          'no' => 'Không',
+        ],
+      ],
     ],
 
     'buttons' => [

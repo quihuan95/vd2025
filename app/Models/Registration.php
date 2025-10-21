@@ -14,6 +14,7 @@ class Registration extends Model
         'organization',
         'department',
         'event_type',
+        'gala_dinner',
         'title',
         'email',
         'phone',
@@ -23,6 +24,7 @@ class Registration extends Model
 
     protected $casts = [
         'date_of_birth' => 'date',
+        'gala_dinner' => 'boolean',
     ];
 
     // Accessor for gender display
@@ -67,6 +69,26 @@ class Registration extends Model
         $lang = app()->getLocale();
         
         return $eventType[$lang][$this->event_type] ?? $this->event_type;
+    }
+
+    // Accessor for gala dinner display
+    public function getGalaDinnerDisplayAttribute()
+    {
+        $galaDinnerOptions = [
+            'en' => [
+                'yes' => 'Yes',
+                'no' => 'No'
+            ],
+            'vi' => [
+                'yes' => 'Có',
+                'no' => 'Không'
+            ],
+        ];
+
+        $lang = app()->getLocale();
+        $value = $this->gala_dinner ? 'yes' : 'no';
+        
+        return $galaDinnerOptions[$lang][$value] ?? ($this->gala_dinner ? 'Yes' : 'No');
     }
 
     // Scope for filtering by status

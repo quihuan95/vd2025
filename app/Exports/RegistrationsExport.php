@@ -40,6 +40,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             'Email',
             'Số điện thoại',
             'Sự kiện tham dự',
+            'Tiệc tối / Gala Dinner',
             // 'Trạng thái / Status'
         ];
     }
@@ -59,6 +60,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             $registration->email ?? '',
             $registration->phone ?? '',
             $registration->event_type_display ?? '',
+            $registration->gala_dinner_display ?? '',
             // $registration->status_display ?? '',
         ];
     }
@@ -96,6 +98,7 @@ class RegistrationsExport implements FromCollection, WithHeadings, WithMapping, 
             'I' => 30, // Email
             'J' => 15, // Số điện thoại
             'K' => 50, // Sự kiện tham dự
+            'L' => 20, // Tiệc tối / Gala Dinner
         ];
     }
 }
