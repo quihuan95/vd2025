@@ -32,7 +32,7 @@ class AdminController extends Controller
         $sortOrder = $request->get('sort_order', 'desc');
         $query->orderBy($sortBy, $sortOrder);
 
-        $registrations = $query->paginate(20);
+        $registrations = $query->get();
 
         return view('admin.registrations.index', compact('registrations'));
     }
