@@ -273,7 +273,7 @@
         <div class="main-content">
             <!-- QR Code -->
             <div class="qr-code">
-                <img src="https://vduhsc2025.org/images/Logo%20BV%20-%20No%20Text.png" alt="QR Code" style="width: 150px; height: 150px; border: 2px solid #ddd; display: block; margin: 0 auto;" />
+                <img src="https://vduhsc2025.org/images/{{ $registration->registration_code }}.svg" alt="QR Code" style="width: 150px; height: 150px; border: 2px solid #ddd; display: block; margin: 0 auto;" />
             </div>
             
             <!-- Participant Information -->
