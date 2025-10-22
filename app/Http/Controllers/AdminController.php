@@ -84,7 +84,7 @@ class AdminController extends Controller
     public function sendConfirmation(Registration $registration)
     {
         try {
-            $subject = 'Xác nhận đăng ký tham dự - VDUHSC 2025';
+            $subject = 'Xác nhận đăng ký tham dự - VDUHSC 2025 / Registration Confirmation - VDUHSC 2025';
             $content = '';
 
             // Gửi email xác nhận cho người đăng ký
