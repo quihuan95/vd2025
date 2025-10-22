@@ -10,7 +10,8 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Queue\SerializesModels;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
 
 class AdminMessageMail extends Mailable
 {
@@ -58,11 +59,16 @@ class AdminMessageMail extends Mailable
             return asset('images/' . $this->registration->registration_code . '.png');
         }
 
-        // Tạo QR code dưới dạng PNG
-        $qrCodePng = QrCode::format('png')
-            ->size(300)
-            ->margin(1)
-            ->generate($qrData);
+        // Tạo QR code dưới dạng PNG (không cần imagick)
+        $options = new QROptions([
+            'outputType' => QRCode::OUTPUT_IMAGE_PNG,
+            'eccLevel'   => QRCode::ECC_L,
+            'scale'      => 5,
+            'imageBase64' => false,
+        ]);
+        
+        $qrcode = new QRCode($options);
+        $qrCodePng = $qrcode->render($qrData);
 
         // Lưu vào public/images
         file_put_contents($qrCodePath, $qrCodePng);
