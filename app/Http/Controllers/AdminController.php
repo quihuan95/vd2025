@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Registration;
 use App\Exports\RegistrationsExport;
+use App\Mail\AdminMessageMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
@@ -77,6 +79,22 @@ class AdminController extends Controller
         $filename = 'registrations_' . date('Y-m-d_H-i-s') . '.xlsx';
 
         return Excel::download(new RegistrationsExport($registrations), $filename);
+    }
+
+    public function sendConfirmation(Registration $registration)
+    {
+        try {
+            $subject = 'Xác nhận đăng ký tham dự - VDUHSC 2025';
+            $content = '';
+
+            // Gửi email xác nhận cho người đăng ký
+            Mail::to($registration->email, $registration->full_name)
+                ->send(new AdminMessageMail($registration, $subject, $content));
+
+            return redirect()->back()->with('success', 'Email xác nhận đã được gửi thành công đến ' . $registration->full_name . '!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi gửi email xác nhận: ' . $e->getMessage());
+        }
     }
 
     public function destroy(Registration $registration)

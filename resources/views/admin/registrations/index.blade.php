@@ -193,6 +193,23 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-12" style="max-width: 1400px; margin: 2rem; background-color: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+        <!-- Success/Error Messages -->
+        @if(session('success'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        @endif
+
+        @if(session('error'))
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i>
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        @endif
+
         <!-- Statistics Cards -->
         <div class="row mb-4">
           <div class="col-md-3">
@@ -285,7 +302,7 @@
               <thead>
                 <tr>
                   <th>Mã đăng ký</th>
-                  <th>ID</th>
+                  {{-- <th>ID</th> --}}
                   <th>Họ tên</th>
                   <th>Giới tính</th>
                   <th>Email</th>
@@ -301,7 +318,7 @@
                     <td>
                       <span class="badge bg-primary">{{ $registration->registration_code }}</span>
                     </td>
-                    <td>{{ $registration->id }}</td>
+                    {{-- <td>{{ $registration->id }}</td> --}}
                     <td>
                       <div class="user-info">
                         <strong>{{ $registration->full_name }}</strong>
@@ -329,6 +346,12 @@
                         <a href="{{ route('admin.registrations.show', $registration) }}" class="btn btn-sm btn-outline-primary" title="Xem chi tiết">
                           <i class="fas fa-eye"></i>
                         </a>
+                        {{-- <form method="POST" action="{{ route('admin.registrations.send-confirmation', $registration) }}" style="display: inline;">
+                          @csrf
+                          <button type="submit" class="btn btn-sm btn-outline-success" title="Gửi email xác nhận" onclick="return confirm('Bạn có chắc chắn muốn gửi email xác nhận đến {{ $registration->full_name }}?')">
+                            <i class="fas fa-envelope"></i>
+                          </button>
+                        </form> --}}
                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteRegistration({{ $registration->id }})" title="Xóa">
                           <i class="fas fa-trash"></i>
                         </button>
@@ -384,6 +407,7 @@
       </div>
     </div>
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
