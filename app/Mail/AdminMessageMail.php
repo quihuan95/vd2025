@@ -51,24 +51,24 @@ class AdminMessageMail extends Mailable
         ]);
 
         // Đường dẫn file QR code
-        $qrCodePath = public_path('images/' . $this->registration->registration_code . '.svg');
+        $qrCodePath = public_path('images/' . $this->registration->registration_code . '.png');
         
         // Kiểm tra nếu file đã tồn tại thì sử dụng lại
         if (file_exists($qrCodePath)) {
-            return asset('images/' . $this->registration->registration_code . '.svg');
+            return asset('images/' . $this->registration->registration_code . '.png');
         }
 
-        // Tạo QR code dưới dạng SVG (không cần imagick)
-        $qrCodeSvg = QrCode::format('svg')
+        // Tạo QR code dưới dạng PNG
+        $qrCodePng = QrCode::format('png')
             ->size(300)
             ->margin(1)
             ->generate($qrData);
 
         // Lưu vào public/images
-        file_put_contents($qrCodePath, $qrCodeSvg);
+        file_put_contents($qrCodePath, $qrCodePng);
 
         // Trả về URL của QR code
-        return asset('images/' . $this->registration->registration_code . '.svg');
+        return asset('images/' . $this->registration->registration_code . '.png');
     }
 
 
