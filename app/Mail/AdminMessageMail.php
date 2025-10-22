@@ -40,16 +40,8 @@ class AdminMessageMail extends Mailable
      */
     private function generateQrCode(): string
     {
-        // Tạo nội dung QR code với thông tin registration
-        $qrData = json_encode([
-            'registration_code' => $this->registration->registration_code,
-            'full_name' => $this->registration->full_name,
-            'email' => $this->registration->email,
-            'organization' => $this->registration->organization,
-            'event' => 'VDUHSC 2025',
-            'date' => '2025-11-01',
-            'venue' => 'Lotte Hotel Hanoi'
-        ]);
+        // Tạo nội dung QR code chỉ với registration_code
+        $qrData = $this->registration->registration_code;
 
         // Đường dẫn file QR code
         $qrCodePath = public_path('images/' . $this->registration->registration_code . '.png');
