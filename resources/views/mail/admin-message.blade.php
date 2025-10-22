@@ -117,6 +117,8 @@
         .main-content {
             padding: 40px;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .qr-code {
@@ -193,12 +195,16 @@
             font-style: italic;
             color: #333;
             line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .website-info {
             margin: 30px 0;
             color: #333;
             line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .website-info a {
@@ -210,7 +216,8 @@
         .footer-gradient {
             background: linear-gradient(135deg, #2e7d32 0%, #4caf50 50%, #66bb6a 100%);
             height: 20px;
-            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         /* Responsive */
@@ -263,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            <div class="title-section"></div>
+            <div class="title-section">
                 <h1 class="main-title">THƯ XÁC NHẬN</h1>
                 <p class="sub-title">CONFIRMATION EMAIL</p>
             </div>
@@ -279,12 +286,12 @@
             <!-- Participant Information -->
             <div class="participant-info">
                 <div class="info-row">
-                    <span class="info-label">Họ tên / Full name:</span>
-                    <span class="info-value">{{ $registration->full_name }}</span>
+                    <span class="info-label">Họ tên:</span> {{ $registration->full_name }}<br>
+                    <span class="info-label">Full name:</span> {{ $registration->full_name }}
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Đơn vị công tác / Organization:</span>
-                    <span class="info-value">{{ $registration->organization }}</span>
+                    <span class="info-label">Đơn vị công tác:</span> {{ $registration->organization }}<br>
+                    <span class="info-label">Organization:</span> {{ $registration->organization }}
                 </div>
             </div>
             
@@ -306,29 +313,27 @@
             </div>
             
             <!-- Event Details -->
-            <div class="event-details"></div>
+            <div class="event-details">
                 <div class="detail-row">
-                    <span class="detail-label">Thời gian / Time:</span>
-                    08h00 – 20h00, thứ Bảy, ngày 01 tháng 11 năm 2025<br>
-                    8:00 AM – 8:00 PM, Saturday, November 1st, 2025
+                    <span class="detail-label">Thời gian:</span> 08h00 – 20h00, thứ Bảy, ngày 01 tháng 11 năm 2025<br>
+                    <span class="detail-label">Time:</span> 8:00 AM – 8:00 PM, Saturday, November 1st, 2025
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Địa điểm / Venue:</span>
-                    Tầng 6, Khách sạn Lotte Hà Nội, 54 Liễu Giai, Giảng Võ, Hà Nội<br>
-                    6th Floor, Lotte Hotel Hanoi, 54 Lieu Giai St, Giang Vo Ward, Hanoi
+                    <span class="detail-label">Địa điểm:</span> Tầng 6, Khách sạn Lotte Hà Nội, 54 Liễu Giai, Giảng Võ, Hà Nội<br>
+                    <span class="detail-label">Venue:</span> 6th Floor, Lotte Hotel Hanoi, 54 Lieu Giai St, Giang Vo Ward, Hanoi
                 </div>
             </div>
             
             <!-- Check-in Instructions -->
             <div class="checkin-instructions">
-                Quý khách vui lòng mang theo thư xác nhận tham dự (kèm mã vạch - QR code) để làm thủ tục check-in nhanh tại sự kiện.<br>
-                Please bring your confirmation email (with the QR code) for a quick check-in at the event.
+                <strong>Quý khách vui lòng mang theo thư xác nhận tham dự (kèm mã vạch - QR code) để làm thủ tục check-in nhanh tại sự kiện.</strong><br>
+                <em>Please bring your confirmation email (with the QR code) for a quick check-in at the event.</em>
             </div>
             
             <!-- Website Information -->
             <div class="website-info">
-                Để biết thêm thông tin chi tiết, vui lòng truy cập website <a href="https://vduhsc2025.org/vi">https://vduhsc2025.org/vi</a><br>
-                For more information, please visit us at <a href="https://vduhsc2025.org/en">https://vduhsc2025.org/en</a>
+                Để biết thêm thông tin chi tiết, vui lòng truy cập website (<a href="https://vduhsc2025.org/vi">https://vduhsc2025.org/vi</a>)<br>
+                For more information, please visit us at (<a href="https://vduhsc2025.org/en">https://vduhsc2025.org/en</a>)
             </div>
             
             <!-- Custom Message -->
