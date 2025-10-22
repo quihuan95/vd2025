@@ -186,6 +186,69 @@
         font-size: 0.875rem;
       }
     }
+
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 1rem 0;
+    }
+
+    .pagination .page-link {
+      color: #495057;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .pagination .page-link:hover {
+      color: #fff;
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+
+    .pagination .page-item.active .page-link {
+      color: #fff;
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+
+    .pagination .page-item.disabled .page-link {
+      color: #6c757d;
+      background-color: #fff;
+      border-color: #dee2e6;
+      cursor: not-allowed;
+    }
+
+    .pagination .page-item.disabled .page-link:hover {
+      color: #6c757d;
+      background-color: #fff;
+      border-color: #dee2e6;
+    }
+
+    .pagination .page-item:first-child .page-link {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    .pagination .page-item:last-child .page-link {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    /* Pagination Info */
+    .pagination-info {
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 
@@ -346,12 +409,12 @@
                         <a href="{{ route('admin.registrations.show', $registration) }}" class="btn btn-sm btn-outline-primary" title="Xem chi tiết">
                           <i class="fas fa-eye"></i>
                         </a>
-                        {{-- <form method="POST" action="{{ route('admin.registrations.send-confirmation', $registration) }}" style="display: inline;">
+                        <form method="POST" action="{{ route('admin.registrations.send-confirmation', $registration) }}" style="display: inline;">
                           @csrf
                           <button type="submit" class="btn btn-sm btn-outline-success" title="Gửi email xác nhận" onclick="return confirm('Bạn có chắc chắn muốn gửi email xác nhận đến {{ $registration->full_name }}?')">
                             <i class="fas fa-envelope"></i>
                           </button>
-                        </form> --}}
+                        </form>
                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteRegistration({{ $registration->id }})" title="Xóa">
                           <i class="fas fa-trash"></i>
                         </button>
@@ -376,7 +439,12 @@
           <!-- Pagination -->
           @if ($registrations->hasPages())
             <div class="d-flex justify-content-center mt-4">
-              {{ $registrations->appends(request()->query())->links() }}
+              <div class="pagination-wrapper">
+                {{ $registrations->appends(request()->query())->links() }}
+                <div class="pagination-info">
+                  Hiển thị {{ $registrations->firstItem() ?? 0 }} - {{ $registrations->lastItem() ?? 0 }} trong tổng số {{ $registrations->total() }} kết quả
+                </div>
+              </div>
             </div>
           @endif
         </div>

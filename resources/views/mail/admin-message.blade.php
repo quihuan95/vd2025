@@ -254,7 +254,7 @@
             <div class="logo-section">
                 <div class="logo-container">
                     <div class="logo-circle">
-                        <img src="{{ $logoCid }}" alt="Logo Bệnh viện Hữu nghị Việt Đức" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src='https://vduhsc2025.org/images/Logo%20BV%20-%20No%20Text.png' alt="Logo Bệnh viện Hữu nghị Việt Đức" style="width: 50px; height: 50px; object-fit: contain;">
                     </div>
                     <div class="logo-text">
                         <p class="hospital-name">BỆNH VIỆN HỮU NGHỊ</p>
@@ -273,7 +273,7 @@
         <div class="main-content">
             <!-- QR Code -->
             <div class="qr-code">
-                <img src="{{ $qrCodeCid }}" alt="QR Code" style="width: 150px; height: 150px; border: 2px solid #ddd; display: block; margin: 0 auto;" />
+                <img src="{{ $qrCodeUrl }}" alt="QR Code" style="width: 150px; height: 150px; border: 2px solid #ddd; display: block; margin: 0 auto;" />
             </div>
             
             <!-- Participant Information -->
