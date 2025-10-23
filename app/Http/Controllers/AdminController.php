@@ -86,16 +86,16 @@ class AdminController extends Controller
     public function sendConfirmation(Registration $registration)
     {
         try {
-            Log::info('Starting individual email send for registration: ' . $registration->registration_code);
+            Log::info('📧 Starting individual email send for registration: ' . $registration->registration_code . ' to: ' . $registration->email);
             
             // Gửi email xác nhận cho người đăng ký
             Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
             
-            Log::info('Individual email sent successfully to: ' . $registration->email);
+            Log::info('✅ Individual email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
 
             return redirect()->back()->with('success', 'Email xác nhận đã được gửi thành công đến ' . $registration->full_name . '!');
         } catch (\Exception $e) {
-            Log::error('Failed to send individual confirmation email to ' . $registration->email . ': ' . $e->getMessage());
+            Log::error('❌ Failed to send individual confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ') - Error: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Có lỗi xảy ra khi gửi email xác nhận: ' . $e->getMessage());
         }
     }
@@ -127,8 +127,12 @@ class AdminController extends Controller
 
         foreach ($registrations as $registration) {
             try {
+                Log::info('📧 Sending bulk confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
+                
                 // Gửi email xác nhận đăng ký
                 Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+                
+                Log::info('✅ Bulk confirmation email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
                 $successCount++;
                 
                 // Thêm delay nhỏ để user có thể thấy loading (chỉ khi có nhiều email)
@@ -138,9 +142,12 @@ class AdminController extends Controller
             } catch (\Exception $e) {
                 $errorCount++;
                 $errors[] = $registration->full_name . ': ' . $e->getMessage();
-                Log::error('Failed to send bulk confirmation email to ' . $registration->email . ': ' . $e->getMessage());
+                Log::error('❌ Failed to send bulk confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ') - Error: ' . $e->getMessage());
             }
         }
+
+        // Log tổng kết bulk email
+        Log::info('📊 Bulk email sending completed - Success: ' . $successCount . ', Failed: ' . $errorCount . ', Total: ' . count($registrations));
 
         $message = "Đã gửi email xác nhận thành công cho {$successCount} đăng ký.";
         if ($errorCount > 0) {

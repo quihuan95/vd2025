@@ -62,10 +62,12 @@ class RegistrationController extends Controller
 
             // Gửi mail xác nhận đăng ký
             try {
+                Log::info('Sending registration confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
                 Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+                Log::info('✅ Registration confirmation email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
             } catch (\Exception $mailException) {
                 // Log lỗi gửi mail nhưng không làm gián đoạn quá trình đăng ký
-                Log::error('Failed to send registration confirmation email: ' . $mailException->getMessage());
+                Log::error('❌ Failed to send registration confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ') - Error: ' . $mailException->getMessage());
             }
 
             // Redirect to success page with registration code
