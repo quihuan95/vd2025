@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Queue\SerializesModels;
 use chillerlan\QRCode\QRCode;
 use chillerlan\QRCode\QROptions;
@@ -108,6 +109,10 @@ class RegistrationConfirmationMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            Attachment::fromUrl('https://vduhsc2025.org/images/Th%C6%B0%20m%E1%BB%9Di%20Gala%20dinner%2001.11.2025.pdf')
+                ->as('Thư mời Gala dinner 01.11.2025.pdf')
+                ->withMime('application/pdf'),
+        ];
     }
 }
