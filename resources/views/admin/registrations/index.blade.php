@@ -203,6 +203,45 @@
       padding: 1rem 2rem;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
+    /* Loading Overlay Styles */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .loading-content .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    /* Disable interactions during loading */
+    .loading-overlay.active {
+      pointer-events: all;
+    }
+
+    .loading-overlay.active ~ * {
+      pointer-events: none;
+      opacity: 0.6;
+    }
   </style>
 </head>
 
@@ -312,12 +351,52 @@
           </form>
         </div>
 
+        <!-- Bulk Actions -->
+        <div class="bulk-actions mb-3" style="display: none;">
+          <div class="d-flex align-items-center gap-3">
+            <span class="text-muted" id="selectedCount">0 đăng ký được chọn</span>
+            <div class="dropdown">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="bulkActionsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Thao tác hàng loạt
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="bulkActionsDropdown">
+                <li>
+                  <form id="bulkSendEmailForm" method="POST" action="{{ route('admin.registrations.bulk-send-confirmation') }}" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="dropdown-item" id="bulkSendEmailBtn" onclick="return confirmBulkAction('gửi email xác nhận')">
+                      <i class="fas fa-envelope me-2"></i>Gửi email xác nhận
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-outline-secondary" onclick="clearSelection()">
+              <i class="fas fa-times me-1"></i>Bỏ chọn
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+          <div class="loading-content">
+            <div class="spinner-border text-primary mb-3" role="status">
+              <span class="visually-hidden">Đang tải...</span>
+            </div>
+            <h5 class="text-primary mb-2">Đang gửi email...</h5>
+            <p class="text-muted mb-0">Vui lòng chờ trong giây lát, chúng tôi đang xử lý yêu cầu của bạn.</p>
+          </div>
+        </div>
+
         <!-- Registrations Table -->
         <div class="admin-table-container">
-          <div class="table-responsive">
+          <form id="bulkForm">
+            <div class="table-responsive">
             <table class="table table-hover admin-table">
               <thead>
                 <tr>
+                  <th>
+                    <input type="checkbox" id="selectAll" class="form-check-input">
+                  </th>
                   <th>Mã đăng ký</th>
                   {{-- <th>ID</th> --}}
                   <th>Họ tên</th>
@@ -332,6 +411,9 @@
               <tbody>
                 @forelse($registrations as $registration)
                   <tr>
+                    <td>
+                      <input type="checkbox" name="selected_registrations[]" value="{{ $registration->id }}" class="form-check-input registration-checkbox">
+                    </td>
                     <td>
                       <span class="badge bg-primary">{{ $registration->registration_code }}</span>
                     </td>
@@ -388,7 +470,8 @@
                 @endforelse
               </tbody>
             </table>
-          </div>
+            </div>
+          </form>
 
           <!-- Results Info -->
           <div class="d-flex justify-content-center mt-4">
@@ -434,6 +517,111 @@
       document.getElementById('deleteForm').action = `/admin/registrations/${id}`;
       new bootstrap.Modal(document.getElementById('deleteModal')).show();
     }
+
+    // Bulk selection functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const selectAllCheckbox = document.getElementById('selectAll');
+      const registrationCheckboxes = document.querySelectorAll('.registration-checkbox');
+      const bulkActions = document.querySelector('.bulk-actions');
+      const selectedCount = document.getElementById('selectedCount');
+      const bulkSendEmailForm = document.getElementById('bulkSendEmailForm');
+
+      // Select all functionality
+      selectAllCheckbox.addEventListener('change', function() {
+        registrationCheckboxes.forEach(checkbox => {
+          checkbox.checked = this.checked;
+        });
+        updateBulkActions();
+      });
+
+      // Individual checkbox functionality
+      registrationCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          updateSelectAllState();
+          updateBulkActions();
+        });
+      });
+
+      function updateSelectAllState() {
+        const checkedBoxes = document.querySelectorAll('.registration-checkbox:checked');
+        selectAllCheckbox.checked = checkedBoxes.length === registrationCheckboxes.length;
+        selectAllCheckbox.indeterminate = checkedBoxes.length > 0 && checkedBoxes.length < registrationCheckboxes.length;
+      }
+
+      function updateBulkActions() {
+        const checkedBoxes = document.querySelectorAll('.registration-checkbox:checked');
+        const count = checkedBoxes.length;
+        
+        if (count > 0) {
+          bulkActions.style.display = 'block';
+          selectedCount.textContent = `${count} đăng ký được chọn`;
+        } else {
+          bulkActions.style.display = 'none';
+        }
+      }
+
+      // Bulk form submission
+      bulkSendEmailForm.addEventListener('submit', function(e) {
+        const checkedBoxes = document.querySelectorAll('.registration-checkbox:checked');
+        if (checkedBoxes.length === 0) {
+          e.preventDefault();
+          alert('Vui lòng chọn ít nhất một đăng ký để gửi email.');
+          return;
+        }
+
+        // Show loading overlay
+        showLoadingOverlay();
+
+        // Add selected IDs to form
+        checkedBoxes.forEach(checkbox => {
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = 'selected_registrations[]';
+          hiddenInput.value = checkbox.value;
+          this.appendChild(hiddenInput);
+        });
+      });
+    });
+
+    function confirmBulkAction(action) {
+      const checkedBoxes = document.querySelectorAll('.registration-checkbox:checked');
+      return confirm(`Bạn có chắc chắn muốn ${action} cho ${checkedBoxes.length} đăng ký đã chọn?`);
+    }
+
+    function clearSelection() {
+      document.querySelectorAll('.registration-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      document.getElementById('selectAll').checked = false;
+      document.querySelector('.bulk-actions').style.display = 'none';
+    }
+
+    function showLoadingOverlay() {
+      const overlay = document.getElementById('loadingOverlay');
+      overlay.style.display = 'flex';
+      overlay.classList.add('active');
+      
+      // Disable form interactions
+      document.querySelectorAll('form, button, input, select').forEach(element => {
+        element.disabled = true;
+      });
+    }
+
+    function hideLoadingOverlay() {
+      const overlay = document.getElementById('loadingOverlay');
+      overlay.style.display = 'none';
+      overlay.classList.remove('active');
+      
+      // Re-enable form interactions
+      document.querySelectorAll('form, button, input, select').forEach(element => {
+        element.disabled = false;
+      });
+    }
+
+    // Hide loading overlay when page loads (in case of redirect back)
+    document.addEventListener('DOMContentLoaded', function() {
+      hideLoadingOverlay();
+    });
   </script>
 </body>
 

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registration;
+use App\Mail\RegistrationConfirmationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class RegistrationController extends Controller
 {
@@ -57,12 +60,20 @@ class RegistrationController extends Controller
             
             $registration = Registration::create($registrationData);
 
+            // Gửi mail xác nhận đăng ký
+            try {
+                Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+            } catch (\Exception $mailException) {
+                // Log lỗi gửi mail nhưng không làm gián đoạn quá trình đăng ký
+                Log::error('Failed to send registration confirmation email: ' . $mailException->getMessage());
+            }
+
             // Redirect to success page with registration code
             return redirect()->route('registration.success', ['locale' => app()->getLocale()])
                 ->with('registration_code', $registrationCode)
                 ->with('success', app()->getLocale() === 'vi'
-                    ? 'Đăng ký thành công! Cảm ơn bạn đã đăng ký tham gia VDUHSC 2025.'
-                    : 'Registration successful! Thank you for registering for VDUHSC 2025.');
+                    ? 'Đăng ký thành công! Cảm ơn bạn đã đăng ký tham gia VDUHSC 2025. Email xác nhận đã được gửi đến bạn.'
+                    : 'Registration successful! Thank you for registering for VDUHSC 2025. A confirmation email has been sent to you.');
         } catch (\Exception $e) {
             // dd($e);
             return response()->json([

@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use App\Exports\RegistrationsExport;
 use App\Mail\AdminMessageMail;
+use App\Mail\RegistrationConfirmationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
@@ -95,6 +97,53 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Có lỗi xảy ra khi gửi email xác nhận: ' . $e->getMessage());
         }
+    }
+
+    public function bulkSendConfirmation(Request $request)
+    {
+        $request->validate([
+            'selected_registrations' => 'required|array|min:1',
+            'selected_registrations.*' => 'exists:registrations,id',
+        ]);
+
+        $selectedIds = $request->selected_registrations;
+        $registrations = Registration::whereIn('id', $selectedIds)->get();
+
+        if ($registrations->isEmpty()) {
+            return redirect()->back()->with('error', 'Không tìm thấy đăng ký nào để gửi email.');
+        }
+
+        $successCount = 0;
+        $errorCount = 0;
+        $errors = [];
+
+        foreach ($registrations as $registration) {
+            try {
+                // Gửi email xác nhận đăng ký
+                Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+                $successCount++;
+                
+                // Thêm delay nhỏ để user có thể thấy loading (chỉ khi có nhiều email)
+                if (count($registrations) > 1) {
+                    usleep(500000); // 0.5 giây delay
+                }
+            } catch (\Exception $e) {
+                $errorCount++;
+                $errors[] = $registration->full_name . ': ' . $e->getMessage();
+                Log::error('Failed to send bulk confirmation email to ' . $registration->email . ': ' . $e->getMessage());
+            }
+        }
+
+        $message = "Đã gửi email xác nhận thành công cho {$successCount} đăng ký.";
+        if ($errorCount > 0) {
+            $message .= " Có {$errorCount} email gửi thất bại.";
+            if (count($errors) <= 5) {
+                $message .= " Chi tiết: " . implode(', ', $errors);
+            }
+        }
+
+        $messageType = $errorCount > 0 ? 'warning' : 'success';
+        return redirect()->back()->with($messageType, $message);
     }
 
     public function destroy(Registration $registration)

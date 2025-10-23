@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', serif;
             background-color: #f5f5f5;
         }
         
@@ -20,8 +20,20 @@
         }
         
         /* Header với gradient xanh lá */
-        .header-gradient {
+        .header-gradient-1 {
             background: linear-gradient(135deg, #2e7d32 0%, #4caf50 50%, #66bb6a 100%);
+            height: 20px;
+            width: 100%;
+        }
+        
+        .header-gradient-2 {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #8bc34a 100%);
+            height: 20px;
+            width: 100%;
+        }
+        
+        .header-gradient-3 {
+            background: linear-gradient(135deg, #66bb6a 0%, #8bc34a 50%, #a5d6a7 100%);
             height: 20px;
             width: 100%;
         }
@@ -48,18 +60,17 @@
         }
         
         .logo-container {
-            display: flex;
-            align-items: center;
+            display: table;
+            width: 100%;
         }
         
         .logo-circle {
-            width: 60px;
-            height: 60px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
             margin-right: 15px;
             padding: 5px;
             box-sizing: border-box;
@@ -73,32 +84,38 @@
         }
         
         .logo-text {
+            display: table-cell;
+            vertical-align: middle;
             line-height: 1.2;
+            padding-left: 15px;
         }
         
         .logo-text .hospital-name {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
-            color: #333;
+            color: #2e7d32;
+            font-style: italic;
             margin: 0;
         }
         
         .logo-text .viet-duc {
             font-size: 18px;
             font-weight: bold;
-            color: #d32f2f;
+            color: #2e7d32;
             margin: 0;
         }
         
         .logo-text .university {
             font-size: 12px;
-            color: #333;
+            color: #2e7d32;
+            font-weight: bold;
+            font-style: italic;
             margin: 0;
         }
         
         .main-title {
             font-family: 'Times New Roman', serif;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             color: #333;
             margin: 0;
@@ -107,7 +124,8 @@
         
         .sub-title {
             font-family: 'Times New Roman', serif;
-            font-size: 16px;
+            font-size: 24px;
+            font-weight: bold;
             font-style: italic;
             color: #333;
             margin: 5px 0 0 0;
@@ -138,10 +156,6 @@
             line-height: 1.8;
         }
         
-        .info-row {
-            margin: 8px 0;
-        }
-        
         .info-label {
             font-weight: bold;
             color: #333;
@@ -153,24 +167,33 @@
         }
         
         .thank-you {
-            margin: 40px 0;
+            margin: 4px 0;
             font-size: 16px;
             color: #333;
         }
         
         .conference-title {
             font-family: 'Times New Roman', serif;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #333;
-            margin: 20px 0;
+            margin: 10px 0;
             line-height: 1.3;
         }
+
+        .thank-you-en {
+            margin: 4px 0;
+            font-size: 16px;
+            font-style: italic;
+            color: #333;
+        }
+
         
         .conference-title-en {
             font-family: 'Times New Roman', serif;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            font-style: italic;
             color: #333;
             margin: 10px 0;
             line-height: 1.3;
@@ -192,6 +215,7 @@
         
         .checkin-instructions {
             margin: 30px 0;
+            margin-top: 80px;
             font-style: italic;
             color: #333;
             line-height: 1.6;
@@ -213,8 +237,22 @@
         }
         
         /* Footer với gradient xanh lá */
-        .footer-gradient {
+        .footer-gradient-1 {
             background: linear-gradient(135deg, #2e7d32 0%, #4caf50 50%, #66bb6a 100%);
+            height: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-gradient-2 {
+            background: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #8bc34a 100%);
+            height: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-gradient-3 {
+            background: linear-gradient(135deg, #66bb6a 0%, #8bc34a 50%, #a5d6a7 100%);
             height: 20px;
             max-width: 800px;
             margin: 0 auto;
@@ -237,6 +275,22 @@
                 text-align: center;
             }
             
+            .logo-container {
+                display: block;
+            }
+            
+            .logo-circle,
+            .logo-text {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .logo-text {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+            
             .title-section {
                 margin-top: 20px;
             }
@@ -254,14 +308,16 @@
 <body>
     <div class="email-wrapper">
         <!-- Header Gradient -->
-        <div class="header-gradient"></div>
+        <div class="header-gradient-1"></div>
+        <div class="header-gradient-2"></div>
+        <div class="header-gradient-3"></div>
         
         <!-- Header Content -->
         <div class="header-content">
             <div class="logo-section">
-                <div class="logo-container">
+                <div class="logo-container" style="display: table; width: 100%;">
                     <div class="logo-circle">
-                        <img src='https://vduhsc2025.org/images/Logo%20BV%20-%20No%20Text.png' alt="Logo Bệnh viện Hữu nghị Việt Đức" style="width: 50px; height: 50px; object-fit: contain;">
+                        <img src='https://vduhsc2025.org/images/Logo%20BV%20-%20No%20Text.png' alt="Logo Bệnh viện Hữu nghị Việt Đức" style="width: 100px; height: 100px; object-fit: contain;">
                     </div>
                     <div class="logo-text">
                         <p class="hospital-name">BỆNH VIỆN HỮU NGHỊ</p>
@@ -286,12 +342,16 @@
             <!-- Participant Information -->
             <div class="participant-info">
                 <div class="info-row">
-                    <span class="info-label">Họ tên:</span> {{ $registration->full_name }}<br>
-                    <span class="info-label">Full name:</span> {{ $registration->full_name }}
+                    <span class="info-label">Họ tên:</span> <b style="color: #1976d2">{{ $registration->full_name }}</b><br>
+                    <span class="info-label" style="font-style: italic;">Full name:</span> <b style="color: #1976d2">{{ $registration->full_name }}</b>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Đơn vị công tác:</span> {{ $registration->organization }}<br>
-                    <span class="info-label">Organization:</span> {{ $registration->organization }}
+                    <span class="info-label">Ngày tháng năm sinh:</span> <b style="color: #1976d2">{{ date('d/m/Y', strtotime($registration->date_of_birth)) }}</b><br>
+                    <span class="info-label" style="font-style: italic;">Date of birth:</span> <b style="color: #1976d2">{{ date('d/m/Y', strtotime($registration->date_of_birth)) }}</b>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Đơn vị công tác:</span> <b style="color: #1976d2">{{ $registration->organization }}</b><br>
+                    <span class="info-label" style="font-style: italic;">Organization:</span> <b style="color: #1976d2">{{ $registration->organization }}</b>
                 </div>
             </div>
             
@@ -302,12 +362,14 @@
             
             <!-- Conference Title -->
             <div class="conference-title">
-                HỘI NGHỊ KHOA HỌC QUỐC TẾ<br>
+                HỘI NGHỊ KHOA HỌC QUỐC TẾ
                 BỆNH VIỆN HỮU NGHỊ VIỆT ĐỨC NĂM 2025
             </div>
             
+            <div class="thank-you-en">
+                Thank you for joining us at the
+            </div>
             <div class="conference-title-en">
-                Thank you for joining us at the<br>
                 VIET DUC UNIVERSITY HOSPITAL<br>
                 INTERNATIONAL SCIENTIFIC CONFERENCE 2025
             </div>
@@ -316,46 +378,31 @@
             <div class="event-details">
                 <div class="detail-row">
                     <span class="detail-label">Thời gian:</span> 08h00 – 20h00, thứ Bảy, ngày 01 tháng 11 năm 2025<br>
-                    <span class="detail-label">Time:</span> 8:00 AM – 8:00 PM, Saturday, November 1st, 2025
+                    <span class="detail-label">Địa điểm:</span> Tầng 6, Khách sạn Lotte Hà Nội, 54 Liễu Giai, Giảng Võ, Hà Nội<br>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Địa điểm:</span> Tầng 6, Khách sạn Lotte Hà Nội, 54 Liễu Giai, Giảng Võ, Hà Nội<br>
-                    <span class="detail-label">Venue:</span> 6th Floor, Lotte Hotel Hanoi, 54 Lieu Giai St, Giang Vo Ward, Hanoi
+                    <span class="detail-label" style="font-style: italic;">Time:</span> 8:00 AM – 8:00 PM, Saturday, November 1st, 2025<br>
+                    <span class="detail-label" style="font-style: italic;">Venue:</span> 6th Floor, Lotte Hotel Hanoi, 54 Lieu Giai St, Giang Vo Ward, Hanoi
                 </div>
             </div>
             
             <!-- Check-in Instructions -->
             <div class="checkin-instructions">
-                <strong>Quý khách vui lòng mang theo thư xác nhận tham dự (kèm mã vạch - QR code) để làm thủ tục check-in nhanh tại sự kiện.</strong><br>
-                <em>Please bring your confirmation email (with the QR code) for a quick check-in at the event.</em>
+                <strong>Quý khách vui lòng mang theo thư xác nhận tham dự (kèm mã vạch - QR code) để làm thủ tục <br> check-in nhanh tại sự kiện.<br>
+                <em>Please bring your confirmation email (with the QR code) for a quick check-in at the event.</em></strong>
             </div>
             
             <!-- Website Information -->
-            <div class="website-info">
+            <div class="website-info" style="font-style: italic;">
                 Để biết thêm thông tin chi tiết, vui lòng truy cập website (<a href="https://vduhsc2025.org/vi">https://vduhsc2025.org/vi</a>)<br>
                 For more information, please visit us at (<a href="https://vduhsc2025.org/en">https://vduhsc2025.org/en</a>)
             </div>
-            
-            <!-- Custom Message -->
-            @if($content)
-            <div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-left: 4px solid #2e7d32; border-radius: 4px;">
-                <p style="margin: 0; white-space: pre-line; color: #333;">{{ $content }}</p>
-            </div>
-            @endif
-            
-            <!-- CC Information -->
-            @if(!empty($ccEmails))
-            <div style="margin-top: 20px; padding: 15px; background-color: #e8f5e8; border-left: 4px solid #4caf50; border-radius: 4px;">
-                <p style="margin: 0; color: #2e7d32; font-size: 14px;">
-                    <strong>Email này cũng được gửi đến:</strong><br>
-                    {{ implode(', ', $ccEmails) }}
-                </p>
-            </div>
-            @endif
         </div>
         
         <!-- Footer Gradient -->
-        <div class="footer-gradient"></div>
+        <div class="footer-gradient-1"></div>
+        <div class="footer-gradient-2"></div>
+        <div class="footer-gradient-3"></div>
     </div>
 </body>
 </html>
