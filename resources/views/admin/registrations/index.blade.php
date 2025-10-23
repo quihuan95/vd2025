@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Quản lý đăng ký - VDUHSC 2025</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -204,44 +205,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Loading Overlay Styles */
-    .loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .loading-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      max-width: 400px;
-      width: 90%;
-    }
-
-    .loading-content .spinner-border {
-      width: 3rem;
-      height: 3rem;
-    }
-
-    /* Disable interactions during loading */
-    .loading-overlay.active {
-      pointer-events: all;
-    }
-
-    .loading-overlay.active ~ * {
-      pointer-events: none;
-      opacity: 0.6;
-    }
+    /* Loading Overlay CSS removed to avoid form submission conflicts */
   </style>
 </head>
 
@@ -376,16 +340,7 @@
           </div>
         </div>
 
-        <!-- Loading Overlay -->
-        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
-          <div class="loading-content">
-            <div class="spinner-border text-primary mb-3" role="status">
-              <span class="visually-hidden">Đang tải...</span>
-            </div>
-            <h5 class="text-primary mb-2">Đang gửi email...</h5>
-            <p class="text-muted mb-0">Vui lòng chờ trong giây lát, chúng tôi đang xử lý yêu cầu của bạn.</p>
-          </div>
-        </div>
+        <!-- Loading Overlay removed to avoid form submission conflicts -->
 
         <!-- Registrations Table -->
         <div class="admin-table-container">
@@ -441,16 +396,13 @@
                     </td>
                     <td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
                     <td>
-                      <div class="btn-group" role="group">
+                      <div class="d-flex gap-1">
                         <a href="{{ route('admin.registrations.show', $registration) }}" class="btn btn-sm btn-outline-primary" title="Xem chi tiết">
                           <i class="fas fa-eye"></i>
                         </a>
-                        <form method="POST" action="{{ route('admin.registrations.send-confirmation', $registration) }}" style="display: inline;">
-                          @csrf
-                          <button type="submit" class="btn btn-sm btn-outline-success" title="Gửi email xác nhận" onclick="return confirm('Bạn có chắc chắn muốn gửi email xác nhận đến {{ $registration->full_name }}?')">
-                            <i class="fas fa-envelope"></i>
-                          </button>
-                        </form>
+                        <a href="#" class="btn btn-sm btn-outline-success" title="Gửi email xác nhận" onclick="sendIndividualEmail({{ $registration->id }}, '{{ $registration->full_name }}'); return false;">
+                          <i class="fas fa-envelope"></i>
+                        </a>
                         <button type="button" class="btn btn-sm btn-outline-danger" onclick="deleteRegistration({{ $registration->id }})" title="Xóa">
                           <i class="fas fa-trash"></i>
                         </button>
@@ -472,8 +424,9 @@
             </table>
             </div>
           </form>
+        </div>
 
-          <!-- Results Info -->
+        <!-- Results Info -->
           <div class="d-flex justify-content-center mt-4">
             <div class="pagination-wrapper">
               <div class="pagination-info">
@@ -517,6 +470,37 @@
       document.getElementById('deleteForm').action = `/admin/registrations/${id}`;
       new bootstrap.Modal(document.getElementById('deleteModal')).show();
     }
+
+    function sendIndividualEmail(registrationId, fullName) {
+      if (confirm(`Bạn có chắc chắn muốn gửi email xác nhận đến ${fullName}?`)) {
+        console.log('Sending individual email for registration ID:', registrationId);
+        
+        // Create a form dynamically
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = `/admin/registrations/${registrationId}/send-confirmation`;
+        
+        // Add CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const csrfInput = document.createElement('input');
+        csrfInput.type = 'hidden';
+        csrfInput.name = '_token';
+        csrfInput.value = csrfToken;
+        form.appendChild(csrfInput);
+        
+        // Submit form
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+      }
+    }
+
+    // Debug all form submissions
+    document.addEventListener('submit', function(e) {
+      console.log('Form submitted to:', e.target.action);
+      console.log('Form method:', e.target.method);
+      console.log('Form element:', e.target);
+    });
 
     // Bulk selection functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -569,8 +553,18 @@
           return;
         }
 
-        // Show loading overlay
-        showLoadingOverlay();
+        // Refresh CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const csrfInput = this.querySelector('input[name="_token"]');
+        if (csrfInput) {
+          csrfInput.value = csrfToken;
+        }
+
+        // Loading removed to avoid form submission conflicts
+
+        // Clear any existing selected_registrations inputs first
+        const existingInputs = this.querySelectorAll('input[name="selected_registrations[]"]');
+        existingInputs.forEach(input => input.remove());
 
         // Add selected IDs to form
         checkedBoxes.forEach(checkbox => {
@@ -580,6 +574,9 @@
           hiddenInput.value = checkbox.value;
           this.appendChild(hiddenInput);
         });
+
+        console.log('Bulk form submitted with', checkedBoxes.length, 'registrations');
+        console.log('CSRF token:', csrfToken);
       });
     });
 
@@ -596,32 +593,7 @@
       document.querySelector('.bulk-actions').style.display = 'none';
     }
 
-    function showLoadingOverlay() {
-      const overlay = document.getElementById('loadingOverlay');
-      overlay.style.display = 'flex';
-      overlay.classList.add('active');
-      
-      // Disable form interactions
-      document.querySelectorAll('form, button, input, select').forEach(element => {
-        element.disabled = true;
-      });
-    }
-
-    function hideLoadingOverlay() {
-      const overlay = document.getElementById('loadingOverlay');
-      overlay.style.display = 'none';
-      overlay.classList.remove('active');
-      
-      // Re-enable form interactions
-      document.querySelectorAll('form, button, input, select').forEach(element => {
-        element.disabled = false;
-      });
-    }
-
-    // Hide loading overlay when page loads (in case of redirect back)
-    document.addEventListener('DOMContentLoaded', function() {
-      hideLoadingOverlay();
-    });
+    // Loading overlay functions removed to avoid form submission conflicts
   </script>
 </body>
 

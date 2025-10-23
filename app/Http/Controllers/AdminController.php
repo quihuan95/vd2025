@@ -86,21 +86,29 @@ class AdminController extends Controller
     public function sendConfirmation(Registration $registration)
     {
         try {
-            $subject = 'Xác nhận đăng ký tham dự - VDUHSC 2025 / Registration Confirmation - VDUHSC 2025';
-            $content = '';
-
+            Log::info('Starting individual email send for registration: ' . $registration->registration_code);
+            
             // Gửi email xác nhận cho người đăng ký
-            Mail::to($registration->email, $registration->full_name)
-                ->send(new AdminMessageMail($registration, $subject, $content));
+            Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+            
+            Log::info('Individual email sent successfully to: ' . $registration->email);
 
             return redirect()->back()->with('success', 'Email xác nhận đã được gửi thành công đến ' . $registration->full_name . '!');
         } catch (\Exception $e) {
+            Log::error('Failed to send individual confirmation email to ' . $registration->email . ': ' . $e->getMessage());
             return redirect()->back()->with('error', 'Có lỗi xảy ra khi gửi email xác nhận: ' . $e->getMessage());
         }
     }
 
     public function bulkSendConfirmation(Request $request)
     {
+        Log::info('Bulk send confirmation request received', [
+            'user_id' => auth()->id(),
+            'selected_count' => count($request->input('selected_registrations', [])),
+            'csrf_token' => $request->input('_token'),
+            'session_token' => session()->token()
+        ]);
+
         $request->validate([
             'selected_registrations' => 'required|array|min:1',
             'selected_registrations.*' => 'exists:registrations,id',
