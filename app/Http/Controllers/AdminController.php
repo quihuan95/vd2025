@@ -91,6 +91,7 @@ class AdminController extends Controller
             // Gửi email xác nhận cho người đăng ký
             Mail::to($registration->email)
                 ->cc('eventvietduc@vduh.org')
+                ->bcc('minhphamquang028@gmail.com')
                 ->send(new RegistrationConfirmationMail($registration));
             
             Log::info('✅ Individual email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
@@ -134,6 +135,7 @@ class AdminController extends Controller
                 // Gửi email xác nhận đăng ký
                 Mail::to($registration->email)
                     ->cc('eventvietduc@vduh.org')
+                    ->bcc('minhphamquang028@gmail.com')
                     ->send(new RegistrationConfirmationMail($registration));
                 
                 Log::info('✅ Bulk confirmation email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
