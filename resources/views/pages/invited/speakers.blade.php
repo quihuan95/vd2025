@@ -32,7 +32,7 @@
                     <div class="speaker-card">
                       <div class="speaker-image">
                         @if($speaker['image'])
-                          <img src="{{ asset('images/speakers/' . $speaker['image']) }}" 
+                          <img src="{{ Storage::url('images/speakers/' . $speaker['image']) }}" 
                                alt="{{ $speaker['name_vi'] }}" 
                                class="img-fluid">
                         @else
