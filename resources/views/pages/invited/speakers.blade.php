@@ -23,27 +23,37 @@
       <section id="fMatter" class="col-12">
         <div id="f-messages"></div>
 
-        <!-- Coming Soon Content -->
-        <div class='fModule f-speakers-coming-soon f-module f-module-pages-custom'>
-          <div class="f-module-content fModuleContent">
-            <div class="coming-soon-container text-center">
-
-              <h2 class="coming-soon-title mb-3">
-                @if (app()->getLocale() === 'vi')
-                  Diễn giả mời - Sắp ra mắt
-                @else
-                  Invited Speakers - Coming Soon
-                @endif
-              </h2>
-              <div class="coming-soon-alert alert alert-info">
-                <i class="fas fa-info-circle me-2"></i>
-                <strong>
-                  @if (app()->getLocale() === 'vi')
-                    Thông tin diễn giả sẽ được cập nhật liên tục. Vui lòng quay lại sau!
-                  @else
-                    Speaker information will be updated continuously. Please check back soon!
-                  @endif
-                </strong>
+        <!-- Speakers List -->
+        <div class='fModule f-speakers-list f-module f-module-pages-custom'>
+          <div class="f-module-content fModuleContent">              
+              <div class="row speakers-grid">
+                @foreach($speakers as $index => $speaker)
+                  <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="speaker-card">
+                      <div class="speaker-image">
+                        @if($speaker['image'])
+                          <img src="{{ asset('images/speakers/' . $speaker['image']) }}" 
+                               alt="{{ $speaker['name_vi'] }}" 
+                               class="img-fluid">
+                        @else
+                          <div class="speaker-placeholder">
+                            <i class="fas fa-user"></i>
+                          </div>
+                        @endif
+                      </div>
+                      <div class="speaker-info">
+                        <h4 class="speaker-name">
+                          <div class="speaker-name-vi">{{ $speaker['name_vi'] }}</div>
+                          <div class="speaker-name-en">{{ $speaker['name_en'] }}</div>
+                        </h4>
+                        <div style="margin-top: 10px;" class="speaker-title-vi">{{ $speaker['title_vi'] }}</div>
+                        <div class="speaker-title-en">{{ $speaker['title_en'] }}</div>
+                        <div style="margin-top: 10px;" class="speaker-organization-vi">{{ $speaker['organization_vi'] }}</div>
+                        <div class="speaker-organization-en">{{ $speaker['organization_en'] }}</div>
+                      </div>
+                    </div>
+                  </div>
+                @endforeach
               </div>
             </div>
           </div>
@@ -55,93 +65,121 @@
 
 @section('head')
   <style>
-    .coming-soon-container {
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      border-radius: 1rem;
-      margin: 2rem 0;
+    .speakers-container {
+      padding: 2rem 0;
     }
 
-    .coming-soon-icon i {
-      animation: pulse 2s infinite;
-    }
-
-    .coming-soon-title {
+    .speakers-title {
       color: var(--brand-color-1);
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
     }
 
-    .coming-soon-description {
-      color: #6c757d;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .feature-item {
-      padding: 1.5rem;
+    .speaker-card {
       background: white;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
       height: 100%;
+      display: flex;
+      flex-direction: row;
+      border: 1px solid #ddd;
+    }
+    .speaker-image {
+      position: relative;
+      width: 200px;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      flex-shrink: 0;
     }
 
-    .feature-item:hover {
-      transform: translateY(-5px);
+    .speaker-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.3s ease;
     }
 
-    .feature-item h5 {
+    .speaker-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--brand-color-1) 0%, #2c5aa0 100%);
+      color: white;
+    }
+
+    .speaker-placeholder i {
+      font-size: 4rem;
+      opacity: 0.7;
+    }
+
+    .speaker-info {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .speaker-name {
       color: var(--brand-color-1);
       font-weight: 600;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
 
-    .coming-soon-alert {
-      background-color: #e7f3ff;
-      border: 1px solid #b3d9ff;
-      color: #0066cc;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .coming-soon-alert i {
+    .speaker-name-vi {
+      font-weight: 700;
       color: var(--brand-color-1);
+      margin-bottom: 0.25rem;
     }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
+    .speaker-name-en {
+      font-style: italic;
+      color: var(--brand-color-1);
+      font-size: 0.95rem;
+      opacity: 0.9;
     }
 
-    @media (max-width: 768px) {
-      .coming-soon-container {
-        padding: 2rem 1rem;
-        margin: 1rem 0;
-      }
+    .speaker-title-vi {
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 0.25rem;
+    }
 
-      .coming-soon-title {
-        font-size: 1.5rem;
-      }
+    .speaker-title-en {
+      font-style: italic;
+      color: #495057;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
 
-      .coming-soon-description {
-        font-size: 1rem;
-      }
+    .speaker-organization-vi {
+      font-weight: 600;
+      color: #6c757d;
+      margin-bottom: 0.25rem;
+    }
 
-      .feature-item {
-        padding: 1rem;
-        margin-bottom: 1rem;
-      }
+    .speaker-organization-en {
+      font-style: italic;
+      color: #6c757d;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    .speakers-grid {
+      margin: 0 -15px;
+    }
+
+    .speakers-grid > [class*="col-"] {
+      padding: 0 15px;
     }
   </style>
 @endsection

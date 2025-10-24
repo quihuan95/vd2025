@@ -129,9 +129,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|vi'], 'middlew
     })->name('committee.members');
 
     // Invited Speakers
-    Route::get('/invited-speakers', function () {
-        return view('pages.invited.speakers');
-    })->name('invited.speakers');
+    Route::get('/invited-speakers', [App\Http\Controllers\InvitedSpeakersController::class, 'index'])->name('invited.speakers');
 
     // Sponsorship Opportunity
     Route::get('/sponsorship-opp', function () {
