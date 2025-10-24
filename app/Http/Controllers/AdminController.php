@@ -89,7 +89,9 @@ class AdminController extends Controller
             Log::info('📧 Starting individual email send for registration: ' . $registration->registration_code . ' to: ' . $registration->email);
             
             // Gửi email xác nhận cho người đăng ký
-            Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+            Mail::to($registration->email)
+                ->cc('eventvietduc@vduh.org')
+                ->send(new RegistrationConfirmationMail($registration));
             
             Log::info('✅ Individual email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
 
@@ -102,12 +104,12 @@ class AdminController extends Controller
 
     public function bulkSendConfirmation(Request $request)
     {
-        Log::info('Bulk send confirmation request received', [
-            'user_id' => auth()->id(),
-            'selected_count' => count($request->input('selected_registrations', [])),
-            'csrf_token' => $request->input('_token'),
-            'session_token' => session()->token()
-        ]);
+        // Log::info('Bulk send confirmation request received', [
+        //     'user_id' => auth()->id(),
+        //     'selected_count' => count($request->input('selected_registrations', [])),
+        //     'csrf_token' => $request->input('_token'),
+        //     'session_token' => session()->token()
+        // ]);
 
         $request->validate([
             'selected_registrations' => 'required|array|min:1',
@@ -130,7 +132,9 @@ class AdminController extends Controller
                 Log::info('📧 Sending bulk confirmation email to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
                 
                 // Gửi email xác nhận đăng ký
-                Mail::to($registration->email)->send(new RegistrationConfirmationMail($registration));
+                Mail::to($registration->email)
+                    ->cc('eventvietduc@vduh.org')
+                    ->send(new RegistrationConfirmationMail($registration));
                 
                 Log::info('✅ Bulk confirmation email sent successfully to: ' . $registration->email . ' (Registration: ' . $registration->registration_code . ')');
                 $successCount++;
