@@ -34,6 +34,13 @@
           'submenu' => [],
       ],
       [
+          'title' => 'common.nav.sponsorship',
+          'route' => 'sponsors',
+          'url' => 'sponsors',
+          'has_submenu' => false,
+          'submenu' => [],
+      ],
+      [
           'title' => 'common.nav.information',
           'route' => 'contact.faq',
           'url' => 'contact.faq',

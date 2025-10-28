@@ -131,15 +131,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|vi'], 'middlew
     // Invited Speakers
     Route::get('/invited-speakers', [App\Http\Controllers\InvitedSpeakersController::class, 'index'])->name('invited.speakers');
 
-    // Sponsorship Opportunity
-    Route::get('/sponsorship-opp', function () {
-        return view('pages.sponsorship.opportunity');
-    })->name('sponsorship.opportunity');
-
-    // Official Sponsors
-    Route::get('/official-sponsors', function () {
-        return view('pages.sponsors.official');
-    })->name('sponsors.official');
+    // Sponsors
+    Route::get('/sponsors', [App\Http\Controllers\SponsorsController::class, 'index'])->name('sponsors');
 
     // Attendance Guide
     Route::get('/attendance-guide', function () {
