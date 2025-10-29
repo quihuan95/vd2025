@@ -6,6 +6,7 @@ use App\Models\Registration;
 use App\Exports\RegistrationsExport;
 use App\Mail\AdminMessageMail;
 use App\Mail\RegistrationConfirmationMail;
+use App\Jobs\SendAllRegistrationsToAdminJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -171,5 +172,28 @@ class AdminController extends Controller
     {
         $registration->delete();
         return redirect()->back()->with('success', 'Xóa đăng ký thành công!');
+    }
+
+    public function sendAllRegistrationsToAdmin()
+    {
+        try {
+            // Lấy số lượng đăng ký để hiển thị thông tin
+            $totalRegistrations = Registration::count();
+            
+            Log::info('Admin dispatching job to send all registrations to admin. Total: ' . $totalRegistrations);
+            
+            // Dispatch job vào queue
+            SendAllRegistrationsToAdminJob::dispatch();
+            
+            Log::info('✅ Job dispatched successfully for sending all registrations to admin');
+            
+            $message = "Đã đưa việc gửi email cho {$totalRegistrations} đăng ký vào hàng đợi. Email sẽ được gửi trong background đến minhphamquang028@gmail.com.";
+            
+            return redirect()->back()->with('success', $message);
+            
+        } catch (\Exception $e) {
+            Log::error('❌ Admin failed to dispatch job for sending all registrations to admin - Error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Có lỗi xảy ra khi tạo job gửi email: ' . $e->getMessage());
+        }
     }
 }

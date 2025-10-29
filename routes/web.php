@@ -208,6 +208,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/registrations/{registration}/status', [App\Http\Controllers\AdminController::class, 'updateStatus'])->name('registrations.update-status');
         Route::post('/registrations/{registration}/send-confirmation', [App\Http\Controllers\AdminController::class, 'sendConfirmation'])->name('registrations.send-confirmation');
         Route::post('/registrations/bulk-send-confirmation', [App\Http\Controllers\AdminController::class, 'bulkSendConfirmation'])->name('registrations.bulk-send-confirmation');
+        Route::post('/registrations/send-all-to-admin', [App\Http\Controllers\AdminController::class, 'sendAllRegistrationsToAdmin'])->name('registrations.send-all-to-admin');
         Route::delete('/registrations/{registration}', [App\Http\Controllers\AdminController::class, 'destroy'])->name('registrations.destroy');
         Route::get('/export', [App\Http\Controllers\AdminController::class, 'export'])->name('export');
     });

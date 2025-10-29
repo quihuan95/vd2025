@@ -89,4 +89,44 @@ class RegistrationController extends Controller
             ], 500);
         }
     }
+
+    /**
+     * Gửi email thông báo tất cả đăng ký cho admin
+     */
+    public function sendAllRegistrationsToAdmin()
+    {
+        try {
+            // Lấy tất cả đăng ký
+            $registrations = Registration::all();
+            
+            Log::info('Sending all registrations to admin. Total: ' . $registrations->count());
+            
+            foreach ($registrations as $registration) {
+                try {
+                    Mail::to('eventvietduc@vduh.org')
+                        ->send(new RegistrationConfirmationMail($registration));
+                    
+                    Log::info('✅ Sent registration ' . $registration->registration_code . ' to admin');
+                } catch (\Exception $mailException) {
+                    Log::error('❌ Failed to send registration ' . $registration->registration_code . ' to admin - Error: ' . $mailException->getMessage());
+                }
+            }
+            
+            Log::info('✅ Completed sending all registrations to admin');
+            
+            return response()->json([
+                'success' => true,
+                'message' => 'Đã gửi thông báo tất cả đăng ký cho admin thành công!',
+                'total_sent' => $registrations->count()
+            ]);
+            
+        } catch (\Exception $e) {
+            Log::error('❌ Failed to send all registrations to admin - Error: ' . $e->getMessage());
+            
+            return response()->json([
+                'success' => false,
+                'message' => 'Có lỗi xảy ra khi gửi email: ' . $e->getMessage()
+            ], 500);
+        }
+    }
 }

@@ -312,6 +312,11 @@
               <i class="fas fa-file-excel me-1"></i> Xuất Excel
             </a>
           </div>
+          <div class="col-md-2">
+            <button type="button" class="btn btn-warning w-100" onclick="sendAllToAdmin()">
+              <i class="fas fa-paper-plane me-1"></i> Gửi tất cả cho Admin
+            </button>
+          </div>
           </form>
         </div>
 
@@ -591,6 +596,42 @@
       });
       document.getElementById('selectAll').checked = false;
       document.querySelector('.bulk-actions').style.display = 'none';
+    }
+
+    function sendAllToAdmin() {
+      if (confirm('Bạn có chắc chắn muốn gửi tất cả đăng ký cho admin (minhphamquang028@gmail.com)?\n\nHành động này sẽ đưa việc gửi email cho tất cả {{ $registrations->count() }} đăng ký vào hàng đợi để xử lý trong background.')) {
+        console.log('Dispatching job to send all registrations to admin...');
+        
+        // Create a form dynamically
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '{{ route("admin.registrations.send-all-to-admin") }}';
+        
+        // Add CSRF token
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        const csrfInput = document.createElement('input');
+        csrfInput.type = 'hidden';
+        csrfInput.name = '_token';
+        csrfInput.value = csrfToken;
+        form.appendChild(csrfInput);
+        
+        // Show loading state
+        const button = event.target;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Đang tạo job...';
+        button.disabled = true;
+        
+        // Submit form
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+        
+        // Reset button after a delay
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+        }, 2000);
+      }
     }
 
     // Loading overlay functions removed to avoid form submission conflicts
