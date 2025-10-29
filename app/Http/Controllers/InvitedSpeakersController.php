@@ -78,6 +78,15 @@ class InvitedSpeakersController extends Controller
         'image' => '6. Ken Takasaki.jpg'
       ],
       [
+        'name_vi' => 'ThS. Nguyễn Trọng Khoa',
+        'name_en' => 'M.Sc. Nguyen Trong Khoa',
+        'title_vi' => 'Phó Cục trưởng Cục Quản lý Khám, chữa bệnh',
+        'title_en' => 'Vice Director of the Medical Service Administration',
+        'organization_vi' => 'Bộ Y tế',
+        'organization_en' => 'Ministry of Health',
+        'image' => '56. Nguyen Trong Khoa.jpg'
+      ],
+      [
         'name_vi' => 'PGS. TS. Trần Đình Thơ',
         'name_en' => 'Assoc. Prof. Tran Dinh Tho',
         'title_vi' => 'Phó Giám đốc Bệnh viện Hữu nghị Việt Đức; Trưởng khoa Phẫu thuật Gan Mật',
@@ -348,6 +357,15 @@ class InvitedSpeakersController extends Controller
         'image' => '36. Jiangtao Fan.jpg'
       ],
       [
+        'name_vi' => 'PGS. TS. Đỗ Trường Thành',
+        'name_en' => 'Assoc. Pro. Do Truong Thanh',
+        'title_vi' => 'Trưởng khoa Phẫu thuật Tiết niệu',
+        'title_en' => 'Head of Urology Surgery',
+        'organization_vi' => 'Bệnh viện Hữu nghị Việt Đức',
+        'organization_en' => 'Viet Duc University Hospital',
+        'image' => '58. Đỗ Trường Thành.jpg'
+      ],
+      [
         'name_vi' => 'Charlotte Ngo',
         'name_en' => 'Charlotte Ngo',
         'title_vi' => 'Bác sĩ, Trung tâm Phẫu thuật & Ung thư phụ khoa - tuyến vú',
@@ -382,6 +400,15 @@ class InvitedSpeakersController extends Controller
         'organization_vi' => 'Bệnh viện Hữu nghị Việt Đức',
         'organization_en' => 'Viet Duc University Hospital',
         'image' => '40. Nguyễn Đức Chính.jpg'
+      ],
+      [
+        'name_vi' => 'TS. Trần Thị Thanh Huyền',
+        'name_en' => 'Dr. Tran Thi Thanh Huyen',
+        'title_vi' => 'Phó Giám đốc Trung tâm tế bào gốc',
+        'title_en' => 'Deputy Head of Stem Cell Center',
+        'organization_vi' => 'Bệnh viện Hữu nghị Việt Đức',
+        'organization_en' => 'Viet Duc University Hospital',
+        'image' => '57. Trần Thị Thanh Huyền.jpg'
       ],
       [
         'name_vi' => 'PGS. TS. Nguyễn Hồng Hà',
