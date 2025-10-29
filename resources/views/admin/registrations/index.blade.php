@@ -128,6 +128,39 @@
       border-bottom: 1px solid #f1f3f4;
     }
 
+    /* Event column with scroll */
+    .event-column {
+      max-width: 250px;
+      max-height: 80px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      word-wrap: break-word;
+      white-space: normal;
+      line-height: 1.4;
+      padding: 0.25rem;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      border: 1px solid #e9ecef;
+    }
+
+    .event-column::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .event-column::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 2px;
+    }
+
+    .event-column::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 2px;
+    }
+
+    .event-column::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+
     .user-info strong {
       color: #333;
     }
@@ -185,6 +218,12 @@
 
       .table-responsive {
         font-size: 0.875rem;
+      }
+
+      .event-column {
+        max-width: 150px;
+        max-height: 60px;
+        font-size: 0.75rem;
       }
     }
 
@@ -312,11 +351,11 @@
               <i class="fas fa-file-excel me-1"></i> Xuất Excel
             </a>
           </div>
-          <div class="col-md-2">
+          {{-- <div class="col-md-2">
             <button type="button" class="btn btn-warning w-100" onclick="sendAllToAdmin()">
               <i class="fas fa-paper-plane me-1"></i> Gửi tất cả cho Admin
             </button>
-          </div>
+          </div> --}}
           </form>
         </div>
 
@@ -397,7 +436,9 @@
                       </div>
                     </td>
                     <td>
-                      <span class="badge bg-info">{{ $registration->event_type_display }}</span>
+                      <div class="event-column">
+                        <small class="text-muted">{{ $registration->event_type_display }}</small>
+                      </div>
                     </td>
                     <td>{{ $registration->created_at->format('d/m/Y H:i') }}</td>
                     <td>
