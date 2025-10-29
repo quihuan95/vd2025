@@ -42,15 +42,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="sponsor-card">
                     <div class="sponsor-logo-section">
-                      @if($sponsor['tagline_vi'] || $sponsor['tagline_en'])
-                      <p class="sponsor-tagline">
-                        @if (app()->getLocale() === 'vi')
-                          {{ $sponsor['tagline_vi'] }}
-                        @else
-                          {{ $sponsor['tagline_en'] }}
-                        @endif
-                      </p>
-                      @endif
                       <div class="sponsor-logo">
                         <img src="{{ Storage::url($sponsor['logo']) }}" alt="{{ $sponsor['name'] }}" class="img-fluid">
                       </div>
@@ -138,15 +129,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="sponsor-card">
                     <div class="sponsor-logo-section">
-                      @if($sponsor['tagline_vi'] || $sponsor['tagline_en'])
-                      <p class="sponsor-tagline">
-                        @if (app()->getLocale() === 'vi')
-                          {{ $sponsor['tagline_vi'] }}
-                        @else
-                          {{ $sponsor['tagline_en'] }}
-                        @endif
-                      </p>
-                      @endif
                       <div class="sponsor-logo">
                         <img src="{{ Storage::url($sponsor['logo']) }}" alt="{{ $sponsor['name'] }}" class="img-fluid">
                       </div>
@@ -186,15 +168,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="sponsor-card">
                     <div class="sponsor-logo-section">
-                      @if($sponsor['tagline_vi'] || $sponsor['tagline_en'])
-                      <p class="sponsor-tagline">
-                        @if (app()->getLocale() === 'vi')
-                          {{ $sponsor['tagline_vi'] }}
-                        @else
-                          {{ $sponsor['tagline_en'] }}
-                        @endif
-                      </p>
-                      @endif
                       <div class="sponsor-logo">
                         <img src="{{ Storage::url($sponsor['logo']) }}" alt="{{ $sponsor['name'] }}" class="img-fluid">
                       </div>
@@ -234,15 +207,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="sponsor-card">
                     <div class="sponsor-logo-section">
-                      @if($sponsor['tagline_vi'] || $sponsor['tagline_en'])
-                      <p class="sponsor-tagline">
-                        @if (app()->getLocale() === 'vi')
-                          {{ $sponsor['tagline_vi'] }}
-                        @else
-                          {{ $sponsor['tagline_en'] }}
-                        @endif
-                      </p>
-                      @endif
                       <div class="sponsor-logo">
                         <img src="{{ Storage::url($sponsor['logo']) }}" alt="{{ $sponsor['name'] }}" class="img-fluid">
                       </div>
@@ -282,15 +246,6 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                   <div class="sponsor-card">
                     <div class="sponsor-logo-section">
-                      @if($sponsor['tagline_vi'] || $sponsor['tagline_en'])
-                      <p class="sponsor-tagline">
-                        @if (app()->getLocale() === 'vi')
-                          {{ $sponsor['tagline_vi'] }}
-                        @else
-                          {{ $sponsor['tagline_en'] }}
-                        @endif
-                      </p>
-                      @endif
                       <div class="sponsor-logo">
                         <img src="{{ Storage::url($sponsor['logo']) }}" alt="{{ $sponsor['name'] }}" class="img-fluid">
                       </div>
@@ -323,7 +278,7 @@
   <style>
     /* Diamond Sponsors Banner */
     .sponsors-banner {
-      background: linear-gradient(135deg, #6cbb6a 0%, #5aa857 100%);
+      background: linear-gradient(135deg, #5aa857 0%, #95e994 100%);
       padding: 0.75rem 2rem;
       margin-bottom: 3rem;
       border-radius: 3px;
@@ -355,20 +310,13 @@
     .sponsor-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-      /* background-color: #ecffec; */
+      background-color: #f3f3f3;
     }
 
     .sponsor-logo-section {
       text-align: center;
       margin-bottom: 2rem;
       flex-grow: 1;
-    }
-
-    .sponsor-tagline {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      font-style: italic;
     }
 
     .sponsor-logo {

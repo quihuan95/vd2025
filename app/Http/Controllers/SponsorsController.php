@@ -178,14 +178,13 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
-                    // 'buttons' => [
-                    //     [
-                    //         'text_vi' => 'Giới thiệu',
-                    //         'text_en' => 'Introduction',
-                    //         'url' => 'sponsors/Introduction Zuelligpharma.pdf'
-                    //     ]
-                    // ]
-                    'buttons' => []
+                    'buttons' => [
+                        [
+                            'text_vi' => 'Giới thiệu',
+                            'text_en' => 'Introduction',
+                            'url' => 'sponsors/Introduction Zuelligpharma.pdf'
+                        ]
+                    ]
                 ],
                 [
                     'name' => 'AstraZeneca',
