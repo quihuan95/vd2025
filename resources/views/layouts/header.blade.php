@@ -24,6 +24,11 @@
                   'route' => 'invited.speakers',
                   'url' => 'invited.speakers',
               ],
+              [
+                  'title' => 'common.nav.posters',
+                  'route' => 'programme.posters',
+                  'url' => 'programme.posters',
+              ],
           ],
       ],
       [

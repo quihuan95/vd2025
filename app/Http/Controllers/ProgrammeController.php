@@ -19,6 +19,17 @@ class ProgrammeController extends Controller
   }
 
   /**
+   * Display Posters page with hierarchical sections
+   */
+  public function posters(Request $request)
+  {
+    // Now returns a flat array of image URLs
+    $images = $this->getPosterSections();
+
+    return view('pages.programme.posters', compact('images'));
+  }
+
+  /**
    * Get programme images from the images/programme folder
    */
   private function getProgrammeImages()
@@ -57,6 +68,78 @@ class ProgrammeController extends Controller
     return $images;
   }
 
+  /**
+   * Get all image URLs from a given public relative folder path.
+   * Example: getImagesFromFolder('images/posters')
+   * Returns: array of string URLs only
+   */
+  public function getImagesFromFolder(string $relativeFolderPath, array $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp']): array
+  {
+    $relativeFolderPath = trim($relativeFolderPath, "/\\");
+    $folderPath = public_path($relativeFolderPath);
+
+    if (!File::exists($folderPath)) {
+      return [];
+    }
+
+    $images = [];
+    $files = File::files($folderPath);
+
+
+    foreach ($files as $file) {
+      $extension = strtolower($file->getExtension());
+      if (in_array($extension, $allowedExtensions, true)) {
+        $filename = $file->getFilename();
+        $relative = $relativeFolderPath . '/' . $filename;
+        $images[] = [
+          'filename' => $filename,
+          'url' => asset($relative),
+        ];
+      }
+    }
+
+    usort($images, fn($a, $b) => strcmp($a['filename'], $b['filename']));
+
+    // Return only URLs
+    return array_map(fn($i) => $i['url'], $images);
+  }
+
+  /**
+   * Scan public/images/posters and group images by section (subfolders)
+   */
+  private function getPosterSections(): array
+  {
+    $path_doc_1 = 'images/posters/FILE DỌC/TỆP 1';
+    $path_doc_2 = 'images/posters/FILE DỌC/TỆP 2';
+    $path_doc_3 = 'images/posters/FILE DỌC/TỆP 3';
+    $path_ngang_1 = 'images/posters/FILE NGANG/tệp 1';
+    $path_ngang_2 = 'images/posters/FILE NGANG/tệp 2';
+    $path_ngang_3 = 'images/posters/FILE NGANG/tệp 3';
+
+    $images_doc_1 = $this->getImagesFromFolder($path_doc_1);
+    $images_doc_2 = $this->getImagesFromFolder($path_doc_2);
+    $images_doc_3 = $this->getImagesFromFolder($path_doc_3);
+    $images_ngang_1 = $this->getImagesFromFolder($path_ngang_1);
+    $images_ngang_2 = $this->getImagesFromFolder($path_ngang_2);
+    $images_ngang_3 = $this->getImagesFromFolder($path_ngang_3);
+
+    // dd($path_doc_1);
+
+    $result = [
+      'vertical' => [
+        ...$images_doc_1,
+        ...$images_doc_2,
+        ...$images_doc_3,
+      ],
+      'horizontal' => [
+        ...$images_ngang_1,
+        ...$images_ngang_2,
+        ...$images_ngang_3,
+      ]
+    ];
+
+    return $result;
+  }
 
   /**
    * Get file size in human readable format

@@ -13,6 +13,7 @@ return [
     'information' => 'Thông tin liên hệ',
     'registration' => 'Đăng ký',
     'speakers' => 'Diễn giả',
+    'posters' => 'Báo cáo poster',
     // Legacy keys (keep for backward compatibility)
     'congress' => 'Đại hội',
     'about_wces2025' => 'Giới thiệu',

@@ -94,6 +94,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => 'en|vi'], 'middlew
         Route::get('/obes', function () {
             return view('pages.programme.obes');
         })->name('programme.obes');
+
+        Route::get('/posters', [App\Http\Controllers\ProgrammeController::class, 'posters'])->name('programme.posters');
     });
 
     // User pages

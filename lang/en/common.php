@@ -13,6 +13,7 @@ return [
     'information' => 'Information',
     'registration' => 'Registration',
     'speakers' => 'Speakers',
+    'posters' => 'Poster Reports',
     // Legacy keys (keep for backward compatibility)
     'congress' => 'Congress',
     'about_wces2025' => 'About',
