@@ -47,11 +47,6 @@
                 <!-- Lightbox -->
                 <div id="lightbox" class="lightbox" hidden aria-hidden="true">
                   <button type="button" class="lightbox-close" aria-label="Close">×</button>
-                  <div class="lightbox-controls" aria-hidden="false">
-                    <button type="button" id="zoomOutBtn" class="zoom-btn" aria-label="Zoom out">−</button>
-                    <button type="button" id="zoomResetBtn" class="zoom-btn" aria-label="Reset zoom">100%</button>
-                    <button type="button" id="zoomInBtn" class="zoom-btn" aria-label="Zoom in">＋</button>
-                  </div>
                   <div class="lightbox-canvas" id="lightboxCanvas">
                     <img id="lightboxImage" src="" alt="Poster Preview">
                   </div>
@@ -143,27 +138,21 @@
     }
     .lightbox-canvas {
       width: 90vw;
-      height: 80vh;
-      overflow: hidden;
+      height: 90vh;
+      overflow: auto;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #000;
       border-radius: 6px;
       box-shadow: 0 10px 30px rgba(0,0,0,.5);
+      padding: 0;
     }
     .lightbox-canvas img {
-      max-width: 100%;
-      max-height: 100%;
+      display: block;
+      width: 100%;
+      height: auto;
       object-fit: contain;
-      transform-origin: center center;
-      cursor: default;
       user-select: none;
       -webkit-user-drag: none;
-    }
-    .lightbox.dragging .lightbox-canvas img {
-      cursor: grabbing;
     }
     .lightbox[hidden] { display: none; }
     .lightbox-close {
@@ -183,29 +172,7 @@
       z-index: 2147483647;
     }
 
-    .lightbox-controls {
-      position: absolute;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 2147483647;
-      background: rgba(0,0,0,.5);
-      padding: 6px 10px;
-      border-radius: 30px;
-      backdrop-filter: blur(2px);
-    }
-    .zoom-btn {
-      border: 1px solid rgba(255,255,255,.3);
-      background: rgba(255,255,255,.85);
-      color: #111;
-      border-radius: 16px;
-      padding: 6px 10px;
-      font-weight: 600;
-      min-width: 48px;
-      cursor: pointer;
-    }
+    /* Removed zoom controls */
   </style>
 @endsection
 
@@ -288,7 +255,6 @@
             lightboxImage.src = url;
             lightbox.removeAttribute('hidden');
             lightbox.setAttribute('aria-hidden', 'false');
-            resetZoom();
           });
         });
       }
@@ -329,63 +295,7 @@
       initGallery('gridGalleryVertical', 'loadMoreBtnVertical', data.vertical);
       initGallery('gridGalleryHorizontal', 'loadMoreBtnHorizontal', data.horizontal);
 
-      // Zoom & Pan
-      let scale = 1;
-      let translateX = 0;
-      let translateY = 0;
-      const MIN = 0.5;
-      const MAX = 5;
-      const STEP = 0.25;
-
-      function applyTransform() {
-        lightboxImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-      }
-      function resetZoom() {
-        scale = 1; translateX = 0; translateY = 0; applyTransform();
-      }
-
-      const zoomInBtn = document.getElementById('zoomInBtn');
-      const zoomOutBtn = document.getElementById('zoomOutBtn');
-      const zoomResetBtn = document.getElementById('zoomResetBtn');
       const canvas = document.getElementById('lightboxCanvas');
-
-      function zoom(delta, centerX, centerY) {
-        const prevScale = scale;
-        scale = Math.min(MAX, Math.max(MIN, scale + delta));
-        // Zoom towards cursor
-        if (centerX !== undefined && centerY !== undefined && scale !== prevScale) {
-          const rect = lightboxImage.getBoundingClientRect();
-          const imgX = centerX - rect.left;
-          const imgY = centerY - rect.top;
-          const ratio = scale / prevScale;
-          translateX -= (imgX - translateX) * (ratio - 1);
-          translateY -= (imgY - translateY) * (ratio - 1);
-        }
-        applyTransform();
-      }
-
-      zoomInBtn?.addEventListener('click', () => zoom(STEP));
-      zoomOutBtn?.addEventListener('click', () => zoom(-STEP));
-      zoomResetBtn?.addEventListener('click', resetZoom);
-      canvas?.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        zoom(e.deltaY < 0 ? STEP : -STEP, e.clientX, e.clientY);
-      }, { passive: false });
-
-      // Drag to pan when zoomed
-      let dragging = false;
-      let lastX = 0, lastY = 0;
-      canvas?.addEventListener('mousedown', (e) => {
-        if (scale <= 1) return;
-        dragging = true; lastX = e.clientX; lastY = e.clientY; lightbox.classList.add('dragging');
-      });
-      window.addEventListener('mousemove', (e) => {
-        if (!dragging) return;
-        translateX += (e.clientX - lastX);
-        translateY += (e.clientY - lastY);
-        lastX = e.clientX; lastY = e.clientY; applyTransform();
-      });
-      window.addEventListener('mouseup', () => { dragging = false; lightbox.classList.remove('dragging'); });
 
       function closeLightbox() {
         lightboxImage.src = '';

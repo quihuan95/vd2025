@@ -115,6 +115,7 @@ class ProgrammeController extends Controller
     $path_ngang_1 = 'images/posters/FILE NGANG/tệp 1';
     $path_ngang_2 = 'images/posters/FILE NGANG/tệp 2';
     $path_ngang_3 = 'images/posters/FILE NGANG/tệp 3';
+    $path_ngang_4 = 'images/posters/FILE NGANG/tệp 4';
 
     $images_doc_1 = $this->getImagesFromFolder($path_doc_1);
     $images_doc_2 = $this->getImagesFromFolder($path_doc_2);
@@ -122,6 +123,7 @@ class ProgrammeController extends Controller
     $images_ngang_1 = $this->getImagesFromFolder($path_ngang_1);
     $images_ngang_2 = $this->getImagesFromFolder($path_ngang_2);
     $images_ngang_3 = $this->getImagesFromFolder($path_ngang_3);
+    $images_ngang_4 = $this->getImagesFromFolder($path_ngang_4);
 
     // dd($path_doc_1);
 
@@ -135,6 +137,7 @@ class ProgrammeController extends Controller
         ...$images_ngang_1,
         ...$images_ngang_2,
         ...$images_ngang_3,
+        ...$images_ngang_4,
       ]
     ];
 
