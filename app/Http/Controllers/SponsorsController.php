@@ -18,16 +18,6 @@ class SponsorsController extends Controller
     }
 
     /**
-     * Display the official sponsors page
-     */
-    public function official()
-    {
-        $sponsors = $this->getSponsors();
-        
-        return view('pages.sponsors.index', compact('sponsors'));
-    }
-
-    /**
      * Get sponsors data
      */
     protected function getSponsors()
@@ -40,6 +30,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Kim cương',
                     'tagline_en' => 'Diamond Sponsor',
+                    'youtube_video' => 'yQSHBbNkQW8', // Example: 'dQw4w9WgXcQ' for video ID or full URL
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -56,6 +47,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Bạch kim',
                     'tagline_en' => 'Platinum Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -64,6 +56,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Bạch kim',
                     'tagline_en' => 'Platinum Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ]
             ],
@@ -74,6 +67,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Vàng',
                     'tagline_en' => 'Gold Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -82,6 +76,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Vàng',
                     'tagline_en' => 'Gold Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -98,6 +93,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Bạc',
                     'tagline_en' => 'Silver Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -114,6 +110,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -128,6 +125,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -142,6 +140,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -156,6 +155,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -164,6 +164,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -178,6 +179,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -192,6 +194,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Đồng',
                     'tagline_en' => 'Bronze Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ]
             ],
@@ -202,6 +205,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -216,6 +220,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
@@ -230,6 +235,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -238,6 +244,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -246,6 +253,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ],
                 [
@@ -254,6 +262,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Đồng tài trợ',
                     'tagline_en' => 'Co-Sponsor',
+                    'youtube_video' => null,
                     'buttons' => []
                 ]
             ]

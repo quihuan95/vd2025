@@ -1,6 +1,36 @@
 
 @extends('layouts.app')
-@php use Illuminate\Support\Facades\Storage; @endphp
+@php 
+use Illuminate\Support\Facades\Storage;
+
+// Helper function to extract YouTube video ID from URL
+function getYouTubeVideoId($url) {
+    if (empty($url)) {
+        return null;
+    }
+    
+    // If it's already just a video ID (no URL)
+    if (preg_match('/^[a-zA-Z0-9_-]{11}$/', $url)) {
+        return $url;
+    }
+    
+    // Extract from various YouTube URL formats
+    $patterns = [
+        '/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/',
+        '/youtu\.be\/([a-zA-Z0-9_-]+)/',
+        '/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/',
+        '/youtube\.com\/v\/([a-zA-Z0-9_-]+)/',
+    ];
+    
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $url, $matches)) {
+            return $matches[1];
+        }
+    }
+    
+    return null;
+}
+@endphp
 
 @section('title', __('sponsors.title'))
 @section('description', __('sponsors.description'))
@@ -56,6 +86,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -104,6 +144,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -143,6 +193,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -182,6 +242,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -221,6 +291,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -260,6 +340,16 @@
                         @endif
                       </a>
                       @endforeach
+                      @if(!empty($sponsor['youtube_video']))
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                        
+                        @if (app()->getLocale() === 'vi')
+                          Xem video
+                        @else
+                          Watch Video
+                        @endif
+                      </button>
+                      @endif
                     </div>
                   </div>
                 </div>
@@ -270,6 +360,24 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
+
+  <!-- YouTube Video Modal -->
+  <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="video-container-wrapper">
+            <div class="ratio ratio-16x9">
+              <iframe id="youtubePlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 @endsection
@@ -354,6 +462,107 @@
       transform: translateY(-2px);
     }
 
+    .sponsor-video-button {
+      background: #6cbb6a !important;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sponsor-video-button:hover {
+      background: #5aa857 !important;
+    }
+
+    /* YouTube Modal Styles */
+    #youtubeModal .modal-content {
+      border-radius: 0px !important;
+      overflow: hidden;
+      background: transparent !important;
+      border: none !important;
+    }
+
+    #youtubeModal {
+      z-index: 999999 !important;
+    }
+
+    /* Modal backdrop (overlay) - đảm bảo hiển thị trên cùng */
+    .modal-backdrop {
+      z-index: 999998 !important;
+    }
+
+    .modal-backdrop.show {
+      z-index: 999998 !important;
+      opacity: 0.5;
+    }
+
+    /* Đảm bảo modal backdrop khi modal đang mở */
+    body.modal-open .modal-backdrop {
+      z-index: 999998 !important;
+    }
+
+    #youtubeModal .modal-body {
+      padding: 0;
+      background: transparent;
+    }
+
+    /* Container wrapper cho video và nút đóng */
+    #youtubeModal .video-container-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      /* padding: 10px; */
+    }
+
+    /* Video container chiếm phần lớn không gian */
+    #youtubeModal .video-container-wrapper .ratio {
+      flex: 1;
+      background: #000;
+    }
+
+    /* Nút đóng modal - đặt bên ngoài, bên cạnh video */
+    #youtubeModal .modal-close-btn,
+    #youtubeModal .btn-close {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: transparent !important;
+      background-color: transparent !important;
+      border-radius: 4px;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: none !important;
+      filter: brightness(0) invert(1); /* Đảm bảo icon X màu trắng */
+    }
+
+    #youtubeModal .modal-close-btn:hover,
+    #youtubeModal .btn-close:hover {
+      opacity: 1;
+      background: transparent !important;
+      background-color: transparent !important;
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: none !important;
+    }
+
+    #youtubeModal .modal-close-btn:focus,
+    #youtubeModal .btn-close:focus {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      outline: none;
+    }
+
+    #youtubeModal .modal-close-btn::before,
+    #youtubeModal .btn-close::before,
+    #youtubeModal .modal-close-btn::after,
+    #youtubeModal .btn-close::after {
+      background-color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    #youtubeModal iframe {
+      width: 100%;
+      height: 100%;
+    }
+
     /* All Sponsors Sections */
     .sponsors-section {
       margin-bottom: 3rem;
@@ -426,6 +635,25 @@
 
         document.querySelectorAll('img[loading="lazy"]').forEach(img => {
           imageObserver.observe(img);
+        });
+      }
+
+      // YouTube Modal Handler
+      const youtubeModal = document.getElementById('youtubeModal');
+      const youtubePlayer = document.getElementById('youtubePlayer');
+
+      if (youtubeModal) {
+        youtubeModal.addEventListener('show.bs.modal', function (event) {
+          const button = event.relatedTarget;
+          const videoId = button.getAttribute('data-video-id');
+          
+          // Set iframe src with autoplay
+          youtubePlayer.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        });
+
+        youtubeModal.addEventListener('hide.bs.modal', function () {
+          // Stop video when modal is closed
+          youtubePlayer.src = '';
         });
       }
     });
