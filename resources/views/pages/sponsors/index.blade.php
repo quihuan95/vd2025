@@ -90,9 +90,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
@@ -148,9 +148,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
@@ -197,9 +197,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
@@ -246,9 +246,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
@@ -295,9 +295,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
@@ -344,9 +344,9 @@ function getYouTubeVideoId($url) {
                       <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
-                          Xem video
+                          Video giới thiệu
                         @else
-                          Watch Video
+                          Introduction video
                         @endif
                       </button>
                       @endif
