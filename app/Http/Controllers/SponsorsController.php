@@ -30,7 +30,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Kim cương',
                     'tagline_en' => 'Diamond Sponsor',
-                    'youtube_video' => 'yQSHBbNkQW8', // Example: 'dQw4w9WgXcQ' for video ID or full URL
+                    'youtube_video' => null, // Example: 'dQw4w9WgXcQ' for video ID or full URL
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',
