@@ -3,32 +3,12 @@
 @php 
 use Illuminate\Support\Facades\Storage;
 
-// Helper function to extract YouTube video ID from URL
-function getYouTubeVideoId($url) {
+// Helper function to get video URL (returns the URL as-is)
+function getVideoUrl($url) {
     if (empty($url)) {
         return null;
     }
-    
-    // If it's already just a video ID (no URL)
-    if (preg_match('/^[a-zA-Z0-9_-]{11}$/', $url)) {
-        return $url;
-    }
-    
-    // Extract from various YouTube URL formats
-    $patterns = [
-        '/youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/',
-        '/youtu\.be\/([a-zA-Z0-9_-]+)/',
-        '/youtube\.com\/embed\/([a-zA-Z0-9_-]+)/',
-        '/youtube\.com\/v\/([a-zA-Z0-9_-]+)/',
-    ];
-    
-    foreach ($patterns as $pattern) {
-        if (preg_match($pattern, $url, $matches)) {
-            return $matches[1];
-        }
-    }
-    
-    return null;
+    return $url;
 }
 @endphp
 
@@ -87,7 +67,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -145,7 +125,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -194,7 +174,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -243,7 +223,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -292,7 +272,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -341,7 +321,7 @@ function getYouTubeVideoId($url) {
                       </a>
                       @endforeach
                       @if(!empty($sponsor['youtube_video']))
-                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#youtubeModal" data-video-id="{{ getYouTubeVideoId($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
+                      <button type="button" class="sponsor-button sponsor-video-button" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="{{ getVideoUrl($sponsor['youtube_video']) }}" data-sponsor-name="{{ $sponsor['name'] }}">
                         
                         @if (app()->getLocale() === 'vi')
                           Video giới thiệu
@@ -363,14 +343,23 @@ function getYouTubeVideoId($url) {
     </div>
   </div>
 
-  <!-- YouTube Video Modal -->
-  <div class="modal fade" id="youtubeModal" tabindex="-1" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-body">
           <div class="video-container-wrapper">
             <div class="ratio ratio-16x9">
-              <iframe id="youtubePlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <video
+                id="videoPlayer"
+                class="video-js vjs-default-skin vjs-big-play-centered"
+                preload="auto"
+                data-setup="{}">
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.
+                </p>
+              </video>
             </div>
             <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
               <i class="fas fa-times"></i>
@@ -472,15 +461,15 @@ function getYouTubeVideoId($url) {
       background: #5aa857 !important;
     }
 
-    /* YouTube Modal Styles */
-    #youtubeModal .modal-content {
+    /* Video Modal Styles */
+    #videoModal .modal-content {
       border-radius: 0px !important;
       overflow: hidden;
       background: transparent !important;
       border: none !important;
     }
 
-    #youtubeModal {
+    #videoModal {
       z-index: 999999 !important;
     }
 
@@ -499,33 +488,37 @@ function getYouTubeVideoId($url) {
       z-index: 999998 !important;
     }
 
-    #youtubeModal .modal-body {
+    #videoModal .modal-body {
       padding: 0;
       background: transparent;
     }
 
     /* Container wrapper cho video và nút đóng */
-    #youtubeModal .video-container-wrapper {
+    #videoModal .video-container-wrapper {
+      position: relative;
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      /* padding: 10px; */
     }
 
     /* Video container chiếm phần lớn không gian */
-    #youtubeModal .video-container-wrapper .ratio {
+    #videoModal .video-container-wrapper .ratio {
+      position: relative;
       flex: 1;
       background: #000;
     }
 
-    /* Nút đóng modal - đặt bên ngoài, bên cạnh video */
-    #youtubeModal .modal-close-btn,
-    #youtubeModal .btn-close {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      background: transparent !important;
-      background-color: transparent !important;
+    /* Nút đóng modal - đặt ở góc trên bên phải */
+    #videoModal .modal-close-btn,
+    #videoModal .btn-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      width: 30px;
+      height: 30px;
+      background: rgba(0, 0, 0, 0.5) !important;
+      background-color: rgba(0, 0, 0, 0.5) !important;
       border-radius: 4px;
       opacity: 0.8;
       transition: all 0.3s ease;
@@ -534,33 +527,122 @@ function getYouTubeVideoId($url) {
       filter: brightness(0) invert(1); /* Đảm bảo icon X màu trắng */
     }
 
-    #youtubeModal .modal-close-btn:hover,
-    #youtubeModal .btn-close:hover {
+    #videoModal .modal-close-btn:hover,
+    #videoModal .btn-close:hover {
       opacity: 1;
-      background: transparent !important;
-      background-color: transparent !important;
+      background: rgba(0, 0, 0, 0.7) !important;
+      background-color: rgba(0, 0, 0, 0.7) !important;
       border-color: rgba(255, 255, 255, 0.4);
       box-shadow: none !important;
     }
 
-    #youtubeModal .modal-close-btn:focus,
-    #youtubeModal .btn-close:focus {
-      background: transparent !important;
-      background-color: transparent !important;
+    #videoModal .modal-close-btn:focus,
+    #videoModal .btn-close:focus {
+      background: rgba(0, 0, 0, 0.5) !important;
+      background-color: rgba(0, 0, 0, 0.5) !important;
       box-shadow: none !important;
       outline: none;
     }
 
-    #youtubeModal .modal-close-btn::before,
-    #youtubeModal .btn-close::before,
-    #youtubeModal .modal-close-btn::after,
-    #youtubeModal .btn-close::after {
+    #videoModal .modal-close-btn::before,
+    #videoModal .btn-close::before,
+    #videoModal .modal-close-btn::after,
+    #videoModal .btn-close::after {
       background-color: rgba(255, 255, 255, 0.8) !important;
     }
 
-    #youtubeModal iframe {
+    /* Video.js Customization */
+    #videoModal .video-container-wrapper {
+      position: relative;
+    }
+
+    #videoModal .video-container-wrapper .ratio {
+      position: relative;
+      background: #000;
+    }
+
+    #videoModal .video-js {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
+      background: #000;
+    }
+
+    /* Customize Video.js controls to match theme */
+    #videoModal .video-js .vjs-control-bar {
+      display: flex !important;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 100%);
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    #videoModal .video-js:hover .vjs-control-bar {
+      opacity: 1 !important;
+    }
+
+    #videoModal .video-js .vjs-play-progress,
+    #videoModal .video-js .vjs-volume-level {
+      background-color: #6cbb6a !important;
+    }
+
+    #videoModal .video-js .vjs-play-progress .vjs-play-progress-bar {
+      background-color: #6cbb6a !important;
+    }
+
+    #videoModal .video-js .vjs-big-play-button {
+      background-color: rgba(108, 187, 106, 0.8) !important;
+      border-color: #6cbb6a !important;
+      border-radius: 50% !important;
+      width: 80px !important;
+      height: 80px !important;
+      line-height: 80px !important;
+      margin-top: -40px !important;
+      margin-left: -40px !important;
+      font-size: 2.5em !important;
+    }
+
+    #videoModal .video-js .vjs-big-play-button:hover {
+      background-color: rgba(108, 187, 106, 0.9) !important;
+      border-color: #5aa857 !important;
+    }
+
+    #videoModal .video-js .vjs-control:focus,
+    #videoModal .video-js .vjs-control:focus:before,
+    #videoModal .video-js .vjs-control:hover:before {
+      color: #6cbb6a !important;
+    }
+
+    /* Ensure controls are always visible */
+    #videoModal .video-js.vjs-user-inactive .vjs-control-bar {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    /* Make sure Video.js has proper dimensions */
+    #videoModal .video-js {
+      min-width: 640px;
+      min-height: 360px;
+    }
+
+    /* Force controls to show */
+    #videoModal .video-js.vjs-has-started .vjs-control-bar {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: flex !important;
+    }
+
+    #videoModal .video-js.vjs-playing .vjs-control-bar {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: flex !important;
+    }
+
+    #videoModal .video-js.vjs-paused .vjs-control-bar {
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: flex !important;
     }
 
     /* All Sponsors Sections */
@@ -638,24 +720,181 @@ function getYouTubeVideoId($url) {
         });
       }
 
-      // YouTube Modal Handler
-      const youtubeModal = document.getElementById('youtubeModal');
-      const youtubePlayer = document.getElementById('youtubePlayer');
+      // Video.js Modal Handler
+      const videoModal = document.getElementById('videoModal');
+      if (!videoModal) return;
 
-      if (youtubeModal) {
-        youtubeModal.addEventListener('show.bs.modal', function (event) {
-          const button = event.relatedTarget;
-          const videoId = button.getAttribute('data-video-id');
+      let videojsPlayer = null;
+      const videoContainer = videoModal.querySelector('.video-container-wrapper .ratio');
+
+      // Wait for Video.js to be loaded
+      function initVideoJS(videoUrl) {
+        if (typeof videojs === 'undefined') {
+          console.error('Video.js is not loaded');
+          return;
+        }
+
+        // Check if video element exists, if not create it
+        let videoEl = document.getElementById('videoPlayer');
+        
+        // If video element doesn't exist (was removed by dispose), recreate it
+        if (!videoEl && videoContainer) {
+          videoEl = document.createElement('video');
+          videoEl.id = 'videoPlayer';
+          videoEl.className = 'video-js vjs-default-skin vjs-big-play-centered';
+          videoEl.setAttribute('preload', 'auto');
+          videoEl.setAttribute('data-setup', '{}');
           
-          // Set iframe src with autoplay
-          youtubePlayer.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-        });
+          const noJsMsg = document.createElement('p');
+          noJsMsg.className = 'vjs-no-js';
+          noJsMsg.innerHTML = 'To view this video please enable JavaScript, and consider upgrading to a web browser that ' +
+            '<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.';
+          videoEl.appendChild(noJsMsg);
+          
+          videoContainer.appendChild(videoEl);
+        }
 
-        youtubeModal.addEventListener('hide.bs.modal', function () {
-          // Stop video when modal is closed
-          youtubePlayer.src = '';
-        });
+        if (!videoEl) {
+          console.error('Video element not found and could not be created');
+          return;
+        }
+
+        // Destroy existing player if any
+        if (videojsPlayer) {
+          try {
+            // Check if player is still attached to an element
+            if (videojsPlayer.el() && videojsPlayer.el().parentNode) {
+              videojsPlayer.dispose();
+            }
+          } catch (e) {
+            console.log('Error disposing player:', e);
+          }
+          videojsPlayer = null;
+        }
+
+        // Get container dimensions
+        const container = videoEl.closest('.ratio');
+        const width = container ? container.offsetWidth : 640;
+        const height = container ? container.offsetHeight : 360;
+
+        // Initialize Video.js player
+        try {
+          videojsPlayer = videojs(videoEl, {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            fluid: false,
+            responsive: false,
+            width: width,
+            height: height,
+            playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 2],
+            userActions: {
+              hotkeys: true
+            }
+          });
+
+          // Set video source when ready
+          videojsPlayer.ready(function() {
+            this.src({
+              type: 'video/mp4',
+              src: videoUrl
+            });
+            
+            // Load the video
+            this.load();
+            
+            // Try to autoplay (may be blocked by browser)
+            this.play().catch(function(error) {
+              console.log('Autoplay prevented:', error);
+            });
+          });
+
+          // Error handling
+          videojsPlayer.on('error', function() {
+            console.error('Video.js error:', this.error());
+          });
+        } catch (e) {
+          console.error('Error initializing Video.js:', e);
+        }
       }
+
+      // Initialize Video.js when modal opens
+      videoModal.addEventListener('shown.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const videoUrl = button.getAttribute('data-video-url');
+        
+        if (videoUrl) {
+          // Wait a bit for modal animation to complete
+          setTimeout(() => {
+            initVideoJS(videoUrl);
+          }, 300);
+        }
+      });
+
+      // Cleanup when modal closes
+      videoModal.addEventListener('hide.bs.modal', function () {
+        if (videojsPlayer) {
+          try {
+            // Pause and reset video
+            videojsPlayer.pause();
+            videojsPlayer.currentTime(0);
+            
+            // Get the video element before dispose
+            const playerEl = videojsPlayer.el();
+            const videoElement = playerEl && playerEl.tagName === 'VIDEO' ? playerEl : playerEl.querySelector('video');
+            
+            // Dispose player with preserveEl option to keep the element
+            try {
+              videojsPlayer.dispose({ preserveEl: true });
+            } catch (disposeError) {
+              // If preserveEl doesn't work, try standard dispose
+              try {
+                videojsPlayer.dispose();
+              } catch (e) {
+                console.log('Error disposing player:', e);
+              }
+            }
+            
+            videojsPlayer = null;
+            
+            // Ensure video element still exists, if not recreate it
+            if (!document.getElementById('videoPlayer') && videoContainer) {
+              const newVideoEl = document.createElement('video');
+              newVideoEl.id = 'videoPlayer';
+              newVideoEl.className = 'video-js vjs-default-skin vjs-big-play-centered';
+              newVideoEl.setAttribute('preload', 'auto');
+              newVideoEl.setAttribute('data-setup', '{}');
+              
+              const noJsMsg = document.createElement('p');
+              noJsMsg.className = 'vjs-no-js';
+              noJsMsg.innerHTML = 'To view this video please enable JavaScript, and consider upgrading to a web browser that ' +
+                '<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.';
+              newVideoEl.appendChild(noJsMsg);
+              
+              videoContainer.appendChild(newVideoEl);
+            } else if (videoElement && videoElement.id === 'videoPlayer') {
+              // Clean up the video element: remove sources and restore classes
+              const sources = videoElement.querySelectorAll('source');
+              sources.forEach(src => src.remove());
+              videoElement.className = 'video-js vjs-default-skin vjs-big-play-centered';
+              videoElement.removeAttribute('src');
+              videoElement.removeAttribute('data-setup');
+            }
+          } catch (e) {
+            console.log('Error cleaning up player:', e);
+            // Force cleanup and recreate element if needed
+            videojsPlayer = null;
+            if (!document.getElementById('videoPlayer') && videoContainer) {
+              const newVideoEl = document.createElement('video');
+              newVideoEl.id = 'videoPlayer';
+              newVideoEl.className = 'video-js vjs-default-skin vjs-big-play-centered';
+              newVideoEl.setAttribute('preload', 'auto');
+              newVideoEl.setAttribute('data-setup', '{}');
+              videoContainer.appendChild(newVideoEl);
+            }
+          }
+        }
+      });
     });
   </script>
 @endsection

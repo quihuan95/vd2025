@@ -30,7 +30,7 @@ class SponsorsController extends Controller
                     'website' => '#',
                     'tagline_vi' => 'Nhà tài trợ Kim cương',
                     'tagline_en' => 'Diamond Sponsor',
-                    'youtube_video' => null, // Example: 'dQw4w9WgXcQ' for video ID or full URL
+                    'youtube_video' => 'https://common.mcms.one/assets/hieubt/Management-of-Immunosuppressive-Drugs-with-a-Narrow-Therapeutic-Range-From-Guidelines-to-Clinical-Practice.mp4', // Example: 'dQw4w9WgXcQ' for video ID or full URL
                     'buttons' => [
                         [
                             'text_vi' => 'Giới thiệu',

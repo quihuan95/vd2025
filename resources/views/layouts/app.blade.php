@@ -65,6 +65,7 @@
   <link href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@11.0.3/build/css/intlTelInput.css" rel="stylesheet">
   <link rel='stylesheet' href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+  <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 
   <!-- Local CSS -->
   <link href="{{ asset('css/vendor/boxy/style-min.css') }}" rel="stylesheet">
@@ -157,6 +158,7 @@
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@11.0.3/build/js/intlTelInput.min.js"></script>
   <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 
   <!-- Local JS -->
   <script src="{{ asset('js/vendor/fphp/script-min.js') }}"></script>
